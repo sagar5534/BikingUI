@@ -12,13 +12,24 @@ struct Dashboard: View {
     @ObservedObject var Location = CoreLocation()
     @ObservedObject var timer = StopWatchManager()
     @State var speedToggle: Bool = true
+    @State var timeToggle: Bool = true
+
     @State var isRunning: Bool = true
     @State var isStopping: Bool = false
 
     var body: some View {
         VStack {
             VStack {
-                LargeCountDown(value: $timer.time, desc: "Moving Time")
+                Button(action: {
+                    timeToggle.toggle()
+                }, label: {
+                    if timeToggle {
+                        LargeCountDown(value: $timer.movingCounter, desc: "Moving Time")
+                    } else {
+                        LargeCountDown(value: $timer.totalCounter, desc: "Total Time")
+                    }
+                })
+
                 Spacer()
 
                 Button(action: {
@@ -41,10 +52,7 @@ struct Dashboard: View {
                 HStack {
                     Button(action: {
                         isRunning.toggle()
-
-                        if isRunning { timer.start() }
-                        else { timer.pause() }
-
+                        isRunning ? timer.resume() : timer.pause()
                     }) {
                         Dashboard_Buttons_Pause(isRunning: $isRunning)
                             .padding()

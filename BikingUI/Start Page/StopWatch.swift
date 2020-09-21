@@ -5,39 +5,51 @@
 //  Created by Sagar on 2020-09-20.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 class StopWatchManager: ObservableObject {
+    @State var isRunning: Bool = false
     
-    @Published var isRunning: Bool = false
-    var secondsElapsed = 0.0
-    @Published var time = ""
+    var totalTime = 0.0
+    var movingTime = 0.0
     
-    var timer = Timer()
+    @Published var totalCounter = ""
+    @Published var movingCounter = ""
+    
+    var TotalTimer = Timer()
+    var MovingTimer = Timer()
     let formatter = DateComponentsFormatter()
     
     init() {
-        
         formatter.unitsStyle = .positional
         formatter.includesApproximationPhrase = false
         formatter.includesTimeRemainingPhrase = false
         formatter.zeroFormattingBehavior = .pad
         formatter.allowedUnits = [.second, .minute, .hour]
-        
     }
     
     func start() {
-        isRunning = true
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-            self.secondsElapsed += 0.1
-            self.time = self.formatter.string(from: self.secondsElapsed)!
+        TotalTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.totalTime += 0.1
+            self.totalCounter = self.formatter.string(from: self.totalTime)!
         }
+        resume()
     }
     
     func pause() {
-        timer.invalidate()
-        isRunning = false
+        MovingTimer.invalidate()
     }
     
+    func resume() {
+        MovingTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.movingTime += 0.1
+            self.movingCounter = self.formatter.string(from: self.movingTime)!
+        }
+    }
+    
+    func stop() {
+        TotalTimer.invalidate()
+        MovingTimer.invalidate()
+    }
 }

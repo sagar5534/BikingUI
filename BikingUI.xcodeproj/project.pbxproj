@@ -12,7 +12,6 @@
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
 		1B0DABD3251054A800926415 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD2251054A800926415 /* MapView.swift */; };
-		1B8D542525115040000CBB56 /* Start_BikeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D542425115040000CBB56 /* Start_BikeType.swift */; };
 		1B8D542725116252000CBB56 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D542625116252000CBB56 /* TabBar.swift */; };
 		1B9A0ED02515B9F60017AD07 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ECF2515B9F60017AD07 /* Dashboard.swift */; };
 		1B9A0ED52515DADB0017AD07 /* DashMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ED42515DADB0017AD07 /* DashMap.swift */; };
@@ -35,7 +34,6 @@
 		1B0DABCA2510517300926415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B0DABD2251054A800926415 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		1B8D542425115040000CBB56 /* Start_BikeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_BikeType.swift; sourceTree = "<group>"; };
 		1B8D542625116252000CBB56 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		1B9A0ECF2515B9F60017AD07 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		1B9A0ED42515DADB0017AD07 /* DashMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashMap.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 			children = (
 				1B0DABD0251052B700926415 /* Start.swift */,
 				1B0DABD2251054A800926415 /* MapView.swift */,
-				1B8D542425115040000CBB56 /* Start_BikeType.swift */,
 				1B9A0EE02517326F0017AD07 /* Core Location.swift */,
 				1B9A0EE3251740600017AD07 /* StopWatch.swift */,
 			);
@@ -276,7 +273,6 @@
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,
 				1B9A0ED82515DAEB0017AD07 /* DashTabManager.swift in Sources */,
-				1B8D542525115040000CBB56 /* Start_BikeType.swift in Sources */,
 				1B8D542725116252000CBB56 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

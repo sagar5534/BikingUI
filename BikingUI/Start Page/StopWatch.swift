@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class StopWatchManager: ObservableObject {
-    @State var isRunning: Bool = false
+
     @Published var totalCounter = ""
     @Published var movingCounter = ""
 
@@ -28,21 +28,11 @@ class StopWatchManager: ObservableObject {
     }
 
     func start() {
-        isRunning = true
         TotalTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.totalTime += 0.1
             self.totalCounter = self.formatter.string(from: self.totalTime)!
         }
         resume()
-    }
-
-    func toggle() {
-        isRunning.toggle()
-        if isRunning {
-            resume()
-        } else {
-            pause()
-        }
     }
 
     func pause() {
@@ -57,7 +47,6 @@ class StopWatchManager: ObservableObject {
     }
 
     func stop() {
-        isRunning = false
         TotalTimer.invalidate()
         MovingTimer.invalidate()
     }

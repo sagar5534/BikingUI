@@ -52,8 +52,8 @@ struct Dashboard: View {
             VStack {
                 HStack {
                     Button(action: {
-                        Timer.toggle()
                         isTimerRunning.toggle()
+                        isTimerRunning ? Timer.resume() : Timer.pause()
                     }) {
                         Dashboard_Buttons_Pause(isRunning: $isTimerRunning)
                             .padding()

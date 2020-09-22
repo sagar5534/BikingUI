@@ -15,10 +15,8 @@ struct History: View {
         NavigationView {
             ScrollView {
                 ScoreBoard(totalKm: .constant("45.98"), totalTrips: .constant("56"), totalMoving: .constant("40:34"), totalLast: .constant("34"))
-                
+
                 Divider()
-                
-                
             }
             .foregroundColor(lightColor)
             .navigationTitle("History")
@@ -31,7 +29,6 @@ struct History: View {
                     .shadow(radius: 3)
                     .padding(.bottom)
             )
-
         }
     }
 }

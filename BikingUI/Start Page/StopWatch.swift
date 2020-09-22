@@ -10,17 +10,15 @@ import SwiftUI
 
 class StopWatchManager: ObservableObject {
     @State var isRunning: Bool = false
-    
-    var totalTime = 0.0
-    var movingTime = 0.0
-    
     @Published var totalCounter = ""
     @Published var movingCounter = ""
-    
-    var TotalTimer = Timer()
-    var MovingTimer = Timer()
-    let formatter = DateComponentsFormatter()
-    
+
+    private var totalTime = 0.0
+    private var movingTime = 0.0
+    private var TotalTimer = Timer()
+    private var MovingTimer = Timer()
+    private let formatter = DateComponentsFormatter()
+
     init() {
         formatter.unitsStyle = .positional
         formatter.includesApproximationPhrase = false
@@ -28,27 +26,38 @@ class StopWatchManager: ObservableObject {
         formatter.zeroFormattingBehavior = .pad
         formatter.allowedUnits = [.second, .minute, .hour]
     }
-    
+
     func start() {
+        isRunning = true
         TotalTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.totalTime += 0.1
             self.totalCounter = self.formatter.string(from: self.totalTime)!
         }
         resume()
     }
-    
+
+    func toggle() {
+        isRunning.toggle()
+        if isRunning {
+            resume()
+        } else {
+            pause()
+        }
+    }
+
     func pause() {
         MovingTimer.invalidate()
     }
-    
+
     func resume() {
         MovingTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.movingTime += 0.1
             self.movingCounter = self.formatter.string(from: self.movingTime)!
         }
     }
-    
+
     func stop() {
+        isRunning = false
         TotalTimer.invalidate()
         MovingTimer.invalidate()
     }

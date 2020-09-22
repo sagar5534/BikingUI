@@ -9,13 +9,14 @@ import SwiftUI
 import SwiftUICharts
 
 struct Dashboard: View {
-    @ObservedObject var Location = CoreLocation()
-    @ObservedObject var timer = StopWatchManager()
+    @Binding var isDone: Bool
+
     @State var speedToggle: Bool = true
     @State var timeToggle: Bool = true
+    @State var isTimerRunning: Bool = true
 
-    @State var isRunning: Bool = true
-    @State var isStopping: Bool = false
+    @EnvironmentObject var Location: CoreLocation
+    @EnvironmentObject var Timer: StopWatchManager
 
     var body: some View {
         VStack {
@@ -24,9 +25,9 @@ struct Dashboard: View {
                     timeToggle.toggle()
                 }, label: {
                     if timeToggle {
-                        LargeCountDown(value: $timer.movingCounter, desc: "Moving Time")
+                        LargeCountDown(value: $Timer.movingCounter, desc: "Moving Time")
                     } else {
-                        LargeCountDown(value: $timer.totalCounter, desc: "Total Time")
+                        LargeCountDown(value: $Timer.totalCounter, desc: "Total Time")
                     }
                 })
 
@@ -51,20 +52,20 @@ struct Dashboard: View {
             VStack {
                 HStack {
                     Button(action: {
-                        isRunning.toggle()
-                        isRunning ? timer.resume() : timer.pause()
+                        Timer.toggle()
+                        isTimerRunning.toggle()
                     }) {
-                        Dashboard_Buttons_Pause(isRunning: $isRunning)
+                        Dashboard_Buttons_Pause(isRunning: $isTimerRunning)
                             .padding()
                     }
 
-                    Dashboard_Buttons_Stop()
+                    Dashboard_Buttons_Stop(isDone: $isDone)
                         .padding()
                 }
             }
         }
         .onAppear {
-            timer.start()
+            Timer.start()
         }
     }
 }
@@ -115,6 +116,6 @@ private struct LargeCountDown: View {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        Dashboard()
+        Dashboard(isDone: .constant(false))
     }
 }

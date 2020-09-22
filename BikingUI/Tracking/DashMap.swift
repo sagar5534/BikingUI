@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct DashMap: View {
-    
-    @Binding var selectedPage: Int
-    
-    var body: some View {
-        
-        ZStack(alignment: .bottom){
-            MapView()
-            
-            Button(action: {
-                
-                withAnimation { selectedPage -= 1 }
+    @Binding var selectedTabViewPage: Int
 
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            MapView()
+
+            Button(action: {
+                withAnimation { selectedTabViewPage -= 1 }
             }, label: {
                 ZStack {
                     Circle()
@@ -32,16 +28,13 @@ struct DashMap: View {
             })
                 .frame(width: 100, height: 100, alignment: .center)
                 .padding()
-            
         }
         .ignoresSafeArea()
-        
-        
     }
 }
 
 struct DashMap_Previews: PreviewProvider {
     static var previews: some View {
-        DashMap(selectedPage: .constant(2))
+        DashMap(selectedTabViewPage: .constant(2))
     }
 }

@@ -28,4 +28,3 @@ struct MapView_Previews: PreviewProvider {
             .previewDevice("iPhone 11 Pro")
     }
 }
-

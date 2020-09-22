@@ -9,9 +9,7 @@ import SwiftUI
 import UIKit
 
 struct Start: View {
-    
-    @State private var isPresented = false
-
+    @State private var isTrackingMode = false
 
     var body: some View {
         NavigationView {
@@ -21,9 +19,9 @@ struct Start: View {
 
                     VStack {
                         Spacer()
-                        
+
                         Button(action: {
-                            self.isPresented.toggle()
+                            self.isTrackingMode.toggle()
                         }, label: {
                             ZStack {
                                 Circle()
@@ -35,7 +33,6 @@ struct Start: View {
                             }
                             .frame(width: 125, height: 125, alignment: .center)
                         })
-                      
                     }
                     .padding(.bottom, 30)
                 }
@@ -50,12 +47,9 @@ struct Start: View {
                     .shadow(radius: 3)
                     .foregroundColor(Color.red)
                     .padding(.bottom)
-
             )
-
         }
-        .fullScreenCover(isPresented: $isPresented, content: DashTabManager.init)
-
+        .fullScreenCover(isPresented: $isTrackingMode, content: DashTabManager.init)
     }
 }
 

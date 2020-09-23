@@ -6,8 +6,5 @@ target 'BikingUI' do
   use_frameworks!
 
   # Pods for BikingUI
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseFirestoreSwift'
 
 end

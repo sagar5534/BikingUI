@@ -15,7 +15,9 @@ struct Start: View {
         NavigationView {
             VStack {
                 ZStack {
-                    MapView()
+                    MapView {
+                        Map()
+                    }
 
                     VStack {
                         Spacer()

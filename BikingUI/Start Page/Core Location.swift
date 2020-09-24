@@ -40,26 +40,3 @@ extension CoreLocation: CLLocationManagerDelegate {
         avgSpeed = avgSpeed + (((location.speed * 3.6) - avgSpeed) / Double(self.locations.count))
     }
 }
-
-struct Map: UIViewRepresentable {
-    private var locationManager = CoreLocation()
-
-    func makeUIView(context _: Context) -> MKMapView {
-        let mapView = MKMapView(frame: UIScreen.main.bounds)
-
-        mapView.showsUserLocation = true
-        mapView.userTrackingMode = .followWithHeading
-
-        mapView.isZoomEnabled = false
-        mapView.isScrollEnabled = false
-        mapView.isUserInteractionEnabled = false
-
-        mapView.setUserTrackingMode(.followWithHeading, animated: true)
-        mapView.showsCompass = true
-        mapView.userActivity = .init(activityType: "Bike")
-
-        return mapView
-    }
-
-    func updateUIView(_: MKMapView, context _: Context) {}
-}

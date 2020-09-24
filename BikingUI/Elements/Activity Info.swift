@@ -34,7 +34,7 @@ struct Activity_Info: View {
             Divider()
 
             // Make map for this page
-            Map()
+            Map_Summary()
                 .frame(minHeight: 400)
                 .padding()
         }

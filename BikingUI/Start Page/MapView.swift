@@ -9,11 +9,17 @@ import MapKit
 import SwiftUI
 import UIKit
 
-struct MapView: View {
-    var body: some View {
+public struct MapView<Content: View>: View {
+    let content: () -> Content
+
+    public init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+    }
+    
+    public var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
-                Map()
+                self.content()
                 Rectangle()
                     .foregroundColor(.clear)
                     .background(RadialGradient(gradient: Gradient(colors: [Color.white.opacity(0), Color.white.opacity(1)]), center: .center, startRadius: 150, endRadius: geometry.size.height / 2))
@@ -24,7 +30,8 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
-            .previewDevice("iPhone 11 Pro")
+        MapView{
+            Map()
+        }
     }
 }

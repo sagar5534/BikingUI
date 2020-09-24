@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Activity_Info: View {
-    // Data Incomplete
+
     @State var title: String = ""
+    @State var activity: Test
 
     var body: some View {
         ScrollView {
@@ -19,7 +20,7 @@ struct Activity_Info: View {
                         .font(.system(size: 35, weight: .bold, design: .default))
                         .foregroundColor(.primary)
 
-                    Text("Sept 05, 2020")
+                    Text(activity.name)
                         .bold()
                         .font(.callout)
                         .foregroundColor(.secondary)
@@ -43,6 +44,6 @@ struct Activity_Info: View {
 
 struct Activity_Info_Previews: PreviewProvider {
     static var previews: some View {
-        Activity_Info()
+        Activity_Info(activity: Test(name: "Hey"))
     }
 }

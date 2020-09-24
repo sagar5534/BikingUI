@@ -9,17 +9,17 @@ import SwiftUI
 import SwiftUICharts
 
 struct ActivityDetail: View {
+    
+    @State var activity: Test
+    
     var body: some View {
-        NavigationView {
-            Activity_Info()
-
-                .navigationBarTitleDisplayMode(.inline)
-        }
+        Activity_Info(activity: activity)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ActivityDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityDetail()
+        ActivityDetail(activity: Test(name: "Hey"))
     }
 }

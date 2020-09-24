@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct History: View {
+    @ObservedObject private var firebaseManager = FirebaseManager()
+
     private var lightColor = Color(UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00))
     private var whiteColor = Color(UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00))
 
     var body: some View {
         NavigationView {
-            ScrollView {
+            List {
                 ScoreBoard(totalKm: .constant("45.98"), totalTrips: .constant("56"), totalMoving: .constant("40:34"), totalLast: .constant("34"))
 
-                Divider()
+                ForEach(self.firebaseManager.data) { activity in
+                    NavigationLink(
+                        destination: ActivityDetail(activity: activity),
+                        label: {
+                            ActivityCell(activity: activity)
+                        })
+                }
             }
-            .foregroundColor(lightColor)
+            .listStyle(PlainListStyle())
+
             .navigationTitle("History")
             .navigationBarItems(leading:
                 Image("profile").resizable()
@@ -29,6 +38,9 @@ struct History: View {
                     .shadow(radius: 3)
                     .padding(.bottom)
             )
+            .onAppear {
+                self.firebaseManager.fetchData()
+            }
         }
     }
 }

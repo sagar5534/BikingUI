@@ -12,7 +12,7 @@ struct ActivityOverview: View {
 
     var body: some View {
         NavigationView {
-            Activity_Info()
+            Activity_Info(activity: Test(name: "Test"))
 
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: Button(action: {

@@ -14,6 +14,7 @@ struct ScoreBoard: View {
     var body: some View {
         VStack {
             VStack {
+
                 Text(User.distance.formatDistance(isKm: User.isKm).format())
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(.primary)
@@ -56,7 +57,7 @@ struct ScoreBoard: View {
                 Divider()
 
                 VStack {
-                    Text(User.avgSpeed.format())
+                    Text(User.avgSpeed.formatSpeed(isKmph: User.isKm).format())
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(.primary)
                         .italic()
@@ -78,16 +79,21 @@ struct ScoreBoard: View {
 
 struct ScoreBoardDetail: View {
     
+    @EnvironmentObject var firebaseManager: FirebaseManager
     @State var activity: Activity
     
     var body: some View {
         VStack {
             VStack {
-                Text(activity.distance.format())
+                
+                let label = firebaseManager.user.isKm ? "Kilometers" : "Miles"
+                let distance = activity.distance.formatDistance(isKm: firebaseManager.user.isKm).format()
+                
+                Text(distance)
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(.primary)
                     .italic()
-                Text("Kilometers")
+                Text(label)
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -97,9 +103,14 @@ struct ScoreBoardDetail: View {
             
             VStack{
                 HStack(alignment: .top) {
-                    MinorLabel(value: activity.avgSpeed.format(), detail: "Avg Speed")
+                    
+                    let avg = activity.avgSpeed.formatSpeed(isKmph: firebaseManager.user.isKm).format()
+                    let fast = activity.fastestSpeed.formatSpeed(isKmph: firebaseManager.user.isKm).format()
+                    
+                    MinorLabel(value: avg, detail: "Avg Speed")
                     Divider()
-                    MinorLabel(value: activity.fastestSpeed.format(), detail: "Fastest Speed")
+                    MinorLabel(value: fast, detail: "Fastest Speed")
+                    
                 }
                 .padding()
                 

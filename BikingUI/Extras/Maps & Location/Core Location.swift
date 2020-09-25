@@ -34,9 +34,9 @@ class CoreLocation: NSObject, ObservableObject {
 extension CoreLocation: CLLocationManagerDelegate {
     func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        curSpeed = location.speed * 3.6
-        distance += location.distance(from: self.locations.last ?? location) / 1000
+        curSpeed = location.speed
+        distance += location.distance(from: self.locations.last ?? location)
         self.locations.append(location)
-        avgSpeed = avgSpeed + (((location.speed * 3.6) - avgSpeed) / Double(self.locations.count))
+        avgSpeed = avgSpeed + (((location.speed) - avgSpeed) / Double(self.locations.count))
     }
 }

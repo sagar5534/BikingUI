@@ -18,6 +18,8 @@ struct Dashboard: View {
     @EnvironmentObject var Location: CoreLocation
     @EnvironmentObject var Timer: StopWatchManager
 
+    @EnvironmentObject var firebaseManager: FirebaseManager
+
     var body: some View {
         VStack {
             VStack {
@@ -36,15 +38,17 @@ struct Dashboard: View {
                 Button(action: {
                     speedToggle.toggle()
                 }, label: {
+                    let label = firebaseManager.user.isKm ? "Km/h" : "Mi/h"
+                             
                     if speedToggle {
-                        LargeText(value: $Location.avgSpeed, desc: "Average Speed Km/h")
+                        LargeText(value: $Location.avgSpeed, desc: "Average Speed \(label)", isDistance: false)
                     } else {
-                        LargeText(value: $Location.curSpeed, desc: "Current Speed Km/h")
+                        LargeText(value: $Location.curSpeed, desc: "Current Speed \(label)", isDistance: false)
                     }
                 })
 
                 Spacer()
-                LargeText(value: $Location.distance, desc: "Kms")
+                LargeText(value: $Location.distance, desc: (firebaseManager.user.isKm ? "Kilometers" : "Miles"), isDistance: true)
                     .frame(maxWidth: .infinity)
             }
             .padding()
@@ -73,10 +77,15 @@ struct Dashboard: View {
 private struct LargeText: View {
     @Binding var value: Double
     @State var desc: String
+    @State var isDistance: Bool
+    @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
         VStack {
-            Text(value.format())
+            
+            let x = isDistance ? value.formatDistance(isKm: firebaseManager.user.isKm).format() : value.formatSpeed(isKmph: firebaseManager.user.isKm).format()
+            
+            Text(x)
                 .font(Font.system(size: 120, weight: .heavy).monospacedDigit())
                 .foregroundColor(.primary)
                 .italic()

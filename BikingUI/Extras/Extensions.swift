@@ -31,6 +31,10 @@ extension Double {
         return (self / (isKm ? 1000 : 1609))
     }
 
+    func formatSpeed(isKmph: Bool) -> Double{
+        return (self * (isKmph ? 3.6 : 2.237))
+    }
+    
 }
 
 extension Timestamp {

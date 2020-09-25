@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ActivityCell: View {
     
+    @EnvironmentObject var firebaseManager: FirebaseManager
     @State var activity: Activity
     
     var body: some View {
@@ -25,7 +26,12 @@ struct ActivityCell: View {
                 HStack(alignment: .center){
                     DetailLabel(label: activity.date.format())
                     Spacer()
-                    DetailLabel(label: "\(activity.distance.format()) Km")
+                    
+                    let label = firebaseManager.user.isKm ? "Km" : "Mi"
+                    let distance = activity.distance.formatDistance(isKm: firebaseManager.user.isKm).format()
+                    
+                    DetailLabel(label: "\(distance) \(label)")
+                    
                     Spacer()
                     DetailLabel(label: activity.movingTime.toTime(pad: false))
                 }

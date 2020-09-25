@@ -16,7 +16,6 @@ struct DashTabManager: View {
 
     var body: some View {
         if isDone {
-            
             let x = Activity(location: Location, timer: Timer)
             ActivityOverview(activity: x)
                 .environmentObject(Location)
@@ -41,9 +40,9 @@ struct DashTabManager: View {
 struct DashTabManager_Previews: PreviewProvider {
     static var previews: some View {
         var fire = FirebaseManager()
-   
+
         DashTabManager()
             .environmentObject(fire)
-            .onAppear{fire.fetchData()}
+            .onAppear { fire.fetchData() }
     }
 }

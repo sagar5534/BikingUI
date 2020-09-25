@@ -10,23 +10,19 @@ import Foundation
 struct User: Identifiable {
     var id: String = UUID().uuidString
     var name: String
-    
-    //Global Details
+
+    // Global Details
     var distance: Double
     var movingTime: Int
     var trips: Int
-    
-    
 }
 
 struct Activity: Identifiable {
     var id: String = UUID().uuidString
     var name: String
-    
-    //Global Details
+
+    // Global Details
     var distance: Double
     var movingTime: Int
     var trips: Int
-    
-    
 }

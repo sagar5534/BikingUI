@@ -12,7 +12,7 @@ struct DashMap: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            MapView{
+            MapView {
                 Map_Tracking()
             }
 

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct History: View {
-    
     @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
@@ -21,7 +20,8 @@ struct History: View {
                         destination: ActivityDetail(activity: activity),
                         label: {
                             ActivityCell(activity: activity)
-                        })
+                        }
+                    )
                 }
             }
             .listStyle(PlainListStyle())
@@ -40,14 +40,11 @@ struct History: View {
 }
 
 struct History_Previews: PreviewProvider {
-    
     static var previews: some View {
-        
         var fire = FirebaseManager()
-        
+
         History()
             .environmentObject(fire)
-            .onAppear{fire.fetchData()}
-        
+            .onAppear { fire.fetchData() }
     }
 }

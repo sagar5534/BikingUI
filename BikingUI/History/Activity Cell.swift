@@ -8,38 +8,34 @@
 import SwiftUI
 
 struct ActivityCell: View {
-    
     @EnvironmentObject var firebaseManager: FirebaseManager
     @State var activity: Activity
-    
+
     var body: some View {
-        
-        HStack(spacing: 15){
+        HStack(spacing: 15) {
             Map()
                 .frame(width: 80, height: 80, alignment: .center)
                 .multilineTextAlignment(.leading)
 
             VStack(alignment: .leading, spacing: 5) {
-                
                 MainLabel(label: activity.tripName)
-                
-                HStack(alignment: .center){
+
+                HStack(alignment: .center) {
                     DetailLabel(label: activity.date.format())
                     Spacer()
-                    
+
                     let label = firebaseManager.user.isKm ? "Km" : "Mi"
                     let distance = activity.distance.formatDistance(isKm: firebaseManager.user.isKm).format()
-                    
+
                     DetailLabel(label: "\(distance) \(label)")
-                    
+
                     Spacer()
                     DetailLabel(label: activity.movingTime.toTime(pad: false))
                 }
                 .padding(.trailing)
             }
-            
+
         }.padding(10)
-        
     }
 }
 
@@ -62,17 +58,15 @@ private struct MainLabel: View {
     }
 }
 
-
-
-
 struct ActivityCell_Previews: PreviewProvider {
     static var previews: some View {
-        List{
+        List {
             NavigationLink(
                 destination: Text("Destination"),
                 label: {
                     ActivityCell(activity: Activity())
-                })
+                }
+            )
         }
     }
 }

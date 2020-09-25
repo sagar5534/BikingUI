@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Activity_Info: View {
-
     @State var activity: Activity
     @State var isConfirmView: Bool = false
     @State var textfieldData: String = ""
@@ -17,7 +16,6 @@ struct Activity_Info: View {
         ScrollView {
             Leading {
                 VStack(alignment: .leading) {
-                    
                     if isConfirmView {
                         TextField("Tuesday Ride", text: $textfieldData)
                             .font(.system(size: 35, weight: .bold, design: .default))
@@ -25,7 +23,7 @@ struct Activity_Info: View {
                             .onChange(of: textfieldData, perform: { value in
                                 activity.tripName = value
                             })
-                    }else{
+                    } else {
                         Text(activity.tripName)
                             .font(.system(size: 35, weight: .bold, design: .default))
                             .foregroundColor(.primary)

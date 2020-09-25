@@ -38,7 +38,7 @@ struct Dashboard: View {
                     speedToggle.toggle()
                 }, label: {
                     let label = firebaseManager.user.isKm ? "Km/h" : "Mi/h"
-                             
+
                     if speedToggle {
                         LargeText(value: $Location.avgSpeed, desc: "Average Speed \(label)", isDistance: false)
                     } else {
@@ -47,7 +47,7 @@ struct Dashboard: View {
                 })
 
                 Spacer()
-                LargeText(value: $Location.distance, desc: (firebaseManager.user.isKm ? "Kilometers" : "Miles"), isDistance: true)
+                LargeText(value: $Location.distance, desc: firebaseManager.user.isKm ? "Kilometers" : "Miles", isDistance: true)
                     .frame(maxWidth: .infinity)
             }
             .padding()
@@ -81,9 +81,8 @@ private struct LargeText: View {
 
     var body: some View {
         VStack {
-            
             let x = isDistance ? value.formatDistance(isKm: firebaseManager.user.isKm).format() : value.formatSpeed(isKmph: firebaseManager.user.isKm).format()
-            
+
             Text(x)
                 .font(Font.system(size: 120, weight: .heavy).monospacedDigit())
                 .foregroundColor(.primary)
@@ -124,18 +123,16 @@ private struct LargeCountDown: View {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        
         var Location = CoreLocation()
         var Timer = StopWatchManager()
         var firebaseManager = FirebaseManager()
-        
+
         Dashboard(isDone: .constant(false))
             .environmentObject(Location)
             .environmentObject(Timer)
             .environmentObject(firebaseManager)
-            .onAppear{
+            .onAppear {
                 firebaseManager.fetchData()
             }
-        
     }
 }

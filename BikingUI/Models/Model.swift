@@ -5,14 +5,13 @@
 //  Created by Sagar on 2020-09-23.
 //
 
-import Foundation
-import FirebaseFirestoreSwift
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
+import Foundation
 import MapKit
 
 struct User: Identifiable, Codable {
-    
     @DocumentID var id: String? = UUID().uuidString
     var name: String
     var distance: Double
@@ -20,21 +19,19 @@ struct User: Identifiable, Codable {
     var trips: Int
     var avgSpeed: Double
     var isKm: Bool
-    
+
     init() {
-        self.id = UUID().uuidString
-        self.name = ""
-        self.distance = 0
-        self.movingTime = 0
-        self.trips = 0
-        self.avgSpeed = 0
-        self.isKm = true
+        id = UUID().uuidString
+        name = ""
+        distance = 0
+        movingTime = 0
+        trips = 0
+        avgSpeed = 0
+        isKm = true
     }
-    
 }
 
 struct Activity: Identifiable, Codable {
-        
     @DocumentID var id: String? = UUID().uuidString
     var tripName: String
     var distance: Double
@@ -43,26 +40,26 @@ struct Activity: Identifiable, Codable {
     var avgSpeed: Double
     var fastestSpeed: Double
     var date: Timestamp
-    
+
     init() {
-        self.id = UUID().uuidString
-        self.tripName = ""
-        self.distance = 0
-        self.movingTime = 0
-        self.totalTime = 0
-        self.avgSpeed = 0
-        self.fastestSpeed = 0
-        self.date = Timestamp()
+        id = UUID().uuidString
+        tripName = ""
+        distance = 0
+        movingTime = 0
+        totalTime = 0
+        avgSpeed = 0
+        fastestSpeed = 0
+        date = Timestamp()
     }
-    
+
     init(location: CoreLocation, timer: StopWatchManager) {
-        self.id = UUID().uuidString
-        self.tripName = ""
-        self.distance = location.distance
-        self.movingTime = timer.movingTime
-        self.totalTime = timer.totalTime
-        self.avgSpeed = location.avgSpeed
-        self.fastestSpeed = 0
-        self.date = Timestamp()
+        id = UUID().uuidString
+        tripName = ""
+        distance = location.distance
+        movingTime = timer.movingTime
+        totalTime = timer.totalTime
+        avgSpeed = location.avgSpeed
+        fastestSpeed = 0
+        date = Timestamp()
     }
 }

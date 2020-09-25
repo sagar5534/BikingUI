@@ -9,9 +9,8 @@ import SwiftUI
 import SwiftUICharts
 
 struct ActivityDetail: View {
-    
     @State var activity: Activity
-    
+
     var body: some View {
         Activity_Info(activity: activity)
             .navigationBarTitleDisplayMode(.inline)

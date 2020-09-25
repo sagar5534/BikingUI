@@ -15,7 +15,7 @@ public struct MapView<Content: View>: View {
     public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
-    
+
     public var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
@@ -30,7 +30,7 @@ public struct MapView<Content: View>: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView{
+        MapView {
             Map()
         }
     }

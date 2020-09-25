@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ScoreBoard: View {
-    
     @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
         VStack {
             VStack {
-
                 Text(firebaseManager.user.distance.formatDistance(isKm: firebaseManager.user.isKm).format())
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(.primary)
@@ -27,7 +25,6 @@ struct ScoreBoard: View {
             .padding()
 
             HStack(alignment: .top) {
-                
                 VStack {
                     Text(String(firebaseManager.user.trips))
                         .font(.system(size: 20, weight: .heavy))
@@ -39,7 +36,7 @@ struct ScoreBoard: View {
                         .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
-                
+
                 Divider()
 
                 VStack {
@@ -53,7 +50,7 @@ struct ScoreBoard: View {
                         .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
-                
+
                 Divider()
 
                 VStack {
@@ -69,7 +66,7 @@ struct ScoreBoard: View {
                 .frame(maxWidth: .infinity)
             }
             .padding()
-            
+
             .padding(.leading)
             .padding(.trailing)
             .padding(.bottom)
@@ -78,17 +75,15 @@ struct ScoreBoard: View {
 }
 
 struct ScoreBoardDetail: View {
-    
     @EnvironmentObject var firebaseManager: FirebaseManager
     @State var activity: Activity
-    
+
     var body: some View {
         VStack {
             VStack {
-                
                 let label = firebaseManager.user.isKm ? "Kilometers" : "Miles"
                 let distance = activity.distance.formatDistance(isKm: firebaseManager.user.isKm).format()
-                
+
                 Text(distance)
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(.primary)
@@ -100,20 +95,17 @@ struct ScoreBoardDetail: View {
             }
             .padding()
 
-            
-            VStack{
+            VStack {
                 HStack(alignment: .top) {
-                    
                     let avg = activity.avgSpeed.formatSpeed(isKmph: firebaseManager.user.isKm).format()
                     let fast = activity.fastestSpeed.formatSpeed(isKmph: firebaseManager.user.isKm).format()
-                    
+
                     MinorLabel(value: avg, detail: "Avg Speed")
                     Divider()
                     MinorLabel(value: fast, detail: "Fastest Speed")
-                    
                 }
                 .padding()
-                
+
                 HStack(alignment: .top) {
                     MinorLabel(value: activity.movingTime.toTime(pad: false), detail: "Moving Time")
                     Divider()
@@ -149,13 +141,12 @@ private struct MinorLabel: View {
 
 struct ScoreBoard_Previews: PreviewProvider {
     static var previews: some View {
-        
         var fire = FirebaseManager()
-        
+
         ScoreBoard()
             .previewLayout(.fixed(width: 400, height: 250))
             .environmentObject(fire)
-            .onAppear{
+            .onAppear {
                 fire.fetchData()
             }
 

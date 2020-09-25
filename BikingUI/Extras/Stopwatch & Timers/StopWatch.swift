@@ -9,13 +9,12 @@ import Foundation
 import SwiftUI
 
 class StopWatchManager: ObservableObject {
-
     @Published var totalLabel = ""
     @Published var movingLabel = ""
 
     var totalTime = 0.0
     var movingTime = 0.0
-    
+
     private var TotalTimer = Timer()
     private var MovingTimer = Timer()
 

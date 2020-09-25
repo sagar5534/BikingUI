@@ -19,7 +19,7 @@ struct Activity_Info: View {
                         .font(.system(size: 35, weight: .bold, design: .default))
                         .foregroundColor(.primary)
 
-                    Text(activity.tripName)
+                    Text(activity.date.format())
                         .bold()
                         .font(.callout)
                         .foregroundColor(.secondary)
@@ -29,7 +29,7 @@ struct Activity_Info: View {
                 .padding(.top)
             }
 
-            ScoreBoardDetail(activity: Activity())
+            ScoreBoardDetail(activity: activity)
 
             Divider()
 

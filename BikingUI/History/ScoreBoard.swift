@@ -149,7 +149,7 @@ struct ScoreBoard_Previews: PreviewProvider {
     static var previews: some View {
         
         
-        ScoreBoard(User: .constant(User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: [])))
+        ScoreBoard(User: .constant(User()))
 
         ScoreBoardDetail(activity: Activity())
             .previewLayout(.fixed(width: 400, height: 250))

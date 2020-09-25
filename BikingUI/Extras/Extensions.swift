@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 extension Double {
     
@@ -24,5 +25,16 @@ extension Double {
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         return formatter.string(for: self) ?? ""
+    }
+
+}
+
+extension Timestamp {
+    
+    func format() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.doesRelativeDateFormatting = true
+        return formatter.string(from: self.dateValue())
     }
 }

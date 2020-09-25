@@ -23,11 +23,11 @@ struct ActivityCell: View {
                 MainLabel(label: activity.tripName)
                 
                 HStack(alignment: .center){
-                    DetailLabel(label: "Tuesday")
+                    DetailLabel(label: activity.date.format())
                     Spacer()
-                    DetailLabel(label: "1.5km")
+                    DetailLabel(label: "\(activity.distance.format()) Km")
                     Spacer()
-                    DetailLabel(label: "15:45")
+                    DetailLabel(label: activity.movingTime.toTime(pad: false))
                 }
                 .padding(.trailing)
             }

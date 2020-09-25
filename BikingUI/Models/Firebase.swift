@@ -9,38 +9,81 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class FirebaseManager: ObservableObject {
-    @Published var data: User = User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: [])
+    
+    @Published var user: User = User()
+    @Published var activity: [Activity] = []
     
     private var db = Firestore.firestore()
     
     func fetchData() {
+        getUser()
+        getActivity()
+    }
+       
+    private func getActivity(){
+        db.collection("users").document("AKNdoblQtARRCjmQN7aH").collection("activity")
+            .addSnapshotListener { qu, error in
+                
+                guard let docs = qu?.documents else {
+                    print("No Docs")
+                    return
+                }
+                
+                self.activity = docs.compactMap { (QueryDocumentSnapshot) -> Activity? in
+                    //return try? QueryDocumentSnapshot.data(as: Activity.self)
+                    
+                    let result = Result {
+                        try QueryDocumentSnapshot.data(as: Activity.self)
+                    }
+                    switch result {
+                    case .success(let city):
+                        if let city = city {
+                            // A `City` value was successfully initialized from the DocumentSnapshot.
+                            print("City: \(city)")
+                            return city
+                        } else {
+                            // A nil value was successfully initialized from the DocumentSnapshot,
+                            // or the DocumentSnapshot was nil.
+                            print("Document does not exist" + city.debugDescription)
+                            return nil
+                        }
+                    case .failure(let error):
+                        // A `City` value could not be initialized from the DocumentSnapshot.
+                        print("Error decoding city: \(error)")
+                        return nil
+                    }
+                }
+            }
+    }
+    
+    private func getUser(){
         db.collection("users").document("AKNdoblQtARRCjmQN7aH")
             .addSnapshotListener { documentSnapshot, error in
                 guard let document = documentSnapshot else {
                     print("Error fetching document: \(error!)")
                     return
                 }
-                guard let data = document.data() else {
-                    print("Document data was empty.")
-                    return
+
+                let result = Result {
+                    try document.data(as: User.self)
                 }
-                
-                let name = data["name"] as? String ?? ""
-                let distance = data["distance"] as? Double ?? 0
-                let movingTime = data["movingTime"] as? Double ?? 0
-                let trips = data["trips"] as? Int ?? 0
-                let avgSpeed = data["avgSpeed"] as? Double ?? 0
-                
-                
-                self.data = User(
-                    name: name,
-                    distance: distance,
-                    movingTime: movingTime,
-                    trips: trips,
-                    avgSpeed: avgSpeed,
-                    activity: [Activity()]
-                )
+                switch result {
+                case .success(let city):
+                    if let city = city {
+                        // A `City` value was successfully initialized from the DocumentSnapshot.
+                        print("City: \(city)")
+                        self.user = city
+                    } else {
+                        // A nil value was successfully initialized from the DocumentSnapshot,
+                        // or the DocumentSnapshot was nil.
+                        print("Document does not exist" + city.debugDescription)
+                    }
+                case .failure(let error):
+                    // A `City` value could not be initialized from the DocumentSnapshot.
+                    print("Error decoding city: \(error)")
+                }
                 
             }
     }
+        
 }

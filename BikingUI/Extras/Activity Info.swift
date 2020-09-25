@@ -10,14 +10,26 @@ import SwiftUI
 struct Activity_Info: View {
 
     @State var activity: Activity
+    @State var isConfirmView: Bool = false
+    @State var textfieldData: String = ""
 
     var body: some View {
         ScrollView {
             Leading {
                 VStack(alignment: .leading) {
-                    Text(activity.tripName)
-                        .font(.system(size: 35, weight: .bold, design: .default))
-                        .foregroundColor(.primary)
+                    
+                    if isConfirmView {
+                        TextField("Tuesday Ride", text: $textfieldData)
+                            .font(.system(size: 35, weight: .bold, design: .default))
+                            .foregroundColor(.primary)
+                            .onChange(of: textfieldData, perform: { value in
+                                activity.tripName = value
+                            })
+                    }else{
+                        Text(activity.tripName)
+                            .font(.system(size: 35, weight: .bold, design: .default))
+                            .foregroundColor(.primary)
+                    }
 
                     Text(activity.date.format())
                         .bold()
@@ -34,7 +46,7 @@ struct Activity_Info: View {
             Divider()
 
             // Make map for this page
-            Map_Summary()
+            Map_Summary(locations: .constant([]))
                 .frame(minHeight: 400)
                 .padding()
         }
@@ -43,6 +55,6 @@ struct Activity_Info: View {
 
 struct Activity_Info_Previews: PreviewProvider {
     static var previews: some View {
-        Activity_Info(activity: Activity())
+        Activity_Info(activity: Activity(), isConfirmView: true)
     }
 }

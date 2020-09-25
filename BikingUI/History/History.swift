@@ -9,7 +9,8 @@ import SwiftUI
 
 struct History: View {
     
-    @ObservedObject var firebaseManager = FirebaseManager()
+    //@ObservedObject var firebaseManager = FirebaseManager()
+    @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
         NavigationView {
@@ -43,8 +44,13 @@ struct History: View {
 }
 
 struct History_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
+        let fire = FirebaseManager()
+        
         History()
-            .previewDevice("iPhone 11 Pro")
+            .environmentObject(fire)
+        
     }
 }

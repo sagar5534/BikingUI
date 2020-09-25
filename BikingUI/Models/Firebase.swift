@@ -19,7 +19,7 @@ class FirebaseManager: ObservableObject {
         getUser()
         getActivity()
     }
-       
+    
     private func getActivity(){
         db.collection("users").document("AKNdoblQtARRCjmQN7aH").collection("activity")
             .addSnapshotListener { qu, error in
@@ -63,7 +63,7 @@ class FirebaseManager: ObservableObject {
                     print("Error fetching document: \(error!)")
                     return
                 }
-
+                
                 let result = Result {
                     try document.data(as: User.self)
                 }
@@ -85,5 +85,17 @@ class FirebaseManager: ObservableObject {
                 
             }
     }
-        
+    
+    
+    //Temp
+    func addBook(book: User) {
+        do {
+            try db.collection("books").addDocument(from: book)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    
 }

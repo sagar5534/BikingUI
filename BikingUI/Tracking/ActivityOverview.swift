@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ActivityOverview: View {
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var Location: CoreLocation
+    
+    @State var newActivity = Activity()
+    
     var body: some View {
         NavigationView {
-            Activity_Info(activity: Activity())
+            Activity_Info(activity: newActivity, isConfirmView: true)
 
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: Button(action: {
@@ -20,6 +23,9 @@ struct ActivityOverview: View {
                 }, label: {
                     Text("Save")
                 }))
+        }
+        .onAppear{
+            newActivity = Activity(location: Location)
         }
     }
 }

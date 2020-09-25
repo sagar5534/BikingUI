@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 import Firebase
 import FirebaseFirestore
+import MapKit
 
 struct User: Identifiable, Codable {
     
@@ -18,6 +19,7 @@ struct User: Identifiable, Codable {
     var movingTime: Double
     var trips: Int
     var avgSpeed: Double
+    var isKm: Bool
     
     init() {
         self.id = UUID().uuidString
@@ -26,6 +28,7 @@ struct User: Identifiable, Codable {
         self.movingTime = 0
         self.trips = 0
         self.avgSpeed = 0
+        self.isKm = true
     }
     
 }
@@ -48,6 +51,17 @@ struct Activity: Identifiable, Codable {
         self.movingTime = 0
         self.totalTime = 0
         self.avgSpeed = 0
+        self.fastestSpeed = 0
+        self.date = Timestamp()
+    }
+    
+    init(location: CoreLocation) {
+        self.id = UUID().uuidString
+        self.tripName = ""
+        self.distance = location.distance
+        self.movingTime = 0
+        self.totalTime = 0
+        self.avgSpeed = location.avgSpeed
         self.fastestSpeed = 0
         self.date = Timestamp()
     }

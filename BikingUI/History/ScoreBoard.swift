@@ -14,65 +14,61 @@ struct ScoreBoard: View {
     var body: some View {
         VStack {
             VStack {
-                Text(String(User.distance.format()))
+                Text(User.distance.formatDistance(isKm: User.isKm).format())
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(Color.black)
                     .italic()
-                Text("Kilometers")
+                Text(User.isKm ? "Kilometers" : "Miles")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
             }
             .padding()
 
-            ZStack {
-                RoundedRectangle(cornerRadius: 25.0, style: .circular)
-                    .foregroundColor(.white)
-
-                HStack(alignment: .top) {
-                    
-                    VStack {
-                        Text(String(User.trips))
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(Color.black)
-                            .italic()
-                        Text("Trips")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity)
-                    
-                    Divider()
-
-                    VStack {
-                        Text(String(User.movingTime.toTime(pad: false)))
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(Color.black)
-                            .italic()
-                        Text("Time")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity)
-                    
-                    Divider()
-
-                    VStack {
-                        Text(User.avgSpeed.format())
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(Color.black)
-                            .italic()
-                        Text("Avg Speed")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity)
+            HStack(alignment: .top) {
+                
+                VStack {
+                    Text(String(User.trips))
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(Color.black)
+                        .italic()
+                    Text("Trips")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 }
-                .padding()
+                .frame(maxWidth: .infinity)
+                
+                Divider()
+
+                VStack {
+                    Text(String(User.movingTime.toTime(pad: false)))
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(Color.black)
+                        .italic()
+                    Text("Time")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
+                
+                Divider()
+
+                VStack {
+                    Text(User.avgSpeed.format())
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(Color.black)
+                        .italic()
+                    Text("Avg Speed")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
             }
+            .padding()
+            
             .padding(.leading)
             .padding(.trailing)
             .padding(.bottom)
@@ -98,26 +94,21 @@ struct ScoreBoardDetail: View {
             }
             .padding()
 
-            ZStack {
-                RoundedRectangle(cornerRadius: 25.0, style: .circular)
-                    .foregroundColor(.white)
-
-                VStack{
-                    HStack(alignment: .top) {
-                        MinorLabel(value: activity.avgSpeed.format(), detail: "Avg Speed")
-                        Divider()
-                        MinorLabel(value: activity.fastestSpeed.format(), detail: "Fastest Speed")
-                    }
-                    .padding()
-                    
-                    HStack(alignment: .top) {
-                        MinorLabel(value: activity.movingTime.toTime(pad: false), detail: "Moving Time")
-                        Divider()
-                        MinorLabel(value: activity.totalTime.toTime(pad: false), detail: "Total Time")
-                    }
-                    .padding()
+            
+            VStack{
+                HStack(alignment: .top) {
+                    MinorLabel(value: activity.avgSpeed.format(), detail: "Avg Speed")
+                    Divider()
+                    MinorLabel(value: activity.fastestSpeed.format(), detail: "Fastest Speed")
                 }
+                .padding()
                 
+                HStack(alignment: .top) {
+                    MinorLabel(value: activity.movingTime.toTime(pad: false), detail: "Moving Time")
+                    Divider()
+                    MinorLabel(value: activity.totalTime.toTime(pad: false), detail: "Total Time")
+                }
+                .padding()
             }
             .padding(.leading)
             .padding(.trailing)
@@ -150,6 +141,7 @@ struct ScoreBoard_Previews: PreviewProvider {
         
         
         ScoreBoard(User: .constant(User()))
+            .previewLayout(.fixed(width: 400, height: 250))
 
         ScoreBoardDetail(activity: Activity())
             .previewLayout(.fixed(width: 400, height: 250))

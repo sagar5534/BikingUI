@@ -26,6 +26,10 @@ extension Double {
         formatter.minimumFractionDigits = 2
         return formatter.string(for: self) ?? ""
     }
+    
+    func formatDistance(isKm : Bool) -> Double{
+        return (self / (isKm ? 1000 : 1609))
+    }
 
 }
 

@@ -76,7 +76,7 @@ private struct LargeText: View {
 
     var body: some View {
         VStack {
-            Text(String(format: "%.2f", value))
+            Text(value.format())
                 .font(Font.system(size: 120, weight: .heavy).monospacedDigit())
                 .foregroundColor(Color.black)
                 .italic()

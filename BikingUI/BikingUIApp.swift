@@ -18,7 +18,14 @@ struct BikingUIApp: App {
     
     var body: some Scene {
         WindowGroup {
+            
+            var firebaseManager = FirebaseManager()
+            
             TabBar()
+                .environmentObject(firebaseManager)
+                .onAppear{
+                    firebaseManager.fetchData()
+                }
         }
     }
 }

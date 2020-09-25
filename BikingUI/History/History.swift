@@ -9,13 +9,12 @@ import SwiftUI
 
 struct History: View {
     
-    //@ObservedObject var firebaseManager = FirebaseManager()
     @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
         NavigationView {
             List {
-                ScoreBoard(User: $firebaseManager.user)
+                ScoreBoard()
 
                 ForEach(firebaseManager.activity) { activity in
                     NavigationLink(
@@ -36,9 +35,6 @@ struct History: View {
                     .shadow(radius: 3)
                     .padding(.bottom)
             )
-            .onAppear {
-                firebaseManager.fetchData()
-            }
         }
     }
 }
@@ -47,10 +43,11 @@ struct History_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        let fire = FirebaseManager()
+        var fire = FirebaseManager()
         
         History()
             .environmentObject(fire)
+            .onAppear{fire.fetchData()}
         
     }
 }

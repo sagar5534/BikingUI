@@ -29,3 +29,17 @@ struct BikingUIApp: App {
         }
     }
 }
+
+struct BikingUIApp_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        var firebaseManager = FirebaseManager()
+        
+        TabBar()
+            .environmentObject(firebaseManager)
+            .onAppear{
+                firebaseManager.fetchData()
+            }
+        
+    }
+}

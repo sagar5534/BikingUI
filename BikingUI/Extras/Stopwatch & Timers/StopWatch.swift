@@ -10,18 +10,19 @@ import SwiftUI
 
 class StopWatchManager: ObservableObject {
 
-    @Published var totalCounter = ""
-    @Published var movingCounter = ""
+    @Published var totalLabel = ""
+    @Published var movingLabel = ""
 
-    private var totalTime = 0.0
-    private var movingTime = 0.0
+    var totalTime = 0.0
+    var movingTime = 0.0
+    
     private var TotalTimer = Timer()
     private var MovingTimer = Timer()
 
     func start() {
         TotalTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.totalTime += 0.1
-            self.totalCounter = self.totalTime.toTime(pad: true)
+            self.totalLabel = self.totalTime.toTime(pad: true)
         }
         resume()
     }
@@ -33,7 +34,7 @@ class StopWatchManager: ObservableObject {
     func resume() {
         MovingTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.movingTime += 0.1
-            self.movingCounter = self.movingTime.toTime(pad: true)
+            self.movingLabel = self.movingTime.toTime(pad: true)
         }
     }
 

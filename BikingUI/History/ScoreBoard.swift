@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ScoreBoard: View {
     
-    @Binding var User: User
+    @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
         VStack {
             VStack {
 
-                Text(User.distance.formatDistance(isKm: User.isKm).format())
+                Text(firebaseManager.user.distance.formatDistance(isKm: firebaseManager.user.isKm).format())
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(.primary)
                     .italic()
-                Text(User.isKm ? "Kilometers" : "Miles")
+                Text(firebaseManager.user.isKm ? "Kilometers" : "Miles")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -29,7 +29,7 @@ struct ScoreBoard: View {
             HStack(alignment: .top) {
                 
                 VStack {
-                    Text(String(User.trips))
+                    Text(String(firebaseManager.user.trips))
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(.primary)
                         .italic()
@@ -43,7 +43,7 @@ struct ScoreBoard: View {
                 Divider()
 
                 VStack {
-                    Text(String(User.movingTime.toTime(pad: false)))
+                    Text(String(firebaseManager.user.movingTime.toTime(pad: false)))
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(.primary)
                         .italic()
@@ -57,7 +57,7 @@ struct ScoreBoard: View {
                 Divider()
 
                 VStack {
-                    Text(User.avgSpeed.formatSpeed(isKmph: User.isKm).format())
+                    Text(firebaseManager.user.avgSpeed.formatSpeed(isKmph: firebaseManager.user.isKm).format())
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(.primary)
                         .italic()
@@ -150,9 +150,14 @@ private struct MinorLabel: View {
 struct ScoreBoard_Previews: PreviewProvider {
     static var previews: some View {
         
+        var fire = FirebaseManager()
         
-        ScoreBoard(User: .constant(User()))
+        ScoreBoard()
             .previewLayout(.fixed(width: 400, height: 250))
+            .environmentObject(fire)
+            .onAppear{
+                fire.fetchData()
+            }
 
         ScoreBoardDetail(activity: Activity())
             .previewLayout(.fixed(width: 400, height: 250))

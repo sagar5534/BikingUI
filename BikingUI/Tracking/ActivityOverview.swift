@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ActivityOverview: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var Location: CoreLocation
+    @EnvironmentObject var firebaseManager: FirebaseManager
     
-    @State var newActivity = Activity()
+    @State var activity: Activity
     
     var body: some View {
+        
         NavigationView {
-            Activity_Info(activity: newActivity, isConfirmView: true)
-
+            Activity_Info(activity: activity, isConfirmView: true)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: Button(action: {
                     presentationMode.wrappedValue.dismiss()
@@ -24,14 +24,18 @@ struct ActivityOverview: View {
                     Text("Save")
                 }))
         }
-        .onAppear{
-            newActivity = Activity(location: Location)
-        }
     }
 }
 
 struct ActivityOverview_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityOverview()
+        
+        var fire = FirebaseManager()
+        
+        ActivityOverview(activity: Activity())
+            .environmentObject(fire)
+            .onAppear{
+                fire.fetchData()
+            }
     }
 }

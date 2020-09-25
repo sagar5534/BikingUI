@@ -55,12 +55,12 @@ struct Activity: Identifiable, Codable {
         self.date = Timestamp()
     }
     
-    init(location: CoreLocation) {
+    init(location: CoreLocation, timer: StopWatchManager) {
         self.id = UUID().uuidString
         self.tripName = ""
         self.distance = location.distance
-        self.movingTime = 0
-        self.totalTime = 0
+        self.movingTime = timer.movingTime
+        self.totalTime = timer.totalTime
         self.avgSpeed = location.avgSpeed
         self.fastestSpeed = 0
         self.date = Timestamp()

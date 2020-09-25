@@ -17,7 +17,6 @@ struct Dashboard: View {
 
     @EnvironmentObject var Location: CoreLocation
     @EnvironmentObject var Timer: StopWatchManager
-
     @EnvironmentObject var firebaseManager: FirebaseManager
 
     var body: some View {
@@ -27,9 +26,9 @@ struct Dashboard: View {
                     timeToggle.toggle()
                 }, label: {
                     if timeToggle {
-                        LargeCountDown(value: $Timer.movingCounter, desc: "Moving Time")
+                        LargeCountDown(value: $Timer.movingLabel, desc: "Moving Time")
                     } else {
-                        LargeCountDown(value: $Timer.totalCounter, desc: "Total Time")
+                        LargeCountDown(value: $Timer.totalLabel, desc: "Total Time")
                     }
                 })
 
@@ -125,6 +124,18 @@ private struct LargeCountDown: View {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
+        
+        var Location = CoreLocation()
+        var Timer = StopWatchManager()
+        var firebaseManager = FirebaseManager()
+        
         Dashboard(isDone: .constant(false))
+            .environmentObject(Location)
+            .environmentObject(Timer)
+            .environmentObject(firebaseManager)
+            .onAppear{
+                firebaseManager.fetchData()
+            }
+        
     }
 }

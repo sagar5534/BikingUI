@@ -13,15 +13,15 @@ struct History: View {
     var body: some View {
         NavigationView {
             List {
-                ScoreBoard(totalKm: .constant("45.98"), totalTrips: .constant("56"), totalMoving: .constant("40:34"), totalLast: .constant("34"))
+                ScoreBoard(User: $firebaseManager.data)
 
-                ForEach(self.firebaseManager.data) { activity in
-                    NavigationLink(
-                        destination: ActivityDetail(activity: activity),
-                        label: {
-                            ActivityCell(activity: activity)
-                        })
-                }
+//                ForEach(self.firebaseManager.data) { activity in
+//                    NavigationLink(
+//                        destination: ActivityDetail(activity: activity),
+//                        label: {
+//                            ActivityCell(activity: activity)
+//                        })
+//                }
             }
             .listStyle(PlainListStyle())
 

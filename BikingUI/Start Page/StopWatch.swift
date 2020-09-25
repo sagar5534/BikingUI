@@ -17,20 +17,11 @@ class StopWatchManager: ObservableObject {
     private var movingTime = 0.0
     private var TotalTimer = Timer()
     private var MovingTimer = Timer()
-    private let formatter = DateComponentsFormatter()
-
-    init() {
-        formatter.unitsStyle = .positional
-        formatter.includesApproximationPhrase = false
-        formatter.includesTimeRemainingPhrase = false
-        formatter.zeroFormattingBehavior = .pad
-        formatter.allowedUnits = [.second, .minute, .hour]
-    }
 
     func start() {
         TotalTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.totalTime += 0.1
-            self.totalCounter = self.formatter.string(from: self.totalTime)!
+            self.totalCounter = self.totalTime.toTime(pad: true)
         }
         resume()
     }
@@ -42,7 +33,7 @@ class StopWatchManager: ObservableObject {
     func resume() {
         MovingTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.movingTime += 0.1
-            self.movingCounter = self.formatter.string(from: self.movingTime)!
+            self.movingCounter = self.movingTime.toTime(pad: true)
         }
     }
 

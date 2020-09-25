@@ -13,20 +13,16 @@ struct User: Identifiable {
     
     //Global Details
     var distance: Double
-    var movingTime: Int
+    var movingTime: Double
     var trips: Int
-    
-    
+    var avgSpeed: Double
+    var activity: [Activity]
 }
 
 struct Activity: Identifiable {
     var id: String = UUID().uuidString
-    var name: String
-    
-    //Global Details
+    var tripName: String
     var distance: Double
-    var movingTime: Int
-    var trips: Int
-    
-    
+    var movingTime: Double
+    var totalTime: Double
 }

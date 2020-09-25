@@ -10,7 +10,7 @@ import SwiftUI
 struct Activity_Info: View {
 
     @State var title: String = ""
-    @State var activity: Test
+    @State var activity: User
 
     var body: some View {
         ScrollView {
@@ -44,6 +44,6 @@ struct Activity_Info: View {
 
 struct Activity_Info_Previews: PreviewProvider {
     static var previews: some View {
-        Activity_Info(activity: Test(name: "Hey"))
+        Activity_Info(activity: User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: []))
     }
 }

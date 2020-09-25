@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityCell: View {
     
-    @State var activity: Test
+    @State var activity: User
     
     var body: some View {
         
@@ -65,7 +65,7 @@ struct ActivityCell_Previews: PreviewProvider {
             NavigationLink(
                 destination: Text("Destination"),
                 label: {
-                    ActivityCell(activity: Test(name: "Afternoon Biking"))
+                    ActivityCell(activity: User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: []))
                 })
         }
     }

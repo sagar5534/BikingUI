@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct ScoreBoard: View {
-    @Binding var totalKm: String
-    @Binding var totalTrips: String
-    @Binding var totalMoving: String
-    @Binding var totalLast: String
+    
+    @Binding var User: User
 
     var body: some View {
         VStack {
             VStack {
-                Text(totalKm)
+                Text(String(User.distance.format()))
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(Color.black)
                     .italic()
-                Text("Total Kilometers")
+                Text("Kilometers")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -32,11 +30,45 @@ struct ScoreBoard: View {
                     .foregroundColor(.white)
 
                 HStack(alignment: .top) {
-                    MinorLabel(value: $totalTrips, detail: "Total Trips")
+                    VStack {
+                        Text(String(User.trips))
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(Color.black)
+                            .italic()
+                        Text("Trips")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    
                     Divider()
-                    MinorLabel(value: $totalMoving, detail: "Total Moving Time")
+
+                    VStack {
+                        Text(String(User.movingTime.toTime(pad: false)))
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(Color.black)
+                            .italic()
+                        Text("Time")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    
                     Divider()
-                    MinorLabel(value: $totalLast, detail: "Total Last")
+
+                    VStack {
+                        Text(User.avgSpeed.format())
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(Color.black)
+                            .italic()
+                        Text("Avg Speed")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 .padding()
             }
@@ -52,7 +84,7 @@ struct ScoreBoardDetail: View {
     @Binding var movingTime: String
     @Binding var avgPace: String
     @Binding var fastestPace: String
-
+    
     var body: some View {
         VStack {
             VStack {
@@ -72,11 +104,47 @@ struct ScoreBoardDetail: View {
                     .foregroundColor(.white)
 
                 HStack(alignment: .top) {
-                    MinorLabel(value: $movingTime, detail: "Moving Time")
+                    
+                    VStack {
+                        Text(String(45))
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(Color.black)
+                            .italic()
+                        Text("")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    
                     Divider()
-                    MinorLabel(value: $avgPace, detail: "Avg Pace")
+
+                    VStack {
+                        Text(String(34))
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(Color.black)
+                            .italic()
+                        Text("")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    
                     Divider()
-                    MinorLabel(value: $fastestPace, detail: "Fastest Pace")
+
+                    VStack {
+                        Text(String(5))
+                            .font(.system(size: 20, weight: .heavy))
+                            .foregroundColor(Color.black)
+                            .italic()
+                        Text("")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    
                 }
                 .padding()
             }
@@ -93,7 +161,7 @@ private struct MinorLabel: View {
 
     var body: some View {
         VStack {
-            Text(value)
+            Text(String(value))
                 .font(.system(size: 20, weight: .heavy))
                 .foregroundColor(Color.black)
                 .italic()
@@ -108,8 +176,9 @@ private struct MinorLabel: View {
 
 struct ScoreBoard_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreBoard(totalKm: .constant("45.98"), totalTrips: .constant("56"), totalMoving: .constant("40:34"), totalLast: .constant("34"))
-            .previewLayout(.fixed(width: 400, height: 250))
+        
+        
+        ScoreBoard(User: .constant(User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: [])))
 
         ScoreBoardDetail(totalKm: .constant("45.98"), movingTime: .constant("56"), avgPace: .constant("40:34"), fastestPace: .constant("34"))
             .previewLayout(.fixed(width: 400, height: 250))

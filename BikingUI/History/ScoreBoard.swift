@@ -30,6 +30,7 @@ struct ScoreBoard: View {
                     .foregroundColor(.white)
 
                 HStack(alignment: .top) {
+                    
                     VStack {
                         Text(String(User.trips))
                             .font(.system(size: 20, weight: .heavy))
@@ -80,15 +81,13 @@ struct ScoreBoard: View {
 }
 
 struct ScoreBoardDetail: View {
-    @Binding var totalKm: String
-    @Binding var movingTime: String
-    @Binding var avgPace: String
-    @Binding var fastestPace: String
+    
+    @State var activity: Activity
     
     var body: some View {
         VStack {
             VStack {
-                Text(totalKm)
+                Text(activity.distance.format())
                     .font(.system(size: 55, weight: .heavy))
                     .foregroundColor(Color.black)
                     .italic()
@@ -103,50 +102,22 @@ struct ScoreBoardDetail: View {
                 RoundedRectangle(cornerRadius: 25.0, style: .circular)
                     .foregroundColor(.white)
 
-                HStack(alignment: .top) {
-                    
-                    VStack {
-                        Text(String(45))
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(Color.black)
-                            .italic()
-                        Text("")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
+                VStack{
+                    HStack(alignment: .top) {
+                        MinorLabel(value: activity.avgSpeed.format(), detail: "Avg Speed")
+                        Divider()
+                        MinorLabel(value: activity.fastestSpeed.format(), detail: "Fastest Speed")
                     }
-                    .frame(maxWidth: .infinity)
+                    .padding()
                     
-                    Divider()
-
-                    VStack {
-                        Text(String(34))
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(Color.black)
-                            .italic()
-                        Text("")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
+                    HStack(alignment: .top) {
+                        MinorLabel(value: activity.movingTime.toTime(pad: false), detail: "Moving Time")
+                        Divider()
+                        MinorLabel(value: activity.totalTime.toTime(pad: false), detail: "Total Time")
                     }
-                    .frame(maxWidth: .infinity)
-                    
-                    Divider()
-
-                    VStack {
-                        Text(String(5))
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(Color.black)
-                            .italic()
-                        Text("")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity)
-                    
+                    .padding()
                 }
-                .padding()
+                
             }
             .padding(.leading)
             .padding(.trailing)
@@ -156,7 +127,7 @@ struct ScoreBoardDetail: View {
 }
 
 private struct MinorLabel: View {
-    @Binding var value: String
+    @State var value: String
     @State var detail: String = ""
 
     var body: some View {
@@ -180,7 +151,7 @@ struct ScoreBoard_Previews: PreviewProvider {
         
         ScoreBoard(User: .constant(User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: [])))
 
-        ScoreBoardDetail(totalKm: .constant("45.98"), movingTime: .constant("56"), avgPace: .constant("40:34"), fastestPace: .constant("34"))
+        ScoreBoardDetail(activity: Activity())
             .previewLayout(.fixed(width: 400, height: 250))
     }
 }

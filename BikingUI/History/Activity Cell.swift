@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ActivityCell: View {
     
-    @State var activity: User
+    @State var activity: Activity
     
     var body: some View {
         
@@ -20,7 +20,7 @@ struct ActivityCell: View {
 
             VStack(alignment: .leading, spacing: 5) {
                 
-                MainLabel(label: activity.name)
+                MainLabel(label: activity.tripName)
                 
                 HStack(alignment: .center){
                     DetailLabel(label: "Tuesday")
@@ -65,7 +65,7 @@ struct ActivityCell_Previews: PreviewProvider {
             NavigationLink(
                 destination: Text("Destination"),
                 label: {
-                    ActivityCell(activity: User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: []))
+                    ActivityCell(activity: Activity())
                 })
         }
     }

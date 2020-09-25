@@ -15,13 +15,13 @@ struct History: View {
             List {
                 ScoreBoard(User: $firebaseManager.data)
 
-//                ForEach(self.firebaseManager.data) { activity in
-//                    NavigationLink(
-//                        destination: ActivityDetail(activity: activity),
-//                        label: {
-//                            ActivityCell(activity: activity)
-//                        })
-//                }
+                ForEach(firebaseManager.data.activity) { activity in
+                    NavigationLink(
+                        destination: ActivityDetail(activity: activity),
+                        label: {
+                            ActivityCell(activity: activity)
+                        })
+                }
             }
             .listStyle(PlainListStyle())
 

@@ -29,6 +29,7 @@
 		1B9E0F09251C30830062F320 /* Activity Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F08251C30830062F320 /* Activity Cell.swift */; };
 		1B9E0F24251C6DE50062F320 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */; };
 		1B9E0F28251D82570062F320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F27251D82570062F320 /* Extensions.swift */; };
+		1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F2C251D8F810062F320 /* Ticker.swift */; };
 		1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1DB4E25113E9A008D5162 /* Leading Element.swift */; };
 		1BE732BD2512731E0073E5C8 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732BC2512731E0073E5C8 /* History.swift */; };
 		1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732C025128C120073E5C8 /* ScoreBoard.swift */; };
@@ -59,6 +60,7 @@
 		1B9E0F08251C30830062F320 /* Activity Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Cell.swift"; sourceTree = "<group>"; };
 		1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B9E0F27251D82570062F320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1B9E0F2C251D8F810062F320 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		1BC1DB4E25113E9A008D5162 /* Leading Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leading Element.swift"; sourceTree = "<group>"; };
 		1BE732BC2512731E0073E5C8 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		1BE732C025128C120073E5C8 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 				1B9A0ECE2515B7B70017AD07 /* Tracking */,
 				1BE732BB2512730D0073E5C8 /* History */,
 				1BC1DB5025114B6D008D5162 /* Start Page */,
-				1BC1DB4D25113E23008D5162 /* Elements */,
+				1BC1DB4D25113E23008D5162 /* Extras */,
 				1B8D542625116252000CBB56 /* TabBar.swift */,
 				1B0DABC12510517200926415 /* BikingUIApp.swift */,
 				1B0DABC52510517300926415 /* Assets.xcassets */,
@@ -154,14 +156,34 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
-		1BC1DB4D25113E23008D5162 /* Elements */ = {
+		1B9E0F2A251D8F310062F320 /* Maps & Location */ = {
 			isa = PBXGroup;
 			children = (
+				1B9A0EE02517326F0017AD07 /* Core Location.swift */,
+				1B9E0EEF251C28FD0062F320 /* Maps.swift */,
+			);
+			path = "Maps & Location";
+			sourceTree = "<group>";
+		};
+		1B9E0F2B251D8F690062F320 /* Stopwatch & Timers */ = {
+			isa = PBXGroup;
+			children = (
+				1B9A0EE3251740600017AD07 /* StopWatch.swift */,
+				1B9E0F2C251D8F810062F320 /* Ticker.swift */,
+			);
+			path = "Stopwatch & Timers";
+			sourceTree = "<group>";
+		};
+		1BC1DB4D25113E23008D5162 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				1B9E0F2B251D8F690062F320 /* Stopwatch & Timers */,
+				1B9E0F2A251D8F310062F320 /* Maps & Location */,
 				1BC1DB4E25113E9A008D5162 /* Leading Element.swift */,
 				1B896D4125199411005A3CED /* Activity Info.swift */,
 				1B9E0F27251D82570062F320 /* Extensions.swift */,
 			);
-			path = Elements;
+			path = Extras;
 			sourceTree = "<group>";
 		};
 		1BC1DB5025114B6D008D5162 /* Start Page */ = {
@@ -169,9 +191,6 @@
 			children = (
 				1B0DABD0251052B700926415 /* Start.swift */,
 				1B0DABD2251054A800926415 /* MapView.swift */,
-				1B9A0EE02517326F0017AD07 /* Core Location.swift */,
-				1B9A0EE3251740600017AD07 /* StopWatch.swift */,
-				1B9E0EEF251C28FD0062F320 /* Maps.swift */,
 			);
 			path = "Start Page";
 			sourceTree = "<group>";
@@ -332,6 +351,7 @@
 				1B896DBC251B03A0005A3CED /* Model.swift in Sources */,
 				1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */,
 				1B896D3825197489005A3CED /* ActivityDetail.swift in Sources */,
+				1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */,
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,
 				1B9A0ED82515DAEB0017AD07 /* DashTabManager.swift in Sources */,

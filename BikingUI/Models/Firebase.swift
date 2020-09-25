@@ -30,14 +30,15 @@ class FirebaseManager: ObservableObject {
                 let movingTime = data["movingTime"] as? Double ?? 0
                 let trips = data["trips"] as? Int ?? 0
                 let avgSpeed = data["avgSpeed"] as? Double ?? 0
- 
+                
+                
                 self.data = User(
                     name: name,
                     distance: distance,
                     movingTime: movingTime,
                     trips: trips,
                     avgSpeed: avgSpeed,
-                    activity: []
+                    activity: [Activity()]
                 )
                 
             }

@@ -10,7 +10,7 @@ import SwiftUICharts
 
 struct ActivityDetail: View {
     
-    @State var activity: User
+    @State var activity: Activity
     
     var body: some View {
         Activity_Info(activity: activity)
@@ -20,6 +20,6 @@ struct ActivityDetail: View {
 
 struct ActivityDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityDetail(activity: User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: []))
+        ActivityDetail(activity: Activity())
     }
 }

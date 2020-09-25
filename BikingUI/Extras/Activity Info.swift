@@ -9,18 +9,17 @@ import SwiftUI
 
 struct Activity_Info: View {
 
-    @State var title: String = ""
-    @State var activity: User
+    @State var activity: Activity
 
     var body: some View {
         ScrollView {
             Leading {
                 VStack(alignment: .leading) {
-                    TextField("Trip Name", text: $title)
+                    Text(activity.tripName)
                         .font(.system(size: 35, weight: .bold, design: .default))
                         .foregroundColor(.primary)
 
-                    Text(activity.name)
+                    Text(activity.tripName)
                         .bold()
                         .font(.callout)
                         .foregroundColor(.secondary)
@@ -30,7 +29,7 @@ struct Activity_Info: View {
                 .padding(.top)
             }
 
-            ScoreBoardDetail(totalKm: .constant("45.98"), movingTime: .constant("56"), avgPace: .constant("40:34"), fastestPace: .constant("34"))
+            ScoreBoardDetail(activity: Activity())
 
             Divider()
 
@@ -44,6 +43,6 @@ struct Activity_Info: View {
 
 struct Activity_Info_Previews: PreviewProvider {
     static var previews: some View {
-        Activity_Info(activity: User(name: "", distance: 0, movingTime: 0, trips: 0, avgSpeed: 0, activity: []))
+        Activity_Info(activity: Activity())
     }
 }

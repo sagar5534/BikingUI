@@ -51,7 +51,7 @@ private struct MainLabel: View {
     var body: some View {
         Text(label)
             .font(.system(size: 20, weight: .heavy))
-            .foregroundColor(Color.black)
+            .foregroundColor(.primary)
             .italic()
     }
 }

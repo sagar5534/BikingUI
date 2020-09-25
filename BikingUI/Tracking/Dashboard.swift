@@ -78,7 +78,7 @@ private struct LargeText: View {
         VStack {
             Text(value.format())
                 .font(Font.system(size: 120, weight: .heavy).monospacedDigit())
-                .foregroundColor(Color.black)
+                .foregroundColor(.primary)
                 .italic()
                 .minimumScaleFactor(0.2)
                 .lineLimit(1)
@@ -100,7 +100,7 @@ private struct LargeCountDown: View {
         VStack {
             Text(value)
                 .font(Font.system(size: 120, weight: .heavy).monospacedDigit())
-                .foregroundColor(Color.black)
+                .foregroundColor(.primary)
                 .italic()
                 .minimumScaleFactor(0.2)
                 .lineLimit(1)

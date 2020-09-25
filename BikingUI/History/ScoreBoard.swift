@@ -16,7 +16,7 @@ struct ScoreBoard: View {
             VStack {
                 Text(User.distance.formatDistance(isKm: User.isKm).format())
                     .font(.system(size: 55, weight: .heavy))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(.primary)
                     .italic()
                 Text(User.isKm ? "Kilometers" : "Miles")
                     .font(.callout)
@@ -30,7 +30,7 @@ struct ScoreBoard: View {
                 VStack {
                     Text(String(User.trips))
                         .font(.system(size: 20, weight: .heavy))
-                        .foregroundColor(Color.black)
+                        .foregroundColor(.primary)
                         .italic()
                     Text("Trips")
                         .font(.callout)
@@ -44,7 +44,7 @@ struct ScoreBoard: View {
                 VStack {
                     Text(String(User.movingTime.toTime(pad: false)))
                         .font(.system(size: 20, weight: .heavy))
-                        .foregroundColor(Color.black)
+                        .foregroundColor(.primary)
                         .italic()
                     Text("Time")
                         .font(.callout)
@@ -58,7 +58,7 @@ struct ScoreBoard: View {
                 VStack {
                     Text(User.avgSpeed.format())
                         .font(.system(size: 20, weight: .heavy))
-                        .foregroundColor(Color.black)
+                        .foregroundColor(.primary)
                         .italic()
                     Text("Avg Speed")
                         .font(.callout)
@@ -85,7 +85,7 @@ struct ScoreBoardDetail: View {
             VStack {
                 Text(activity.distance.format())
                     .font(.system(size: 55, weight: .heavy))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(.primary)
                     .italic()
                 Text("Kilometers")
                     .font(.callout)
@@ -125,7 +125,7 @@ private struct MinorLabel: View {
         VStack {
             Text(String(value))
                 .font(.system(size: 20, weight: .heavy))
-                .foregroundColor(Color.black)
+                .foregroundColor(.primary)
                 .italic()
             Text(detail)
                 .font(.callout)

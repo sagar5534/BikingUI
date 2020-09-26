@@ -131,8 +131,6 @@ struct Dashboard_Previews: PreviewProvider {
             .environmentObject(Location)
             .environmentObject(Timer)
             .environmentObject(firebaseManager)
-            .onAppear {
-                firebaseManager.fetchData()
-            }
+           
     }
 }

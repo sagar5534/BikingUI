@@ -146,9 +146,7 @@ struct ScoreBoard_Previews: PreviewProvider {
         ScoreBoard()
             .previewLayout(.fixed(width: 400, height: 250))
             .environmentObject(fire)
-            .onAppear {
-                fire.fetchData()
-            }
+   
 
         ScoreBoardDetail(activity: Activity())
             .previewLayout(.fixed(width: 400, height: 250))

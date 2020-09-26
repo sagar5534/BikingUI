@@ -9,11 +9,12 @@ import SwiftUI
 
 struct DashMap: View {
     @Binding var selectedTabViewPage: Int
+    @EnvironmentObject var Location: CoreLocation
 
     var body: some View {
         ZStack(alignment: .bottom) {
             MapView {
-                Map_Tracking()
+                Map_Tracking(coordinates: $Location.coordinates)
             }
 
             Button(action: {

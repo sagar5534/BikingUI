@@ -10,7 +10,6 @@ import MapKit
 import SwiftUI
 
 struct Map: UIViewRepresentable {
-    private var locationManager = CoreLocation()
 
     func makeUIView(context _: Context) -> MKMapView {
         let mapView = MKMapView(frame: UIScreen.main.bounds)
@@ -29,7 +28,9 @@ struct Map: UIViewRepresentable {
 }
 
 struct Map_Tracking: UIViewRepresentable {
-    private var locationManager = CoreLocation()
+    
+    @Binding var coordinates: [CLLocationCoordinate2D]
+    let mapViewDelegate = MapSummaryDelegate()
 
     func makeUIView(context _: Context) -> MKMapView {
         let mapView = MKMapView(frame: UIScreen.main.bounds)
@@ -43,11 +44,29 @@ struct Map_Tracking: UIViewRepresentable {
         return mapView
     }
 
-    func updateUIView(_: MKMapView, context _: Context) {}
+    func updateUIView(_ view: MKMapView, context _: Context) {
+        view.delegate = mapViewDelegate
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addRoute(to: view)
+    }
+
+    func addRoute(to view: MKMapView) {
+        if !view.overlays.isEmpty {
+            view.removeOverlays(view.overlays)
+        }
+        let route = makeRoute()
+        view.addOverlay(route)
+    }
+
+    func makeRoute() -> MKPolyline {
+        return MKPolyline(coordinates: &coordinates, count: coordinates.count)
+    }
+    
 }
 
 struct Map_Summary: UIViewRepresentable {
-    @Binding var locations: [CLLocation]
+    @Binding var coordinates: [CLLocationCoordinate2D]
+    @State var spacing: CGFloat = 15
     let mapViewDelegate = MapSummaryDelegate()
 
     func makeUIView(context _: Context) -> MKMapView {
@@ -68,37 +87,28 @@ struct Map_Summary: UIViewRepresentable {
         if !view.overlays.isEmpty {
             view.removeOverlays(view.overlays)
         }
-
+        
         let route = makeRoute()
         let mapRect = route.boundingMapRect
-        view.setVisibleMapRect(mapRect, edgePadding: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10), animated: true)
+        view.setVisibleMapRect(
+            mapRect,
+            edgePadding: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing),
+            animated: true
+        )
         view.addOverlay(route)
     }
 
     func makeRoute() -> MKPolyline {
-        var coordinates = locations.map { (location: CLLocation) -> CLLocationCoordinate2D in location.coordinate }
-        return MKPolyline(coordinates: &coordinates, count: locations.count)
+        return MKPolyline(coordinates: &coordinates, count: coordinates.count)
     }
 }
 
 class MapSummaryDelegate: NSObject, MKMapViewDelegate {
     func mapView(_: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.fillColor = UIColor.red.withAlphaComponent(0.5)
-        renderer.strokeColor = UIColor.red.withAlphaComponent(0.8)
+        renderer.fillColor = UIColor.red.withAlphaComponent(0.3)
+        renderer.strokeColor = UIColor.red.withAlphaComponent(0.6)
+        renderer.lineWidth = 7
         return renderer
-    }
-}
-
-struct Maps_Previews: PreviewProvider {
-    static var previews: some View {
-        let locations = [
-            CLLocation(latitude: 32.7767, longitude: -96.7970), /* San Francisco, CA */
-            CLLocation(latitude: 37.7833, longitude: -122.4167), /* Dallas, TX */
-            CLLocation(latitude: 42.2814, longitude: -83.7483), /* Ann Arbor, MI */
-            CLLocation(latitude: 32.7767, longitude: -96.7970), /* San Francisco, CA */
-        ]
-
-        Map_Summary(locations: .constant(locations))
     }
 }

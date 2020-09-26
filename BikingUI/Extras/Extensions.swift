@@ -7,6 +7,7 @@
 
 import FirebaseFirestore
 import Foundation
+import MapKit
 
 extension Double {
     func toTime(pad: Bool) -> String {
@@ -43,3 +44,21 @@ extension Timestamp {
         return formatter.string(from: dateValue())
     }
 }
+
+extension GeoPoint {
+    
+    func toCLLocationCoordinate() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+    }
+    
+}
+
+extension CLLocationCoordinate2D {
+    
+    func toGeoPoint() -> GeoPoint {
+        return GeoPoint(latitude: self.latitude, longitude: self.longitude)
+    }
+    
+}
+
+

@@ -12,6 +12,7 @@
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
 		1B0DABD3251054A800926415 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD2251054A800926415 /* MapView.swift */; };
+		1B27E134251EC53E00A83B02 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* File.swift */; };
 		1B896D3825197489005A3CED /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3725197489005A3CED /* ActivityDetail.swift */; };
 		1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3D251993D6005A3CED /* ActivityOverview.swift */; };
 		1B896D4225199411005A3CED /* Activity Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D4125199411005A3CED /* Activity Info.swift */; };
@@ -44,6 +45,7 @@
 		1B0DABCA2510517300926415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B0DABD2251054A800926415 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1B27E133251EC53D00A83B02 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		1B896D3725197489005A3CED /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		1B896D3D251993D6005A3CED /* ActivityOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverview.swift; sourceTree = "<group>"; };
 		1B896D4125199411005A3CED /* Activity Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Info.swift"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				1B896DB7251B011C005A3CED /* Firebase.swift */,
 				1B896DBB251B03A0005A3CED /* Model.swift */,
+				1B27E133251EC53D00A83B02 /* File.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */,
 				1B9A0EF925185B8A0017AD07 /* Dashboard Buttons.swift in Sources */,
 				1B0DABD3251054A800926415 /* MapView.swift in Sources */,
+				1B27E134251EC53E00A83B02 /* File.swift in Sources */,
 				1B896DB8251B011C005A3CED /* Firebase.swift in Sources */,
 				1B9A0ED02515B9F60017AD07 /* Dashboard.swift in Sources */,
 				1B896D4225199411005A3CED /* Activity Info.swift in Sources */,

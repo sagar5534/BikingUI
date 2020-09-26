@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ActivityCell: View {
     @EnvironmentObject var firebaseManager: FirebaseManager
@@ -13,9 +14,10 @@ struct ActivityCell: View {
 
     var body: some View {
         HStack(spacing: 15) {
-            Map()
+            
+            let x: [CLLocationCoordinate2D] = activity.coordinates.map{ $0.toCLLocationCoordinate() }
+            Map_Summary(coordinates: .constant(x))
                 .frame(width: 80, height: 80, alignment: .center)
-                .multilineTextAlignment(.leading)
 
             VStack(alignment: .leading, spacing: 5) {
                 MainLabel(label: activity.tripName)

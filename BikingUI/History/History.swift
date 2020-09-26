@@ -26,15 +26,6 @@ struct History: View {
             }
             .listStyle(PlainListStyle())
             .navigationTitle("History")
-            .navigationBarItems(leading:
-                Image("profile").resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .clipShape(Circle())
-                    .overlay(
-                        Circle().stroke(Color.white, lineWidth: 3))
-                    .shadow(radius: 3)
-                    .padding(.bottom)
-            )
         }
     }
 }
@@ -45,6 +36,5 @@ struct History_Previews: PreviewProvider {
 
         History()
             .environmentObject(fire)
-            .onAppear { fire.fetchData() }
     }
 }

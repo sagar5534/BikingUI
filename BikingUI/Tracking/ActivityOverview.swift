@@ -18,9 +18,10 @@ struct ActivityOverview: View {
             Activity_Info(activity: activity, isConfirmView: true)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: Button(action: {
+                    firebaseManager.addActivity(activity: activity)
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Save")
+                    Text("Done")
                 }))
         }
     }
@@ -32,8 +33,6 @@ struct ActivityOverview_Previews: PreviewProvider {
 
         ActivityOverview(activity: Activity())
             .environmentObject(fire)
-            .onAppear {
-                fire.fetchData()
-            }
+           
     }
 }

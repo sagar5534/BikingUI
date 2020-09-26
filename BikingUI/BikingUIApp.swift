@@ -10,6 +10,7 @@ import SwiftUI
 
 @main
 struct BikingUIApp: App {
+    
     init() {
         FirebaseApp.configure()
     }
@@ -20,9 +21,7 @@ struct BikingUIApp: App {
 
             TabBar()
                 .environmentObject(firebaseManager)
-                .onAppear {
-                    firebaseManager.fetchData()
-                }
+            
         }
     }
 }
@@ -33,8 +32,6 @@ struct BikingUIApp_Previews: PreviewProvider {
 
         TabBar()
             .environmentObject(firebaseManager)
-            .onAppear {
-                firebaseManager.fetchData()
-            }
+
     }
 }

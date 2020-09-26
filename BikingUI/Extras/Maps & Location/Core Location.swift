@@ -18,6 +18,7 @@ class CoreLocation: NSObject, ObservableObject {
     @Published var avgSpeed: Double = 0
     @Published var distance: Double = 0
     @Published var locations: [CLLocation] = []
+    @Published var coordinates: [CLLocationCoordinate2D] = []
 
     private let locationManager = CLLocationManager()
 
@@ -29,14 +30,25 @@ class CoreLocation: NSObject, ObservableObject {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
     }
+    
+    deinit {
+        locationManager.stopUpdatingLocation()
+    }
+    
 }
 
 extension CoreLocation: CLLocationManagerDelegate {
     func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        curSpeed = location.speed
-        distance += location.distance(from: self.locations.last ?? location)
-        self.locations.append(location)
-        avgSpeed = avgSpeed + ((location.speed - avgSpeed) / Double(self.locations.count))
+        print(location)
+
+        if location.speed > 0 {
+            curSpeed = location.speed
+            distance += location.distance(from: self.locations.last ?? location)
+            self.locations.append(location)
+            self.coordinates.append(location.coordinate)
+            avgSpeed = avgSpeed + ((location.speed - avgSpeed) / Double(self.locations.count))
+        }
+        
     }
 }

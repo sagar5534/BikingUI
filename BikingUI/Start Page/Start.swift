@@ -10,7 +10,7 @@ import UIKit
 
 struct Start: View {
     @State private var isTrackingMode = false
-
+        
     var body: some View {
         NavigationView {
             VStack {
@@ -40,18 +40,9 @@ struct Start: View {
                 }
             }
             .navigationTitle("Start a Ride")
-            .navigationBarItems(leading:
-                Image("profile").resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .clipShape(Circle())
-                    .overlay(
-                        Circle().stroke(Color.white, lineWidth: 3))
-                    .shadow(radius: 3)
-                    .foregroundColor(Color.red)
-                    .padding(.bottom)
-            )
         }
         .fullScreenCover(isPresented: $isTrackingMode, content: DashTabManager.init)
+        
     }
 }
 

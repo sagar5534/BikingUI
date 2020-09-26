@@ -14,6 +14,10 @@ class FirebaseManager: ObservableObject {
 
     private var db = Firestore.firestore()
 
+    init() {
+        fetchData()
+    }
+    
     func fetchData() {
         getUser()
         getActivity()
@@ -29,25 +33,19 @@ class FirebaseManager: ObservableObject {
                 }
 
                 self.activity = docs.compactMap { (QueryDocumentSnapshot) -> Activity? in
-                    // return try? QueryDocumentSnapshot.data(as: Activity.self)
-
                     let result = Result {
                         try QueryDocumentSnapshot.data(as: Activity.self)
                     }
                     switch result {
                     case let .success(city):
                         if let city = city {
-                            // A `City` value was successfully initialized from the DocumentSnapshot.
-                            print("City: \(city)")
+                            print("Activity: \(city)")
                             return city
                         } else {
-                            // A nil value was successfully initialized from the DocumentSnapshot,
-                            // or the DocumentSnapshot was nil.
                             print("Document does not exist" + city.debugDescription)
                             return nil
                         }
                     case let .failure(error):
-                        // A `City` value could not be initialized from the DocumentSnapshot.
                         print("Error decoding city: \(error)")
                         return nil
                     }
@@ -69,25 +67,26 @@ class FirebaseManager: ObservableObject {
                 switch result {
                 case let .success(city):
                     if let city = city {
-                        // A `City` value was successfully initialized from the DocumentSnapshot.
-                        print("City: \(city)")
+                        print("User: \(city)")
                         self.user = city
                     } else {
-                        // A nil value was successfully initialized from the DocumentSnapshot,
-                        // or the DocumentSnapshot was nil.
                         print("Document does not exist" + city.debugDescription)
                     }
                 case let .failure(error):
-                    // A `City` value could not be initialized from the DocumentSnapshot.
                     print("Error decoding city: \(error)")
                 }
             }
     }
 
-    // Temp
-    func addBook(book: User) {
+    func addActivity(activity: Activity) {
+        
         do {
-            try db.collection("books").addDocument(from: book)
+            try db.collection("users").document("AKNdoblQtARRCjmQN7aH").collection("activity")
+                .addDocument(from: activity, completion: { _ in
+                    print("Added")
+                    //self.getActivity()
+                })
+            
         } catch {
             print(error)
         }

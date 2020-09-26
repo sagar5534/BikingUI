@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct Activity_Info: View {
     @State var activity: Activity
     @State var isConfirmView: Bool = false
     @State var textfieldData: String = ""
-
+    
     var body: some View {
         ScrollView {
             Leading {
@@ -44,9 +45,11 @@ struct Activity_Info: View {
             Divider()
 
             // Make map for this page
-            Map_Summary(locations: .constant([]))
-                .frame(minHeight: 400)
+            let x: [CLLocationCoordinate2D] = activity.coordinates.map{ $0.toCLLocationCoordinate() }
+            Map_Summary(coordinates: .constant(x))
+                .frame(minHeight: 450)
                 .padding()
+            
         }
     }
 }

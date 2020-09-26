@@ -31,6 +31,7 @@ struct User: Identifiable, Codable {
     }
 }
 
+
 struct Activity: Identifiable, Codable {
     @DocumentID var id: String? = UUID().uuidString
     var tripName: String
@@ -40,7 +41,9 @@ struct Activity: Identifiable, Codable {
     var avgSpeed: Double
     var fastestSpeed: Double
     var date: Timestamp
-
+    var coordinates: [GeoPoint]
+    
+    
     init() {
         id = UUID().uuidString
         tripName = ""
@@ -50,6 +53,7 @@ struct Activity: Identifiable, Codable {
         avgSpeed = 0
         fastestSpeed = 0
         date = Timestamp()
+        coordinates = []
     }
 
     init(location: CoreLocation, timer: StopWatchManager) {
@@ -61,5 +65,6 @@ struct Activity: Identifiable, Codable {
         avgSpeed = location.avgSpeed
         fastestSpeed = 0
         date = Timestamp()
+        coordinates = location.coordinates.map{ $0.toGeoPoint() }
     }
 }

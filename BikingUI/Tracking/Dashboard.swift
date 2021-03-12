@@ -13,7 +13,7 @@ struct Dashboard: View {
 
     @State var speedToggle: Bool = true
     @State var timeToggle: Bool = true
-    @State var isTimerRunning: Bool = true
+    @State var isPaused: Bool = false
 
     @EnvironmentObject var Location: CoreLocation
     @EnvironmentObject var Timer: StopWatchManager
@@ -21,47 +21,51 @@ struct Dashboard: View {
 
     var body: some View {
         VStack {
-            VStack {
-                Button(action: {
-                    timeToggle.toggle()
-                }, label: {
-                    if timeToggle {
-                        LargeCountDown(value: $Timer.movingLabel, desc: "Moving Time")
-                    } else {
-                        LargeCountDown(value: $Timer.totalLabel, desc: "Total Time")
-                    }
-                })
+            
+            if isPaused == false{
+                VStack {
+                    Button(action: {
+                        timeToggle.toggle()
+                    }, label: {
+                        if timeToggle {
+                            LargeCountDown(value: $Timer.movingLabel, desc: "Moving Time")
+                        } else {
+                            LargeCountDown(value: $Timer.totalLabel, desc: "Total Time")
+                        }
+                    })
 
-                Spacer()
+                    Spacer()
 
-                Button(action: {
-                    speedToggle.toggle()
-                }, label: {
-                    let label = firebaseManager.user.isKm ? "Km/h" : "Mi/h"
+                    Button(action: {
+                        speedToggle.toggle()
+                    }, label: {
+                        let label = firebaseManager.user.isKm ? "Km/h" : "Mi/h"
 
-                    if speedToggle {
-                        LargeText(value: $Location.avgSpeed, desc: "Average Speed \(label)", isDistance: false)
-                    } else {
-                        LargeText(value: $Location.curSpeed, desc: "Current Speed \(label)", isDistance: false)
-                    }
-                })
+                        if speedToggle {
+                            LargeText(value: $Location.avgSpeed, desc: "Average Speed \(label)", isDistance: false)
+                        } else {
+                            LargeText(value: $Location.curSpeed, desc: "Current Speed \(label)", isDistance: false)
+                        }
+                    })
 
-                Spacer()
-                LargeText(value: $Location.distance, desc: firebaseManager.user.isKm ? "Kilometers" : "Miles", isDistance: true)
-                    .frame(maxWidth: .infinity)
+                    Spacer()
+                    LargeText(value: $Location.distance, desc: firebaseManager.user.isKm ? "Kilometers" : "Miles", isDistance: true)
+                        .frame(maxWidth: .infinity)
+                }
+                .padding()
+                
             }
-            .padding()
 
             VStack {
                 HStack {
                     Button(action: {
-                        isTimerRunning.toggle()
-                        isTimerRunning ? Timer.resume() : Timer.pause()
+                        isPaused.toggle()
+                        isPaused ? Timer.pause() : Timer.resume()
                     }) {
-                        Dashboard_Buttons_Pause(isRunning: $isTimerRunning)
+                        Dashboard_Buttons_Pause(isPaused: $isPaused)
                             .padding()
                     }
-
+    
                     Dashboard_Buttons_Stop(isDone: $isDone)
                         .padding()
                 }
@@ -131,6 +135,5 @@ struct Dashboard_Previews: PreviewProvider {
             .environmentObject(Location)
             .environmentObject(Timer)
             .environmentObject(firebaseManager)
-           
     }
 }

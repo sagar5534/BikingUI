@@ -25,6 +25,7 @@ class FirebaseManager: ObservableObject {
 
     private func getActivity() {
         db.collection("users").document("AKNdoblQtARRCjmQN7aH").collection("activity")
+            .order(by: "date", descending: true)
             .addSnapshotListener { qu, error in
 
                 guard let docs = qu?.documents else {
@@ -79,7 +80,7 @@ class FirebaseManager: ObservableObject {
     }
 
     func addActivity(activity: Activity) {
-        
+     
         do {
             try db.collection("users").document("AKNdoblQtARRCjmQN7aH").collection("activity")
                 .addDocument(from: activity, completion: { _ in

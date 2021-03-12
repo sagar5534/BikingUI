@@ -12,7 +12,7 @@
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
 		1B0DABD3251054A800926415 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD2251054A800926415 /* MapView.swift */; };
-		1B27E134251EC53E00A83B02 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* File.swift */; };
+		1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* Testdata.swift */; };
 		1B896D3825197489005A3CED /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3725197489005A3CED /* ActivityDetail.swift */; };
 		1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3D251993D6005A3CED /* ActivityOverview.swift */; };
 		1B896D4225199411005A3CED /* Activity Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D4125199411005A3CED /* Activity Info.swift */; };
@@ -20,18 +20,19 @@
 		1B896DBC251B03A0005A3CED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896DBB251B03A0005A3CED /* Model.swift */; };
 		1B8D542725116252000CBB56 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D542625116252000CBB56 /* TabBar.swift */; };
 		1B9A0ED02515B9F60017AD07 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ECF2515B9F60017AD07 /* Dashboard.swift */; };
-		1B9A0ED52515DADB0017AD07 /* DashMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ED42515DADB0017AD07 /* DashMap.swift */; };
-		1B9A0ED82515DAEB0017AD07 /* DashTabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ED72515DAEB0017AD07 /* DashTabManager.swift */; };
+		1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ED42515DADB0017AD07 /* Dashboard_Map.swift */; };
+		1B9A0ED82515DAEB0017AD07 /* Dash_TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0ED72515DAEB0017AD07 /* Dash_TabManager.swift */; };
 		1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0EE02517326F0017AD07 /* Core Location.swift */; };
 		1B9A0EE4251740600017AD07 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0EE3251740600017AD07 /* StopWatch.swift */; };
 		1B9A0EE82518150E0017AD07 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9A0EE72518150E0017AD07 /* SwiftUICharts */; };
-		1B9A0EF925185B8A0017AD07 /* Dashboard Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0EF825185B8A0017AD07 /* Dashboard Buttons.swift */; };
+		1B9A0EF925185B8A0017AD07 /* Dashboard_Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */; };
 		1B9E0EF0251C28FD0062F320 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0EEF251C28FD0062F320 /* Maps.swift */; };
 		1B9E0F09251C30830062F320 /* Activity Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F08251C30830062F320 /* Activity Cell.swift */; };
 		1B9E0F24251C6DE50062F320 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */; };
 		1B9E0F28251D82570062F320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F27251D82570062F320 /* Extensions.swift */; };
 		1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F2C251D8F810062F320 /* Ticker.swift */; };
 		1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1DB4E25113E9A008D5162 /* Leading Element.swift */; };
+		1BE134C625342D6A006273E6 /* Dash_Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE134C525342D6A006273E6 /* Dash_Pause.swift */; };
 		1BE732BD2512731E0073E5C8 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732BC2512731E0073E5C8 /* History.swift */; };
 		1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732C025128C120073E5C8 /* ScoreBoard.swift */; };
 		FD17DC42CCA34F821CC92831 /* Pods_BikingUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590E2552687948C031DCA97A /* Pods_BikingUI.framework */; };
@@ -45,7 +46,7 @@
 		1B0DABCA2510517300926415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B0DABD2251054A800926415 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		1B27E133251EC53D00A83B02 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		1B27E133251EC53D00A83B02 /* Testdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testdata.swift; sourceTree = "<group>"; };
 		1B896D3725197489005A3CED /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		1B896D3D251993D6005A3CED /* ActivityOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverview.swift; sourceTree = "<group>"; };
 		1B896D4125199411005A3CED /* Activity Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Info.swift"; sourceTree = "<group>"; };
@@ -53,17 +54,18 @@
 		1B896DBB251B03A0005A3CED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1B8D542625116252000CBB56 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		1B9A0ECF2515B9F60017AD07 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
-		1B9A0ED42515DADB0017AD07 /* DashMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashMap.swift; sourceTree = "<group>"; };
-		1B9A0ED72515DAEB0017AD07 /* DashTabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashTabManager.swift; sourceTree = "<group>"; };
+		1B9A0ED42515DADB0017AD07 /* Dashboard_Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_Map.swift; sourceTree = "<group>"; };
+		1B9A0ED72515DAEB0017AD07 /* Dash_TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash_TabManager.swift; sourceTree = "<group>"; };
 		1B9A0EE02517326F0017AD07 /* Core Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core Location.swift"; sourceTree = "<group>"; };
 		1B9A0EE3251740600017AD07 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
-		1B9A0EF825185B8A0017AD07 /* Dashboard Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dashboard Buttons.swift"; sourceTree = "<group>"; };
+		1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_Buttons.swift; sourceTree = "<group>"; };
 		1B9E0EEF251C28FD0062F320 /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		1B9E0F08251C30830062F320 /* Activity Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Cell.swift"; sourceTree = "<group>"; };
 		1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B9E0F27251D82570062F320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1B9E0F2C251D8F810062F320 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		1BC1DB4E25113E9A008D5162 /* Leading Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leading Element.swift"; sourceTree = "<group>"; };
+		1BE134C525342D6A006273E6 /* Dash_Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash_Pause.swift; sourceTree = "<group>"; };
 		1BE732BC2512731E0073E5C8 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		1BE732C025128C120073E5C8 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		590E2552687948C031DCA97A /* Pods_BikingUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikingUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +144,7 @@
 			children = (
 				1B896DB7251B011C005A3CED /* Firebase.swift */,
 				1B896DBB251B03A0005A3CED /* Model.swift */,
-				1B27E133251EC53D00A83B02 /* File.swift */,
+				1B27E133251EC53D00A83B02 /* Testdata.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,11 +152,12 @@
 		1B9A0ECE2515B7B70017AD07 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				1B9A0ED72515DAEB0017AD07 /* DashTabManager.swift */,
+				1B9A0ED72515DAEB0017AD07 /* Dash_TabManager.swift */,
 				1B9A0ECF2515B9F60017AD07 /* Dashboard.swift */,
-				1B9A0ED42515DADB0017AD07 /* DashMap.swift */,
-				1B9A0EF825185B8A0017AD07 /* Dashboard Buttons.swift */,
+				1B9A0ED42515DADB0017AD07 /* Dashboard_Map.swift */,
+				1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */,
 				1B896D3D251993D6005A3CED /* ActivityOverview.swift */,
+				1BE134C525342D6A006273E6 /* Dash_Pause.swift */,
 			);
 			path = Tracking;
 			sourceTree = "<group>";
@@ -339,12 +342,13 @@
 			files = (
 				1B9A0EE4251740600017AD07 /* StopWatch.swift in Sources */,
 				1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */,
-				1B9A0ED52515DADB0017AD07 /* DashMap.swift in Sources */,
+				1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */,
 				1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */,
-				1B9A0EF925185B8A0017AD07 /* Dashboard Buttons.swift in Sources */,
+				1B9A0EF925185B8A0017AD07 /* Dashboard_Buttons.swift in Sources */,
 				1B0DABD3251054A800926415 /* MapView.swift in Sources */,
-				1B27E134251EC53E00A83B02 /* File.swift in Sources */,
+				1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */,
 				1B896DB8251B011C005A3CED /* Firebase.swift in Sources */,
+				1BE134C625342D6A006273E6 /* Dash_Pause.swift in Sources */,
 				1B9A0ED02515B9F60017AD07 /* Dashboard.swift in Sources */,
 				1B896D4225199411005A3CED /* Activity Info.swift in Sources */,
 				1BE732BD2512731E0073E5C8 /* History.swift in Sources */,
@@ -358,7 +362,7 @@
 				1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */,
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,
-				1B9A0ED82515DAEB0017AD07 /* DashTabManager.swift in Sources */,
+				1B9A0ED82515DAEB0017AD07 /* Dash_TabManager.swift in Sources */,
 				1B8D542725116252000CBB56 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

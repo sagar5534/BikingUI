@@ -10,10 +10,14 @@ import UIKit
 
 struct Start: View {
     @State private var isTrackingMode = false
-        
+    @EnvironmentObject var firebaseManager: FirebaseManager
+
     var body: some View {
         NavigationView {
             VStack {
+                Divider()
+                    .padding(.leading)
+                
                 ZStack {
                     MapView {
                         Map()
@@ -41,7 +45,10 @@ struct Start: View {
             }
             .navigationTitle("Start a Ride")
         }
-        .fullScreenCover(isPresented: $isTrackingMode, content: DashTabManager.init)
+        .fullScreenCover(isPresented: $isTrackingMode) {
+            Dash_TabManager()
+                .environmentObject(firebaseManager)
+        }
         
     }
 }

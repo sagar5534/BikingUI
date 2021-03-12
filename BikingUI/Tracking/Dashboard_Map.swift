@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-struct DashMap: View {
+struct Dashboard_Map: View {
     @Binding var selectedTabViewPage: Int
     @EnvironmentObject var Location: CoreLocation
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            MapView {
-                Map_Tracking(coordinates: $Location.coordinates)
-            }
+
+            Map_Tracking(coordinates: $Location.coordinates)
 
             Button(action: {
                 withAnimation { selectedTabViewPage -= 1 }
-            }, label: {
+            }, label: { 
                 ZStack {
                     Circle()
                         .shadow(radius: 3)
@@ -31,6 +30,7 @@ struct DashMap: View {
             })
                 .frame(width: 100, height: 100, alignment: .center)
                 .padding()
+            
         }
         .ignoresSafeArea()
     }
@@ -38,6 +38,6 @@ struct DashMap: View {
 
 struct DashMap_Previews: PreviewProvider {
     static var previews: some View {
-        DashMap(selectedTabViewPage: .constant(2))
+        Dashboard_Map(selectedTabViewPage: .constant(2))
     }
 }

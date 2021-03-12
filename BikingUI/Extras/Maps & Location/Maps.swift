@@ -40,6 +40,7 @@ struct Map_Tracking: UIViewRepresentable {
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.isUserInteractionEnabled = true
+        mapView.showsTraffic = true
 
         return mapView
     }

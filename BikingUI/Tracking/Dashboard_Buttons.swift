@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Dashboard_Buttons_Pause: View {
-    @Binding var isRunning: Bool
+    @Binding var isPaused: Bool
 
     var body: some View {
         ZStack {
@@ -16,7 +16,7 @@ struct Dashboard_Buttons_Pause: View {
                 .shadow(radius: 3)
                 .foregroundColor(.red)
 
-            Image(systemName: isRunning ? "pause.fill" : "play.fill")
+            Image(systemName: isPaused ? "play.fill" : "pause.fill")
                 .resizable()
                 .foregroundColor(.white)
                 .frame(width: 30, height: 30, alignment: .center)
@@ -88,6 +88,7 @@ struct Dashboard_Buttons_Stop: View {
 struct Dashboard_Buttons_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
+            Dashboard_Buttons_Pause(isPaused: .constant(false))
             Dashboard_Buttons_Stop(isDone: .constant(false))
         }
     }

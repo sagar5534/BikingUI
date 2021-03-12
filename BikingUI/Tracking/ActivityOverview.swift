@@ -18,6 +18,11 @@ struct ActivityOverview: View {
             Activity_Info(activity: activity, isConfirmView: true)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: Button(action: {
+                    
+                    if activity.tripName.isEmpty {
+                        activity.tripName = "Afternoon Trip"
+                    }
+                    
                     firebaseManager.addActivity(activity: activity)
                     presentationMode.wrappedValue.dismiss()
                 }, label: {

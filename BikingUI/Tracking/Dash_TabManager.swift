@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DashTabManager: View {
+struct Dash_TabManager: View {
     @ObservedObject var Location = CoreLocation()
     @ObservedObject var Timer = StopWatchManager()
     @EnvironmentObject var firebaseManager: FirebaseManager
@@ -17,8 +17,8 @@ struct DashTabManager: View {
 
     var body: some View {
         if isDone {
-            let x = Activity(location: Location, timer: Timer)
-            ActivityOverview(activity: x)
+            let newAct = Activity(location: Location, timer: Timer)
+            ActivityOverview(activity: newAct)
         } else {
             TabView(selection: $selectedPage) {
                 Dashboard(isDone: $isDone)
@@ -26,7 +26,7 @@ struct DashTabManager: View {
                     .environmentObject(Location)
                     .environmentObject(Timer)
 
-                DashMap(selectedTabViewPage: $selectedPage)
+                Dashboard_Map(selectedTabViewPage: $selectedPage)
                     .tag(1)
                     .environmentObject(Location)
             }
@@ -34,13 +34,13 @@ struct DashTabManager: View {
             .navigationBarHidden(true)
         }
     }
-}
+}But
 
 struct DashTabManager_Previews: PreviewProvider {
     static var previews: some View {
         var fire = FirebaseManager()
 
-        DashTabManager()
+        Dash_TabManager()
             .environmentObject(fire)
     }
 }

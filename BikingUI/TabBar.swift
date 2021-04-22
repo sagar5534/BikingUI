@@ -16,10 +16,10 @@ struct TabBar: View {
                 .tabItem {
                     Image(systemName: selected == 0 ? "flame.fill" : "flame")
                 }.tag(0)
-            History()
-                .tabItem {
-                    Image(systemName: selected == 1 ? "chart.bar.fill" : "chart.bar")
-                }.tag(1)
+//            History()
+//                .tabItem {
+//                    Image(systemName: selected == 1 ? "chart.bar.fill" : "chart.bar")
+//                }.tag(1)
         }
     }
 }

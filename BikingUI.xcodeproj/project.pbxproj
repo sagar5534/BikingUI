@@ -28,7 +28,6 @@
 		1B9A0EF925185B8A0017AD07 /* Dashboard_Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */; };
 		1B9E0EF0251C28FD0062F320 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0EEF251C28FD0062F320 /* Maps.swift */; };
 		1B9E0F09251C30830062F320 /* Activity Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F08251C30830062F320 /* Activity Cell.swift */; };
-		1B9E0F24251C6DE50062F320 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */; };
 		1B9E0F28251D82570062F320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F27251D82570062F320 /* Extensions.swift */; };
 		1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F2C251D8F810062F320 /* Ticker.swift */; };
 		1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1DB4E25113E9A008D5162 /* Leading Element.swift */; };
@@ -61,7 +60,6 @@
 		1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_Buttons.swift; sourceTree = "<group>"; };
 		1B9E0EEF251C28FD0062F320 /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		1B9E0F08251C30830062F320 /* Activity Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Cell.swift"; sourceTree = "<group>"; };
-		1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B9E0F27251D82570062F320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1B9E0F2C251D8F810062F320 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		1BC1DB4E25113E9A008D5162 /* Leading Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leading Element.swift"; sourceTree = "<group>"; };
@@ -116,15 +114,14 @@
 		1B0DABC02510517200926415 /* BikingUI */ = {
 			isa = PBXGroup;
 			children = (
+				1B0DABC12510517200926415 /* BikingUIApp.swift */,
+				1B8D542625116252000CBB56 /* TabBar.swift */,
+				1BC1DB5025114B6D008D5162 /* Start Page */,
 				1B896DB2251B00B6005A3CED /* Models */,
 				1B9A0ECE2515B7B70017AD07 /* Tracking */,
 				1BE732BB2512730D0073E5C8 /* History */,
-				1BC1DB5025114B6D008D5162 /* Start Page */,
 				1BC1DB4D25113E23008D5162 /* Extras */,
-				1B8D542625116252000CBB56 /* TabBar.swift */,
-				1B0DABC12510517200926415 /* BikingUIApp.swift */,
 				1B0DABC52510517300926415 /* Assets.xcassets */,
-				1B9E0F23251C6DE50062F320 /* GoogleService-Info.plist */,
 				1B0DABCA2510517300926415 /* Info.plist */,
 				1B0DABC72510517300926415 /* Preview Content */,
 			);
@@ -231,7 +228,6 @@
 				1B0DABBA2510517200926415 /* Sources */,
 				1B0DABBB2510517200926415 /* Frameworks */,
 				1B0DABBC2510517200926415 /* Resources */,
-				6AD57AFF99E96531407F87F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,7 +283,6 @@
 			files = (
 				1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */,
 				1B0DABC62510517300926415 /* Assets.xcassets in Resources */,
-				1B9E0F24251C6DE50062F320 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,23 +309,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6AD57AFF99E96531407F87F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BikingUI/Pods-BikingUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BikingUI/Pods-BikingUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BikingUI/Pods-BikingUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

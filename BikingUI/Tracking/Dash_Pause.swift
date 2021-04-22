@@ -1,29 +1,29 @@
+////
+////  Dash_Pause.swift
+////  BikingUI
+////
+////  Created by Sagar on 2020-10-12.
+////
 //
-//  Dash_Pause.swift
-//  BikingUI
+//import SwiftUI
 //
-//  Created by Sagar on 2020-10-12.
+//struct Dash_Pause: View {
+//    
+//    @Binding var isPaused: Bool
 //
-
-import SwiftUI
-
-struct Dash_Pause: View {
-    
-    @Binding var isPaused: Bool
-
-    var body: some View {
-        Button(action: {
-            isPaused.toggle()
-        }) {
-            Dashboard_Buttons_Pause(isPaused: $isPaused)
-                .padding()
-        }
-    }
-    
-}
-
-struct Dash_Pause_Previews: PreviewProvider {
-    static var previews: some View {
-        Dash_Pause(isPaused: .constant(false))
-    }
-}
+//    var body: some View {
+//        Button(action: {
+//            isPaused.toggle()
+//        }) {
+//            Dashboard_Buttons_Pause(isPaused: $isPaused)
+//                .padding()
+//        }
+//    }
+//    
+//}
+//
+//struct Dash_Pause_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Dash_Pause(isPaused: .constant(false))
+//    }
+//}

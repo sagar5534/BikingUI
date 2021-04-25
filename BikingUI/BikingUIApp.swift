@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct BikingUIApp: App {
     
+    @StateObject var core = CoreData.sharedInstance
+    
     init() {
-        // FirebaseApp.configure()
+        FirebaseApp.configure()
     }
-
+    
     var body: some Scene {
         WindowGroup {
-
+//            Start()
             TabBar()
-            
+//                .environmentObject(core)
         }
     }
 }

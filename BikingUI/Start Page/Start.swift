@@ -9,46 +9,19 @@ import SwiftUI
 import UIKit
 
 struct Start: View {
-    @State private var isTrackingMode = false
-
+    
+    @StateObject var model = Start_VModel.sharedInstance
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Divider()
-                    .padding(.leading)
-                
-                ZStack {
-                    MapView {
-                        Map()
-                    }
-
-                    VStack {
-                        Spacer()
-
-                        Button(action: {
-                            self.isTrackingMode.toggle()
-                        }, label: {
-                            ZStack {
-                                Circle()
-                                    .shadow(radius: 3)
-                                Text("START")
-                                    .font(.system(size: 22, weight: .heavy))
-                                    .foregroundColor(Color.white)
-                                    .italic()
-                            }
-                            .frame(width: 125, height: 125, alignment: .center)
-                        })
-                    }
-                    .padding(.bottom, 30)
-                }
-            }
-            .navigationTitle("Start a Ride")
+    
+        VStack {
+            Text(model.name)
         }
-//        .fullScreenCover(isPresented: $isTrackingMode) {
-//            Dash_TabManager()
-//        }
+        .navigationTitle("Get Biking 🚴‍♂️")
+        .accentColor(.orange)
         
     }
+    
 }
 
 struct Start_Previews: PreviewProvider {

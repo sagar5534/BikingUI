@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7DDFEC12-AEC1-4A69-A0ED-F114E37A86C5"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA4177B2-B7C5-46E9-9841-26BD1226BF18"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikingUI/Start Page/Start_VModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "deinit"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA4177B2-B7C5-46E9-9841-26BD1226BF18 - fd1afc85b866ccc0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikingUI.Start_VModel.deinit"
+                  moduleName = "BikingUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagar/Desktop/BikingUI/BikingUI/Start%20Page/Start_VModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "DA4177B2-B7C5-46E9-9841-26BD1226BF18 - bce06fe29fa37f59"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BikingUI.Start_VModel.__deallocating_deinit"
+                  moduleName = "BikingUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sagar/Desktop/BikingUI/BikingUI/Start%20Page/Start_VModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

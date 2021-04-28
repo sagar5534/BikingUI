@@ -12,15 +12,17 @@
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
 		1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* Testdata.swift */; };
+		1B71DB0D263743E6009A2BAD /* BikeTypeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71DB0C263743E6009A2BAD /* BikeTypeBarView.swift */; };
+		1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */; };
 		1B74D8912632941E0062D691 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8902632941E0062D691 /* CoreData.swift */; };
 		1B74D8C32632AD6C0062D691 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B74D8C22632AD6C0062D691 /* GoogleService-Info.plist */; };
 		1B74D8C826335D810062D691 /* Start_VModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8C726335D810062D691 /* Start_VModel.swift */; };
-		1B74D8D0263369C80062D691 /* BottomBar-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1B74D8CF263369C80062D691 /* BottomBar-SwiftUI */; };
 		1B74D8DB263371FE0062D691 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8D7263371FE0062D691 /* BottomBar.swift */; };
 		1B74D8DC263371FE0062D691 /* BottomBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */; };
 		1B74D8DD263371FE0062D691 /* BarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8D9263371FE0062D691 /* BarBuilder.swift */; };
 		1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8DA263371FE0062D691 /* BottomBarItem.swift */; };
 		1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */; };
+		1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7868782638E65200362C58 /* InsightScoreboard.swift */; };
 		1B896D3825197489005A3CED /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3725197489005A3CED /* ActivityDetail.swift */; };
 		1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3D251993D6005A3CED /* ActivityOverview.swift */; };
 		1B896D4225199411005A3CED /* Activity Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D4125199411005A3CED /* Activity Info.swift */; };
@@ -40,7 +42,7 @@
 		1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F2C251D8F810062F320 /* Ticker.swift */; };
 		1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1DB4E25113E9A008D5162 /* Leading Element.swift */; };
 		1BE134C625342D6A006273E6 /* Dash_Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE134C525342D6A006273E6 /* Dash_Pause.swift */; };
-		1BE732BD2512731E0073E5C8 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732BC2512731E0073E5C8 /* History.swift */; };
+		1BE732BD2512731E0073E5C8 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732BC2512731E0073E5C8 /* Insights.swift */; };
 		1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732C025128C120073E5C8 /* ScoreBoard.swift */; };
 		FD17DC42CCA34F821CC92831 /* Pods_BikingUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590E2552687948C031DCA97A /* Pods_BikingUI.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		1B0DABCA2510517300926415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B27E133251EC53D00A83B02 /* Testdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testdata.swift; sourceTree = "<group>"; };
+		1B71DB0C263743E6009A2BAD /* BikeTypeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeTypeBarView.swift; sourceTree = "<group>"; };
+		1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTripBox.swift; sourceTree = "<group>"; };
 		1B74D8902632941E0062D691 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		1B74D8C22632AD6C0062D691 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1B74D8C726335D810062D691 /* Start_VModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_VModel.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 		1B74D8D9263371FE0062D691 /* BarBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarBuilder.swift; sourceTree = "<group>"; };
 		1B74D8DA263371FE0062D691 /* BottomBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectsBlur.swift; sourceTree = "<group>"; };
+		1B7868782638E65200362C58 /* InsightScoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightScoreboard.swift; sourceTree = "<group>"; };
 		1B896D3725197489005A3CED /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		1B896D3D251993D6005A3CED /* ActivityOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverview.swift; sourceTree = "<group>"; };
 		1B896D4125199411005A3CED /* Activity Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Info.swift"; sourceTree = "<group>"; };
@@ -79,7 +84,7 @@
 		1B9E0F2C251D8F810062F320 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		1BC1DB4E25113E9A008D5162 /* Leading Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leading Element.swift"; sourceTree = "<group>"; };
 		1BE134C525342D6A006273E6 /* Dash_Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash_Pause.swift; sourceTree = "<group>"; };
-		1BE732BC2512731E0073E5C8 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		1BE732BC2512731E0073E5C8 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
 		1BE732C025128C120073E5C8 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		590E2552687948C031DCA97A /* Pods_BikingUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikingUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CF29BE3D6C13C9AC4EA094 /* Pods-BikingUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikingUI.debug.xcconfig"; path = "Target Support Files/Pods-BikingUI/Pods-BikingUI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +98,6 @@
 			files = (
 				1B9A0EE82518150E0017AD07 /* SwiftUICharts in Frameworks */,
 				FD17DC42CCA34F821CC92831 /* Pods_BikingUI.framework in Frameworks */,
-				1B74D8D0263369C80062D691 /* BottomBar-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,12 +135,12 @@
 			isa = PBXGroup;
 			children = (
 				1B0DABC12510517200926415 /* BikingUIApp.swift */,
-				1B74D8E52633A0830062D691 /* Tab Bar */,
 				1B74D8902632941E0062D691 /* CoreData.swift */,
+				1B74D8E52633A0830062D691 /* Tab Bar */,
 				1BC1DB5025114B6D008D5162 /* Start Page */,
-				1B896DB2251B00B6005A3CED /* Models */,
+				1BE732BB2512730D0073E5C8 /* Insights */,
 				1B9A0ECE2515B7B70017AD07 /* Tracking */,
-				1BE732BB2512730D0073E5C8 /* History */,
+				1B896DB2251B00B6005A3CED /* Models */,
 				1BC1DB4D25113E23008D5162 /* Extras */,
 				1B0DABC52510517300926415 /* Assets.xcassets */,
 				1B0DABCA2510517300926415 /* Info.plist */,
@@ -159,12 +163,20 @@
 			isa = PBXGroup;
 			children = (
 				1B8D542625116252000CBB56 /* TabBar.swift */,
+				1B78687C2638EB8B00362C58 /* CustomTabBar */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		1B78687C2638EB8B00362C58 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
 				1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */,
 				1B74D8D7263371FE0062D691 /* BottomBar.swift */,
 				1B74D8DA263371FE0062D691 /* BottomBarItem.swift */,
 				1B74D8D9263371FE0062D691 /* BarBuilder.swift */,
 			);
-			path = "Tab Bar";
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		1B896DB2251B00B6005A3CED /* Models */ = {
@@ -225,19 +237,22 @@
 			children = (
 				1B0DABD0251052B700926415 /* Start.swift */,
 				1B74D8C726335D810062D691 /* Start_VModel.swift */,
+				1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */,
+				1B71DB0C263743E6009A2BAD /* BikeTypeBarView.swift */,
 			);
 			path = "Start Page";
 			sourceTree = "<group>";
 		};
-		1BE732BB2512730D0073E5C8 /* History */ = {
+		1BE732BB2512730D0073E5C8 /* Insights */ = {
 			isa = PBXGroup;
 			children = (
-				1BE732BC2512731E0073E5C8 /* History.swift */,
+				1BE732BC2512731E0073E5C8 /* Insights.swift */,
+				1B7868782638E65200362C58 /* InsightScoreboard.swift */,
 				1BE732C025128C120073E5C8 /* ScoreBoard.swift */,
 				1B896D3725197489005A3CED /* ActivityDetail.swift */,
 				1B9E0F08251C30830062F320 /* Activity Cell.swift */,
 			);
-			path = History;
+			path = Insights;
 			sourceTree = "<group>";
 		};
 		5C7C078DE26C4890B1E43C18 /* Frameworks */ = {
@@ -268,7 +283,6 @@
 			name = BikingUI;
 			packageProductDependencies = (
 				1B9A0EE72518150E0017AD07 /* SwiftUICharts */,
-				1B74D8CF263369C80062D691 /* BottomBar-SwiftUI */,
 			);
 			productName = BikingUI;
 			productReference = 1B0DABBE2510517200926415 /* BikingUI.app */;
@@ -299,7 +313,6 @@
 			mainGroup = 1B0DABB52510517200926415;
 			packageReferences = (
 				1B9A0EE62518150E0017AD07 /* XCRemoteSwiftPackageReference "ChartView" */,
-				1B74D8CE263369C80062D691 /* XCRemoteSwiftPackageReference "bottombar-swiftui" */,
 			);
 			productRefGroup = 1B0DABBF2510517200926415 /* Products */;
 			projectDirPath = "";
@@ -373,10 +386,13 @@
 				1B9A0EE4251740600017AD07 /* StopWatch.swift in Sources */,
 				1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */,
 				1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */,
+				1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */,
+				1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */,
 				1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */,
 				1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */,
 				1B9A0EF925185B8A0017AD07 /* Dashboard_Buttons.swift in Sources */,
 				1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */,
+				1B71DB0D263743E6009A2BAD /* BikeTypeBarView.swift in Sources */,
 				1B896DB8251B011C005A3CED /* Firebase.swift in Sources */,
 				1BE134C625342D6A006273E6 /* Dash_Pause.swift in Sources */,
 				1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */,
@@ -384,7 +400,7 @@
 				1B896D4225199411005A3CED /* Activity Info.swift in Sources */,
 				1B74D8DB263371FE0062D691 /* BottomBar.swift in Sources */,
 				1B74D8DD263371FE0062D691 /* BarBuilder.swift in Sources */,
-				1BE732BD2512731E0073E5C8 /* History.swift in Sources */,
+				1BE732BD2512731E0073E5C8 /* Insights.swift in Sources */,
 				1B9E0EF0251C28FD0062F320 /* Maps.swift in Sources */,
 				1B74D8C826335D810062D691 /* Start_VModel.swift in Sources */,
 				1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */,
@@ -592,14 +608,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1B74D8CE263369C80062D691 /* XCRemoteSwiftPackageReference "bottombar-swiftui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/smartvipere75/bottombar-swiftui";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		1B9A0EE62518150E0017AD07 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -611,11 +619,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1B74D8CF263369C80062D691 /* BottomBar-SwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1B74D8CE263369C80062D691 /* XCRemoteSwiftPackageReference "bottombar-swiftui" */;
-			productName = "BottomBar-SwiftUI";
-		};
 		1B9A0EE72518150E0017AD07 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1B9A0EE62518150E0017AD07 /* XCRemoteSwiftPackageReference "ChartView" */;

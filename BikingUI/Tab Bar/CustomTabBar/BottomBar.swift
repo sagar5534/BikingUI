@@ -45,12 +45,10 @@ public struct BottomBar : View {
     public var body: some View {
         
         ZStack {
-            
             VisualEffectBlur(blurStyle: .regular)
                 .cornerRadius(40)
                 .shadow(color: Color.darkTextColorMain.opacity(0.1), radius: 10,x: 10,y: 5)
                 
-
             HStack(alignment: .center) {
                 ForEach(0..<items.count) { index in
                     self.itemView(at: index)
@@ -62,8 +60,6 @@ public struct BottomBar : View {
             }
             .animation(.default)
             .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-            
-
         }.fixedSize()
         
     }

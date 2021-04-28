@@ -27,10 +27,6 @@ public struct BottomBarItemView: View {
             }
         }
         .padding()
-//        .background(
-//            Capsule()
-//                .fill(isSelected ? item.color.opacity(0.2) : Color.clear)
-//        )
 
     }
     

@@ -9,13 +9,10 @@ import SwiftUI
 import UIKit
 
 struct Start: View {
-    
     @StateObject var model = Start_VModel.sharedInstance
-    
+
     var body: some View {
-        
         VStack {
-            
             HStack {
                 GroupBox(label: Label("Streaks", systemImage: "flame.fill")) {
                     InfoTextView(value: "4", unit: "Days")
@@ -23,36 +20,31 @@ struct Start: View {
                 .groupBoxStyle(InfoCardGroupBox(color: Color(red: 254 / 255, green: 87 / 255, blue: 45 / 255, opacity: 1)))
                 .boxShadow()
 
-                
                 GroupBox(label: Label("Travelled", systemImage: "mappin.and.ellipse")) {
                     InfoTextView(value: "4019", unit: "Kms")
                 }
                 .groupBoxStyle(InfoCardGroupBox(color: .blue))
                 .boxShadow()
-
-                
             }
             .padding(.horizontal)
             .padding(.top)
-            
+
             StartTripBox()
                 .boxShadow()
                 .padding(.horizontal)
 
             Spacer()
-
         }
-        .navigationTitle("Home")        
+        .navigationTitle("Home")
     }
-    
 }
 
 struct InfoTextView: View {
     var value: String
     var unit: String
-    
+
     @ScaledMetric var size: CGFloat = 1
-    
+
     @ViewBuilder
     var body: some View {
         HStack {
@@ -65,9 +57,9 @@ struct InfoTextView: View {
 
 struct InfoCardGroupBox: GroupBoxStyle {
     var color: Color
-    
+
     @ScaledMetric var size: CGFloat = 1
-    
+
     func makeBody(configuration: Configuration) -> some View {
         GroupBox(label: HStack {
             configuration.label
@@ -75,7 +67,7 @@ struct InfoCardGroupBox: GroupBoxStyle {
                 .scaledToFit()
                 .minimumScaleFactor(0.5)
                 .lineLimit(2)
-                
+
             Spacer()
         }) {
             configuration.content.padding(.top)
@@ -83,10 +75,9 @@ struct InfoCardGroupBox: GroupBoxStyle {
     }
 }
 
-
 struct Start_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
+        NavigationView {
             Start()
                 .previewDevice("iPhone 11 Pro")
         }

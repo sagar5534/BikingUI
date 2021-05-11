@@ -21,8 +21,12 @@ struct Insights: View {
             InsightScoreboard()
                 .padding(.horizontal)
                 .padding(.top)
+                .boxShadow()
+
+            
             InsightHistory(trips: trips)
                 .padding(.horizontal)
+                .boxShadow()
             
             Spacer()
         }

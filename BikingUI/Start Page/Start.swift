@@ -21,24 +21,22 @@ struct Start: View {
                     InfoTextView(value: "4", unit: "Days")
                 }
                 .groupBoxStyle(InfoCardGroupBox(color: Color(red: 254 / 255, green: 87 / 255, blue: 45 / 255, opacity: 1)))
-                .background(Color(UIColor.systemBackground))
-                .cornerRadius(10)
-                .shadow(color: Color.darkTextColorMain.opacity(0.1), radius: 5,x: 0,y: 0)
+                .boxShadow()
 
                 
                 GroupBox(label: Label("Travelled", systemImage: "mappin.and.ellipse")) {
                     InfoTextView(value: "4019", unit: "Kms")
                 }
                 .groupBoxStyle(InfoCardGroupBox(color: .blue))
-                .background(Color(UIColor.systemBackground))
-                .cornerRadius(10)
-                .shadow(color: Color.darkTextColorMain.opacity(0.1), radius: 5,x: 0,y: 0)
+                .boxShadow()
+
                 
             }
             .padding(.horizontal)
             .padding(.top)
             
             StartTripBox()
+                .boxShadow()
                 .padding(.horizontal)
 
             Spacer()

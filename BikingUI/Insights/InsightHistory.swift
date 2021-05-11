@@ -50,9 +50,6 @@ struct InsightHistory: View {
             }
         }
         .groupBoxStyle(HistoryGroupBoxStyle(color: .red))
-        .background(Color(UIColor.systemBackground))
-        .cornerRadius(10)
-        .shadow(color: Color.darkTextColorMain.opacity(0.1), radius: 5,x: 0,y: 0)
         
     }
 }

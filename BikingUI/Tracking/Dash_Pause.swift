@@ -5,10 +5,10 @@
 ////  Created by Sagar on 2020-10-12.
 ////
 //
-//import SwiftUI
+// import SwiftUI
 //
-//struct Dash_Pause: View {
-//    
+// struct Dash_Pause: View {
+//
 //    @Binding var isPaused: Bool
 //
 //    var body: some View {
@@ -19,11 +19,11 @@
 //                .padding()
 //        }
 //    }
-//    
-//}
 //
-//struct Dash_Pause_Previews: PreviewProvider {
+// }
+//
+// struct Dash_Pause_Previews: PreviewProvider {
 //    static var previews: some View {
 //        Dash_Pause(isPaused: .constant(false))
 //    }
-//}
+// }

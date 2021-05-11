@@ -5,9 +5,9 @@
 ////  Created by Sagar on 2020-09-21.
 ////
 //
-//import SwiftUI
+// import SwiftUI
 //
-//struct ActivityOverview: View {
+// struct ActivityOverview: View {
 //    @Environment(\.presentationMode) var presentationMode
 //
 //    @State var activity: Activity
@@ -17,11 +17,11 @@
 //            Activity_Info(activity: activity, isConfirmView: true)
 //                .navigationBarTitleDisplayMode(.inline)
 //                .navigationBarItems(trailing: Button(action: {
-//                    
+//
 //                    if activity.tripName.isEmpty {
 //                        activity.tripName = "Afternoon Trip"
 //                    }
-//                    
+//
 //                    firebaseManager.addActivity(activity: activity)
 //                    presentationMode.wrappedValue.dismiss()
 //                }, label: {
@@ -29,12 +29,12 @@
 //                }))
 //        }
 //    }
-//}
+// }
 //
-//struct ActivityOverview_Previews: PreviewProvider {
+// struct ActivityOverview_Previews: PreviewProvider {
 //    static var previews: some View {
 //
 //        ActivityOverview(activity: Activity())
-//           
+//
 //    }
-//}
+// }

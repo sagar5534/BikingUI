@@ -5,9 +5,9 @@
 ////  Created by Sagar on 2020-09-19.
 ////
 //
-//import SwiftUI
+// import SwiftUI
 //
-//struct Dash_TabManager: View {
+// struct Dash_TabManager: View {
 //    @ObservedObject var Location = CoreLocation()
 //    @ObservedObject var Timer = StopWatchManager()
 //
@@ -33,10 +33,10 @@
 //            .navigationBarHidden(true)
 //        }
 //    }
-//}
+// }
 //
-//struct DashTabManager_Previews: PreviewProvider {
+// struct DashTabManager_Previews: PreviewProvider {
 //    static var previews: some View {
 //        Dash_TabManager()
 //    }
-//}
+// }

@@ -5,13 +5,13 @@
 //  Created by Sagar on 2020-09-23.
 //
 
-//import FirebaseFirestore
-//import FirebaseFirestoreSwift
+// import FirebaseFirestore
+// import FirebaseFirestoreSwift
 //
-//class FirebaseManager: ObservableObject {
+// class FirebaseManager: ObservableObject {
 //
 //
-//    
+//
 //    //    private func getActivity() {
 //    //        db.collection("users").document("AKNdoblQtARRCjmQN7aH").collection("activity")
 //    //            .order(by: "date", descending: true)
@@ -81,4 +81,4 @@
 //    //            print(error)
 //    //        }
 //    //    }
-//}
+// }

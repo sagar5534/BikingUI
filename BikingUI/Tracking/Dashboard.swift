@@ -5,10 +5,10 @@
 ////  Created by Sagar on 2020-09-19.
 ////
 //
-//import SwiftUI
-//import SwiftUICharts
+// import SwiftUI
+// import SwiftUICharts
 //
-//struct Dashboard: View {
+// struct Dashboard: View {
 //    @Binding var isDone: Bool
 //
 //    @State var speedToggle: Bool = true
@@ -20,7 +20,7 @@
 //
 //    var body: some View {
 //        VStack {
-//            
+//
 //            if isPaused == false{
 //                VStack {
 //                    Button(action: {
@@ -52,7 +52,7 @@
 //                        .frame(maxWidth: .infinity)
 //                }
 //                .padding()
-//                
+//
 //            }
 //
 //            VStack {
@@ -64,7 +64,7 @@
 //                        Dashboard_Buttons_Pause(isPaused: $isPaused)
 //                            .padding()
 //                    }
-//    
+//
 //                    Dashboard_Buttons_Stop(isDone: $isDone)
 //                        .padding()
 //                }
@@ -74,9 +74,9 @@
 //            Timer.start()
 //        }
 //    }
-//}
+// }
 //
-//private struct LargeText: View {
+// private struct LargeText: View {
 //    @Binding var value: Double
 //    @State var desc: String
 //    @State var isDistance: Bool
@@ -100,9 +100,9 @@
 //        }
 //        .padding()
 //    }
-//}
+// }
 //
-//private struct LargeCountDown: View {
+// private struct LargeCountDown: View {
 //    @Binding var value: String
 //    @State var desc: String
 //
@@ -122,9 +122,9 @@
 //        }
 //        .padding()
 //    }
-//}
+// }
 //
-//struct Dashboard_Previews: PreviewProvider {
+// struct Dashboard_Previews: PreviewProvider {
 //    static var previews: some View {
 //        var Location = CoreLocation()
 //        var Timer = StopWatchManager()
@@ -135,4 +135,4 @@
 //            .environmentObject(Timer)
 //            .environmentObject(firebaseManager)
 //    }
-//}
+// }

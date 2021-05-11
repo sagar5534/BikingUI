@@ -5,18 +5,17 @@
 //  Created by Sagar Patel on 2020-09-14.
 //
 
-import SwiftUI
 import Firebase
+import SwiftUI
 
 @main
 struct BikingUIApp: App {
-    
     @StateObject var core = CoreData.sharedInstance
-    
+
     init() {
         FirebaseApp.configure()
     }
-    
+
     var body: some Scene {
         WindowGroup {
 //            Start()
@@ -28,8 +27,6 @@ struct BikingUIApp: App {
 
 struct BikingUIApp_Previews: PreviewProvider {
     static var previews: some View {
-
         TabBar()
-
     }
 }

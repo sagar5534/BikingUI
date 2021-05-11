@@ -35,29 +35,27 @@ extension Double {
     }
 }
 
-//extension Timestamp {
+// extension Timestamp {
 //    func format() -> String {
 //        let formatter = DateFormatter()
 //        formatter.dateStyle = .medium
 //        formatter.doesRelativeDateFormatting = true
 //        return formatter.string(from: dateValue())
 //    }
-//}
+// }
 //
-//extension GeoPoint {
+// extension GeoPoint {
 //
 //    func toCLLocationCoordinate() -> CLLocationCoordinate2D {
 //        return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
 //    }
 //
-//}
+// }
 //
-//extension CLLocationCoordinate2D {
+// extension CLLocationCoordinate2D {
 //
 //    func toGeoPoint() -> GeoPoint {
 //        return GeoPoint(latitude: self.latitude, longitude: self.longitude)
 //    }
 //
-//}
-
-
+// }

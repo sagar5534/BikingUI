@@ -8,7 +8,7 @@
 import Foundation
 
 class Ticker: ObservableObject {
-    var startedAt: Date = Date()
+    var startedAt = Date()
 
     var timeIntervalSinceStarted: TimeInterval {
         return Date().timeIntervalSince(startedAt)

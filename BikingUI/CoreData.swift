@@ -5,18 +5,17 @@
 //  Created by Sagar on 2021-04-22.
 //
 
-import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Foundation
 
 class CoreData: ObservableObject {
-    
     static let sharedInstance = CoreData()
     private var db = Firestore.firestore()
-    
+
     @Published var name = ""
-    
+
     func getName() {
         db.collection("test").document("8AfzvuOdRmpcHyraDgEb")
             .addSnapshotListener { documentSnapshot, error in
@@ -32,6 +31,4 @@ class CoreData: ObservableObject {
                 print("Current data: \(data)")
             }
     }
-    
-    
 }

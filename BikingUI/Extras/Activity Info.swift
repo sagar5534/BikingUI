@@ -5,10 +5,10 @@
 ////  Created by Sagar on 2020-09-21.
 ////
 //
-//import SwiftUI
-//import MapKit
+// import SwiftUI
+// import MapKit
 //
-//struct Activity_Info: View {
+// struct Activity_Info: View {
 //    @State var activity: Activity
 //    @State var isConfirmView: Bool = false
 //    @State var textfieldData: String = ""
@@ -52,10 +52,10 @@
 //
 //        }
 //    }
-//}
+// }
 //
-//struct Activity_Info_Previews: PreviewProvider {
+// struct Activity_Info_Previews: PreviewProvider {
 //    static var previews: some View {
 //        Activity_Info(activity: Activity(), isConfirmView: true)
 //    }
-//}
+// }

@@ -5,9 +5,9 @@
 ////  Created by Sagar on 2020-09-19.
 ////
 //
-//import SwiftUI
+// import SwiftUI
 //
-//struct Dashboard_Map: View {
+// struct Dashboard_Map: View {
 //    @Binding var selectedTabViewPage: Int
 //    @EnvironmentObject var Location: CoreLocation
 //
@@ -18,7 +18,7 @@
 //
 //            Button(action: {
 //                withAnimation { selectedTabViewPage -= 1 }
-//            }, label: { 
+//            }, label: {
 //                ZStack {
 //                    Circle()
 //                        .shadow(radius: 3)
@@ -30,14 +30,14 @@
 //            })
 //                .frame(width: 100, height: 100, alignment: .center)
 //                .padding()
-//            
+//
 //        }
 //        .ignoresSafeArea()
 //    }
-//}
+// }
 //
-//struct DashMap_Previews: PreviewProvider {
+// struct DashMap_Previews: PreviewProvider {
 //    static var previews: some View {
 //        Dashboard_Map(selectedTabViewPage: .constant(2))
 //    }
-//}
+// }

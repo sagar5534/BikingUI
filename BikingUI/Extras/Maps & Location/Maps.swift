@@ -10,7 +10,6 @@ import MapKit
 import SwiftUI
 
 struct Map: UIViewRepresentable {
-
     func makeUIView(context _: Context) -> MKMapView {
         let mapView = MKMapView(frame: UIScreen.main.bounds)
 
@@ -28,7 +27,6 @@ struct Map: UIViewRepresentable {
 }
 
 struct Map_Tracking: UIViewRepresentable {
-    
     @Binding var coordinates: [CLLocationCoordinate2D]
     let mapViewDelegate = MapSummaryDelegate()
 
@@ -62,7 +60,6 @@ struct Map_Tracking: UIViewRepresentable {
     func makeRoute() -> MKPolyline {
         return MKPolyline(coordinates: &coordinates, count: coordinates.count)
     }
-    
 }
 
 struct Map_Summary: UIViewRepresentable {
@@ -88,7 +85,7 @@ struct Map_Summary: UIViewRepresentable {
         if !view.overlays.isEmpty {
             view.removeOverlays(view.overlays)
         }
-        
+
         let route = makeRoute()
         let mapRect = route.boundingMapRect
         view.setVisibleMapRect(

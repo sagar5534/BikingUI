@@ -9,11 +9,10 @@ import SwiftUI
 
 struct InsightScoreboard: View {
     var body: some View {
-        
-        VStack{
-            HStack(alignment: .top, spacing: nil){
+        VStack {
+            HStack(alignment: .top, spacing: nil) {
                 GroupBox(label: Text("Trips")) {
-                    VStack{
+                    VStack {
                         Spacer(minLength: 0)
                         InfoLabel(value: "4", unit: "trips")
                     }
@@ -24,11 +23,10 @@ struct InsightScoreboard: View {
                     .padding(.vertical)
 
                 GroupBox(label: Text("Avg\nSpeed")) {
-                    VStack{
+                    VStack {
                         Spacer(minLength: 0)
                         InfoLabel(value: "40", unit: "km/h")
                     }
-
                 }
                 .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
 
@@ -36,7 +34,7 @@ struct InsightScoreboard: View {
                     .padding(.vertical)
 
                 GroupBox(label: Text("Avg\nDistance")) {
-                    VStack{
+                    VStack {
                         Spacer(minLength: 0)
                         InfoLabel(value: "10", unit: "km")
                     }
@@ -45,30 +43,28 @@ struct InsightScoreboard: View {
             }
             .fixedSize(horizontal: false, vertical: true)
         }
-        
     }
 }
 
 private struct InsightsGroupBoxStyle: GroupBoxStyle {
     var color: Color
-    
+
     @ScaledMetric var size: CGFloat = 1
-    
+
     func makeBody(configuration: Configuration) -> some View {
         GroupBox(label:
-                    HStack {
-                        configuration.label
-                            .foregroundColor(color)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.4)
-                        
-                        Spacer(minLength: 0)
-                    }
+            HStack {
+                configuration.label
+                    .foregroundColor(color)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.4)
+
+                Spacer(minLength: 0)
+            }
         ) {
             configuration.content
                 .lineLimit(1)
                 .minimumScaleFactor(0.4)
-            
         }
     }
 }
@@ -76,16 +72,16 @@ private struct InsightsGroupBoxStyle: GroupBoxStyle {
 private struct InfoLabel: View {
     var value: String
     var unit: String
-    
+
     @ScaledMetric var size: CGFloat = 1
-    
+
     @ViewBuilder
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 0) {
             Spacer(minLength: 0)
             Text(value)
                 .font(.system(size: 24 * size, weight: .bold, design: .rounded))
-            
+
             Text(" \(unit)")
                 .font(.system(size: 14 * size, weight: .semibold, design: .rounded))
                 .foregroundColor(.secondary)
@@ -93,8 +89,6 @@ private struct InfoLabel: View {
         }
     }
 }
-
-
 
 struct InsightScoreboard_Previews: PreviewProvider {
     static var previews: some View {

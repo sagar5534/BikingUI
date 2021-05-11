@@ -32,15 +32,12 @@ struct Trip: Hashable, Codable, Identifiable {
 //    }
 }
 
-
 struct InsightHistory: View {
-    
     @State var trips: [Trip]
-    
+
     var body: some View {
-        
         GroupBox(label: Text("Recent Trips")) {
-            ScrollView{
+            ScrollView {
                 ForEach(trips) { trip in
                     NavigationLink(destination: Text(trip.name)) {
                         TripItemView(trip: trip)
@@ -50,68 +47,60 @@ struct InsightHistory: View {
             }
         }
         .groupBoxStyle(HistoryGroupBoxStyle(color: .red))
-        
     }
 }
 
 private struct TripItemView: View {
-    
     @State var trip: Trip
-    
-    var body: some View {
-        
-        VStack(alignment: .leading, spacing: 0) {
 
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
             Leading {
                 Text("Yesterday")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.black)
             }
-           
+
             Leading {
                 Text("Monday Evening Run")
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(.gray)
             }
-            
-            HStack(spacing: 20){
-                HStack{
+
+            HStack(spacing: 20) {
+                HStack {
                     Image(systemName: "ruler")
                     Text("10Km")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
-
                 }
-                HStack{
+                HStack {
                     Image(systemName: "timer")
                     Text("5'15")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
-
                 }
-                HStack{
+                HStack {
                     Image(systemName: "clock")
                     Text("0:25")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
-
                 }
             }
             .padding(.top)
         }
-        
     }
 }
 
 private struct HistoryGroupBoxStyle: GroupBoxStyle {
     var color: Color
-    
+
     @ScaledMetric var size: CGFloat = 1
-    
+
     func makeBody(configuration: Configuration) -> some View {
         GroupBox(label:
-                    HStack {
-                        configuration.label
-                            .foregroundColor(color)
-                        Spacer(minLength: 0)
-                    }
+            HStack {
+                configuration.label
+                    .foregroundColor(color)
+                Spacer(minLength: 0)
+            }
         ) {
             configuration.content
         }
@@ -120,15 +109,14 @@ private struct HistoryGroupBoxStyle: GroupBoxStyle {
 
 struct InsightHistory_Previews: PreviewProvider {
     static var previews: some View {
-        
         let trips: [Trip] = [
             Trip(id: 1, name: "Sagar"),
             Trip(id: 2, name: "Om"),
         ]
-        
+
         InsightHistory(trips: trips)
             .preferredColorScheme(.light)
-        
+
         TripItemView(trip: trips[0])
             .previewLayout(.sizeThatFits)
     }

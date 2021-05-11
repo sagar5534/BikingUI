@@ -29,11 +29,10 @@ class CoreLocation: NSObject, ObservableObject {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
     }
-    
+
     deinit {
         locationManager.stopUpdatingLocation()
     }
-    
 }
 
 extension CoreLocation: CLLocationManagerDelegate {
@@ -45,9 +44,8 @@ extension CoreLocation: CLLocationManagerDelegate {
             curSpeed = location.speed
             distance += location.distance(from: self.locations.last ?? location)
             self.locations.append(location)
-            self.coordinates.append(location.coordinate)
+            coordinates.append(location.coordinate)
             avgSpeed = avgSpeed + ((location.speed - avgSpeed) / Double(self.locations.count))
         }
-        
     }
 }

@@ -5,10 +5,10 @@
 ////  Created by Sagar on 2020-09-23.
 ////
 //
-//import SwiftUI
-//import MapKit
+// import SwiftUI
+// import MapKit
 //
-//struct ActivityCell: View {
+// struct ActivityCell: View {
 //
 //    @State var activity: Activity
 //
@@ -39,18 +39,18 @@
 //
 //        }.padding(10)
 //    }
-//}
+// }
 //
-//private struct DetailLabel: View {
+// private struct DetailLabel: View {
 //    @State var label: String
 //    var body: some View {
 //        Text(label)
 //            .font(.callout)
 //            .foregroundColor(.secondary)
 //    }
-//}
+// }
 //
-//private struct MainLabel: View {
+// private struct MainLabel: View {
 //    @State var label: String
 //    var body: some View {
 //        Text(label)
@@ -58,9 +58,9 @@
 //            .foregroundColor(.primary)
 //            .italic()
 //    }
-//}
+// }
 //
-//struct ActivityCell_Previews: PreviewProvider {
+// struct ActivityCell_Previews: PreviewProvider {
 //    static var previews: some View {
 //        List {
 //            NavigationLink(
@@ -71,4 +71,4 @@
 //            )
 //        }
 //    }
-//}
+// }

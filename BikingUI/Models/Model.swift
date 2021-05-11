@@ -5,10 +5,10 @@
 ////  Created by Sagar on 2020-09-23.
 ////
 //
-//import Foundation
-//import MapKit
+// import Foundation
+// import MapKit
 //
-//struct User: Identifiable, Codable {
+// struct User: Identifiable, Codable {
 //    @DocumentID var id: String? = UUID().uuidString
 //    var name: String
 //    var distance: Double
@@ -26,10 +26,10 @@
 //        avgSpeed = 0
 //        isKm = true
 //    }
-//}
+// }
 //
 //
-//struct Activity: Identifiable, Codable {
+// struct Activity: Identifiable, Codable {
 //    @DocumentID var id: String? = UUID().uuidString
 //    var tripName: String
 //    var distance: Double
@@ -64,4 +64,4 @@
 //        date = Timestamp()
 //        coordinates = location.coordinates.map{ $0.toGeoPoint() }
 //    }
-//}
+// }

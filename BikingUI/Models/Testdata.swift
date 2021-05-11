@@ -9,7 +9,6 @@ import Foundation
 import MapKit
 
 class testData: ObservableObject {
-    
     @Published var coords = [
         CLLocation(latitude: 43.67973480328126, longitude: -79.82698370506066),
         CLLocation(latitude: 43.67972791420599, longitude: -79.82698629711327),
@@ -73,9 +72,6 @@ class testData: ObservableObject {
         CLLocation(latitude: 43.67903293644175, longitude: -79.82704465304772),
         CLLocation(latitude: 43.679074321918115, longitude: -79.82712085710526),
         CLLocation(latitude: 43.67911428573998, longitude: -79.82716509733487),
-        CLLocation(latitude: 43.67911881835384, longitude: -79.827213862736)
+        CLLocation(latitude: 43.67911881835384, longitude: -79.827213862736),
     ]
-
-    
-    
 }

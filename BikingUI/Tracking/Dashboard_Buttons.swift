@@ -5,9 +5,9 @@
 ////  Created by Sagar on 2020-09-20.
 ////
 //
-//import SwiftUI
+// import SwiftUI
 //
-//struct Dashboard_Buttons_Pause: View {
+// struct Dashboard_Buttons_Pause: View {
 //    @Binding var isPaused: Bool
 //
 //    var body: some View {
@@ -24,9 +24,9 @@
 //        }
 //        .frame(width: 100, height: 100, alignment: .center)
 //    }
-//}
+// }
 //
-//struct Dashboard_Buttons_Stop: View {
+// struct Dashboard_Buttons_Stop: View {
 //    @Binding var isDone: Bool
 //
 //    @State private var ticker = Ticker()
@@ -83,13 +83,13 @@
 //            self.timePassed = self.ticker.timeIntervalSinceStarted
 //        }
 //    }
-//}
+// }
 //
-//struct Dashboard_Buttons_Previews: PreviewProvider {
+// struct Dashboard_Buttons_Previews: PreviewProvider {
 //    static var previews: some View {
 //        HStack {
 //            Dashboard_Buttons_Pause(isPaused: .constant(false))
 //            Dashboard_Buttons_Stop(isDone: .constant(false))
 //        }
 //    }
-//}
+// }

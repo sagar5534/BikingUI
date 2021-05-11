@@ -5,9 +5,9 @@
 ////  Created by Sagar on 2020-09-16.
 ////
 //
-//import SwiftUI
+// import SwiftUI
 //
-//struct ScoreBoard: View {
+// struct ScoreBoard: View {
 //
 //    var body: some View {
 //        VStack {
@@ -71,9 +71,9 @@
 //            .padding(.bottom)
 //        }
 //    }
-//}
+// }
 //
-//struct ScoreBoardDetail: View {
+// struct ScoreBoardDetail: View {
 //    @State var activity: Activity
 //
 //    var body: some View {
@@ -116,9 +116,9 @@
 //            .padding(.bottom)
 //        }
 //    }
-//}
+// }
 //
-//private struct MinorLabel: View {
+// private struct MinorLabel: View {
 //    @State var value: String
 //    @State var detail: String = ""
 //
@@ -135,16 +135,16 @@
 //        }
 //        .frame(maxWidth: .infinity)
 //    }
-//}
+// }
 //
-//struct ScoreBoard_Previews: PreviewProvider {
+// struct ScoreBoard_Previews: PreviewProvider {
 //    static var previews: some View {
 //
 //        ScoreBoard()
 //            .previewLayout(.fixed(width: 400, height: 250))
-//   
+//
 //
 //        ScoreBoardDetail(activity: Activity())
 //            .previewLayout(.fixed(width: 400, height: 250))
 //    }
-//}
+// }

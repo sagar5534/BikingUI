@@ -10,42 +10,44 @@ import SwiftUI
 struct InsightScoreboard: View {
     var body: some View {
         
-        HStack(alignment: .top, spacing: nil){
-            GroupBox(label: Text("Trips")) {
-                VStack{
-                    Spacer(minLength: 0)
-                    InfoLabel(value: "4", unit: "trips")
+        VStack{
+            HStack(alignment: .top, spacing: nil){
+                GroupBox(label: Text("Trips")) {
+                    VStack{
+                        Spacer(minLength: 0)
+                        InfoLabel(value: "4", unit: "trips")
+                    }
                 }
-            }
-            .groupBoxStyle(InsightsGroupBoxStyle(color: .red))
-            
-            Divider()
-                .padding(.vertical)
-            
-            GroupBox(label: Text("Avg\nSpeed")) {
-                VStack{
-                    Spacer(minLength: 0)
-                    InfoLabel(value: "40", unit: "km/h")
+                .groupBoxStyle(InsightsGroupBoxStyle(color: .red))
+
+                Divider()
+                    .padding(.vertical)
+
+                GroupBox(label: Text("Avg\nSpeed")) {
+                    VStack{
+                        Spacer(minLength: 0)
+                        InfoLabel(value: "40", unit: "km/h")
+                    }
+
                 }
-                
-            }
-            .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
-            
-            Divider()
-                .padding(.vertical)
-            
-            GroupBox(label: Text("Avg\nDistance")) {
-                VStack{
-                    Spacer(minLength: 0)
-                    InfoLabel(value: "10", unit: "km")
+                .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
+
+                Divider()
+                    .padding(.vertical)
+
+                GroupBox(label: Text("Avg\nDistance")) {
+                    VStack{
+                        Spacer(minLength: 0)
+                        InfoLabel(value: "10", unit: "km")
+                    }
                 }
+                .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
             }
-            .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
+            .fixedSize(horizontal: false, vertical: true)
         }
-        .fixedSize(horizontal: false, vertical: true)
         .background(Color(UIColor.systemBackground))
         .cornerRadius(10)
-        .shadow(color: Color.darkTextColorMain.opacity(0.1), radius: 5,x: 5,y: 1)
+        .shadow(color: Color.darkTextColorMain.opacity(0.1), radius: 5,x: 0,y: 0)
         
     }
 }

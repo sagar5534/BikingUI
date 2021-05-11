@@ -10,17 +10,22 @@ import SwiftUI
 
 struct Insights: View {
     
+    @State var trips: [Trip] = [
+        Trip(id: 1, name: "Sagar"),
+        Trip(id: 2, name: "Om"),
+    ]
+    
     var body: some View {
         
         VStack {
-            
             InsightScoreboard()
-                .padding()
+                .padding(.horizontal)
+                .padding(.top)
+            InsightHistory(trips: trips)
+                .padding(.horizontal)
             
             Spacer()
-            
         }
-        
         .navigationTitle("Insights")
     }
 }

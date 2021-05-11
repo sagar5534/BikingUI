@@ -20,7 +20,15 @@ struct TabBar: View {
         VStack {
             NavigationView {
                 containedView()
+                    .navigationBarTitleDisplayMode(.large)
+                    .navigationBarItems(leading:
+                        Image("profile")
+                        .resizable()
+                        .frame(width: 40, height: 40, alignment: .center)
+                        .clipShape(Circle())
+                    )
             }
+            
             Spacer()
             BottomBar(selectedIndex: $selectedIndex, items: items)
         }
@@ -30,6 +38,7 @@ struct TabBar: View {
          switch selectedIndex {
          case 0: return AnyView(Start()).id("Start")
          case 1: return AnyView(Insights()).id("History")
+         case 2: return AnyView(Settings()).id("Settings")
          default: return AnyView(Start()).id("Start")
          }
     }

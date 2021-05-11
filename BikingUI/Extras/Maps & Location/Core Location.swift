@@ -10,7 +10,6 @@ import CoreLocation
 import Foundation
 import MapKit
 import SwiftUI
-import SwiftUICharts
 import UIKit
 
 class CoreLocation: NSObject, ObservableObject {

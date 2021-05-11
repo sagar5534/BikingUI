@@ -11,8 +11,9 @@
 		1B0DABC62510517300926415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC52510517300926415 /* Assets.xcassets */; };
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
+		1B163B42264734B100AABF52 /* InsightHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B163B41264734B100AABF52 /* InsightHistory.swift */; };
 		1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* Testdata.swift */; };
-		1B71DB0D263743E6009A2BAD /* BikeTypeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71DB0C263743E6009A2BAD /* BikeTypeBarView.swift */; };
+		1B6A209E264A276B00D7DAA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A209D264A276B00D7DAA8 /* Settings.swift */; };
 		1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */; };
 		1B74D8912632941E0062D691 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8902632941E0062D691 /* CoreData.swift */; };
 		1B74D8C32632AD6C0062D691 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B74D8C22632AD6C0062D691 /* GoogleService-Info.plist */; };
@@ -54,8 +55,9 @@
 		1B0DABC82510517300926415 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B0DABCA2510517300926415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		1B163B41264734B100AABF52 /* InsightHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightHistory.swift; sourceTree = "<group>"; };
 		1B27E133251EC53D00A83B02 /* Testdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testdata.swift; sourceTree = "<group>"; };
-		1B71DB0C263743E6009A2BAD /* BikeTypeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeTypeBarView.swift; sourceTree = "<group>"; };
+		1B6A209D264A276B00D7DAA8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTripBox.swift; sourceTree = "<group>"; };
 		1B74D8902632941E0062D691 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		1B74D8C22632AD6C0062D691 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -139,6 +141,7 @@
 				1B74D8E52633A0830062D691 /* Tab Bar */,
 				1BC1DB5025114B6D008D5162 /* Start Page */,
 				1BE732BB2512730D0073E5C8 /* Insights */,
+				1B6A209C264A275200D7DAA8 /* Settings */,
 				1B9A0ECE2515B7B70017AD07 /* Tracking */,
 				1B896DB2251B00B6005A3CED /* Models */,
 				1BC1DB4D25113E23008D5162 /* Extras */,
@@ -157,6 +160,14 @@
 				1B0DABC82510517300926415 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1B6A209C264A275200D7DAA8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1B6A209D264A276B00D7DAA8 /* Settings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		1B74D8E52633A0830062D691 /* Tab Bar */ = {
@@ -238,7 +249,6 @@
 				1B0DABD0251052B700926415 /* Start.swift */,
 				1B74D8C726335D810062D691 /* Start_VModel.swift */,
 				1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */,
-				1B71DB0C263743E6009A2BAD /* BikeTypeBarView.swift */,
 			);
 			path = "Start Page";
 			sourceTree = "<group>";
@@ -248,9 +258,10 @@
 			children = (
 				1BE732BC2512731E0073E5C8 /* Insights.swift */,
 				1B7868782638E65200362C58 /* InsightScoreboard.swift */,
-				1BE732C025128C120073E5C8 /* ScoreBoard.swift */,
+				1B163B41264734B100AABF52 /* InsightHistory.swift */,
 				1B896D3725197489005A3CED /* ActivityDetail.swift */,
 				1B9E0F08251C30830062F320 /* Activity Cell.swift */,
+				1BE732C025128C120073E5C8 /* ScoreBoard.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -386,13 +397,13 @@
 				1B9A0EE4251740600017AD07 /* StopWatch.swift in Sources */,
 				1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */,
 				1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */,
+				1B163B42264734B100AABF52 /* InsightHistory.swift in Sources */,
 				1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */,
 				1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */,
 				1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */,
 				1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */,
 				1B9A0EF925185B8A0017AD07 /* Dashboard_Buttons.swift in Sources */,
 				1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */,
-				1B71DB0D263743E6009A2BAD /* BikeTypeBarView.swift in Sources */,
 				1B896DB8251B011C005A3CED /* Firebase.swift in Sources */,
 				1BE134C625342D6A006273E6 /* Dash_Pause.swift in Sources */,
 				1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */,
@@ -403,6 +414,7 @@
 				1BE732BD2512731E0073E5C8 /* Insights.swift in Sources */,
 				1B9E0EF0251C28FD0062F320 /* Maps.swift in Sources */,
 				1B74D8C826335D810062D691 /* Start_VModel.swift in Sources */,
+				1B6A209E264A276B00D7DAA8 /* Settings.swift in Sources */,
 				1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */,
 				1B9E0F09251C30830062F320 /* Activity Cell.swift in Sources */,
 				1B9E0F28251D82570062F320 /* Extensions.swift in Sources */,
@@ -612,7 +624,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
-				branch = "new-version";
+				branch = master;
 				kind = branch;
 			};
 		};

@@ -30,6 +30,7 @@ struct TabBar: View {
 
             Spacer()
             BottomBar(selectedIndex: $selectedIndex, items: items)
+                .padding(.bottom, 5)
         }
     }
 

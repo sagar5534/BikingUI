@@ -10,14 +10,10 @@ import SwiftUI
 struct Trip: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-//    var park: String
-//    var state: String
-//    var description: String
-
-//    private var imageName: String
-//    var image: Image {
-//        Image(imageName)
-//    }
+    var date: Date
+    var distance: Double
+    var time: Double
+    var pace: Double
 
 //    private var coordinates: Coordinates
 //    var locationCoordinate: CLLocationCoordinate2D {
@@ -36,8 +32,21 @@ struct InsightHistory: View {
     @State var trips: [Trip]
 
     var body: some View {
-        GroupBox(label: Text("Recent Trips")) {
-            ScrollView {
+        GroupBox(label:
+
+            HStack {
+                Text("Recent Trips")
+                Spacer()
+                NavigationLink(
+                    destination: Text("Destination"),
+                    label: {
+                        Text("See All")
+                            .foregroundColor(.blue)
+                    })
+            }
+
+        ) {
+            VStack {
                 ForEach(trips) { trip in
                     NavigationLink(destination: Text(trip.name)) {
                         TripItemView(trip: trip)
@@ -45,6 +54,7 @@ struct InsightHistory: View {
                     Divider()
                 }
             }
+            .padding(.top, 5)
         }
         .groupBoxStyle(HistoryGroupBoxStyle(color: .red))
     }
@@ -56,13 +66,14 @@ private struct TripItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Leading {
+                //TODO
                 Text("Yesterday")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.black)
             }
 
             Leading {
-                Text("Monday Evening Run")
+                Text(trip.name)
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(.gray)
             }
@@ -70,15 +81,17 @@ private struct TripItemView: View {
             HStack(spacing: 20) {
                 HStack {
                     Image(systemName: "ruler")
-                    Text("10Km")
+                    Text(trip.distance.format(precision: 1) + " Km")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                 }
                 HStack {
                     Image(systemName: "timer")
-                    Text("5'15")
+                    Text(trip.time.toTime(pad: true,units: [NSCalendar.Unit.minute, NSCalendar.Unit.hour]))
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                 }
+                
                 HStack {
+                    //TODO
                     Image(systemName: "clock")
                     Text("0:25")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
@@ -110,8 +123,8 @@ private struct HistoryGroupBoxStyle: GroupBoxStyle {
 struct InsightHistory_Previews: PreviewProvider {
     static var previews: some View {
         let trips: [Trip] = [
-            Trip(id: 1, name: "Sagar"),
-            Trip(id: 2, name: "Om"),
+            Trip(id: 1, name: "Sagar", date: Date(), distance: 10, time: 50000, pace: 0.25),
+            Trip(id: 2, name: "Om", date: Date(), distance: 15, time: 7000, pace: 1.25),
         ]
 
         InsightHistory(trips: trips)

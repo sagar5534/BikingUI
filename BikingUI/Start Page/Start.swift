@@ -35,7 +35,7 @@ struct Start: View {
 
             Spacer()
         }
-        .navigationTitle("Home")
+        .navigationTitle("Good Morning, Sagar!")
     }
 }
 

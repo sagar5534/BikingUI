@@ -9,20 +9,26 @@ import Foundation
 import MapKit
 
 extension Double {
-    func toTime(pad: Bool) -> String {
+    
+    func toTime(
+        pad: Bool = true,
+        units: NSCalendar.Unit = [NSCalendar.Unit.second, NSCalendar.Unit.minute, NSCalendar.Unit.hour]
+    ) -> String {
+        
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
         formatter.includesApproximationPhrase = false
         formatter.includesTimeRemainingPhrase = false
+        
         if pad { formatter.zeroFormattingBehavior = .pad }
-        formatter.allowedUnits = [.second, .minute, .hour]
+        formatter.allowedUnits = units
         return formatter.string(from: self) ?? ""
     }
 
-    func format() -> String {
+    func format(precision: Int = 2) -> String {
         let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = precision
+        formatter.minimumFractionDigits = precision
         return formatter.string(for: self) ?? ""
     }
 

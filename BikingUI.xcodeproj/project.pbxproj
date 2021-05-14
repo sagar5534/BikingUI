@@ -25,7 +25,6 @@
 		1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8DA263371FE0062D691 /* BottomBarItem.swift */; };
 		1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */; };
 		1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7868782638E65200362C58 /* InsightScoreboard.swift */; };
-		1B896D3825197489005A3CED /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3725197489005A3CED /* ActivityDetail.swift */; };
 		1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3D251993D6005A3CED /* ActivityOverview.swift */; };
 		1B896D4225199411005A3CED /* Activity Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D4125199411005A3CED /* Activity Info.swift */; };
 		1B896DB8251B011C005A3CED /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896DB7251B011C005A3CED /* Firebase.swift */; };
@@ -39,13 +38,11 @@
 		1B9A0EE82518150E0017AD07 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9A0EE72518150E0017AD07 /* SwiftUICharts */; };
 		1B9A0EF925185B8A0017AD07 /* Dashboard_Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */; };
 		1B9E0EF0251C28FD0062F320 /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0EEF251C28FD0062F320 /* Maps.swift */; };
-		1B9E0F09251C30830062F320 /* Activity Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F08251C30830062F320 /* Activity Cell.swift */; };
 		1B9E0F28251D82570062F320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F27251D82570062F320 /* Extensions.swift */; };
 		1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E0F2C251D8F810062F320 /* Ticker.swift */; };
 		1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1DB4E25113E9A008D5162 /* Leading Element.swift */; };
 		1BE134C625342D6A006273E6 /* Dash_Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE134C525342D6A006273E6 /* Dash_Pause.swift */; };
 		1BE732BD2512731E0073E5C8 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732BC2512731E0073E5C8 /* Insights.swift */; };
-		1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732C025128C120073E5C8 /* ScoreBoard.swift */; };
 		FD17DC42CCA34F821CC92831 /* Pods_BikingUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590E2552687948C031DCA97A /* Pods_BikingUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +67,6 @@
 		1B74D8DA263371FE0062D691 /* BottomBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectsBlur.swift; sourceTree = "<group>"; };
 		1B7868782638E65200362C58 /* InsightScoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightScoreboard.swift; sourceTree = "<group>"; };
-		1B896D3725197489005A3CED /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		1B896D3D251993D6005A3CED /* ActivityOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverview.swift; sourceTree = "<group>"; };
 		1B896D4125199411005A3CED /* Activity Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Info.swift"; sourceTree = "<group>"; };
 		1B896DB7251B011C005A3CED /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
@@ -83,13 +79,11 @@
 		1B9A0EE3251740600017AD07 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		1B9A0EF825185B8A0017AD07 /* Dashboard_Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_Buttons.swift; sourceTree = "<group>"; };
 		1B9E0EEF251C28FD0062F320 /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
-		1B9E0F08251C30830062F320 /* Activity Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Cell.swift"; sourceTree = "<group>"; };
 		1B9E0F27251D82570062F320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1B9E0F2C251D8F810062F320 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		1BC1DB4E25113E9A008D5162 /* Leading Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leading Element.swift"; sourceTree = "<group>"; };
 		1BE134C525342D6A006273E6 /* Dash_Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash_Pause.swift; sourceTree = "<group>"; };
 		1BE732BC2512731E0073E5C8 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
-		1BE732C025128C120073E5C8 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		590E2552687948C031DCA97A /* Pods_BikingUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikingUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CF29BE3D6C13C9AC4EA094 /* Pods-BikingUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikingUI.debug.xcconfig"; path = "Target Support Files/Pods-BikingUI/Pods-BikingUI.debug.xcconfig"; sourceTree = "<group>"; };
 		D0467456A8DB5115383F584C /* Pods-BikingUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikingUI.release.xcconfig"; path = "Target Support Files/Pods-BikingUI/Pods-BikingUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,9 +178,9 @@
 		1B78687C2638EB8B00362C58 /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */,
 				1B74D8D7263371FE0062D691 /* BottomBar.swift */,
 				1B74D8DA263371FE0062D691 /* BottomBarItem.swift */,
+				1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */,
 				1B74D8D9263371FE0062D691 /* BarBuilder.swift */,
 			);
 			path = CustomTabBar;
@@ -262,9 +256,6 @@
 				1BE732BC2512731E0073E5C8 /* Insights.swift */,
 				1B7868782638E65200362C58 /* InsightScoreboard.swift */,
 				1B163B41264734B100AABF52 /* InsightHistory.swift */,
-				1B896D3725197489005A3CED /* ActivityDetail.swift */,
-				1B9E0F08251C30830062F320 /* Activity Cell.swift */,
-				1BE732C025128C120073E5C8 /* ScoreBoard.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -418,12 +409,9 @@
 				1B9E0EF0251C28FD0062F320 /* Maps.swift in Sources */,
 				1B74D8C826335D810062D691 /* Start_VModel.swift in Sources */,
 				1B6A209E264A276B00D7DAA8 /* Settings.swift in Sources */,
-				1BE732C125128C120073E5C8 /* ScoreBoard.swift in Sources */,
-				1B9E0F09251C30830062F320 /* Activity Cell.swift in Sources */,
 				1B9E0F28251D82570062F320 /* Extensions.swift in Sources */,
 				1B896DBC251B03A0005A3CED /* Model.swift in Sources */,
 				1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */,
-				1B896D3825197489005A3CED /* ActivityDetail.swift in Sources */,
 				1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */,
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,

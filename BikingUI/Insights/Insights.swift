@@ -9,20 +9,20 @@ import SwiftUI
 
 struct Insights: View {
     @State var trips: [Trip] = [
-        Trip(id: 1, name: "Sagar"),
-        Trip(id: 2, name: "Om"),
+        Trip(id: 1, name: "Sagar", date: Date(), distance: 10, time: 5.15, pace: 0.25),
+        Trip(id: 2, name: "Om", date: Date(), distance: 15, time: 6.15, pace: 1.25),
     ]
 
     var body: some View {
         VStack {
             InsightScoreboard()
+                .boxShadow()
                 .padding(.horizontal)
                 .padding(.top)
-                .boxShadow()
 
             InsightHistory(trips: trips)
-                .padding(.horizontal)
                 .boxShadow()
+                .padding(.horizontal)
 
             Spacer()
         }

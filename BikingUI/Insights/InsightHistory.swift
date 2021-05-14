@@ -7,29 +7,8 @@
 
 import SwiftUI
 
-struct Trip: Hashable, Codable, Identifiable {
-    var id: Int
-    var name: String
-    var date: Date
-    var distance: Double
-    var time: Double
-    var pace: Double
-
-//    private var coordinates: Coordinates
-//    var locationCoordinate: CLLocationCoordinate2D {
-//        CLLocationCoordinate2D(
-//            latitude: coordinates.latitude,
-//            longitude: coordinates.longitude)
-//    }
-//
-//    struct Coordinates: Hashable, Codable {
-//        var latitude: Double
-//        var longitude: Double
-//    }
-}
-
 struct InsightHistory: View {
-    @State var trips: [Trip]
+    @State var trips: Trips
 
     var body: some View {
         GroupBox(label:
@@ -48,7 +27,7 @@ struct InsightHistory: View {
         ) {
             VStack {
                 ForEach(trips) { trip in
-                    NavigationLink(destination: Text(trip.name)) {
+                    NavigationLink(destination: Text(trip.tripName)) {
                         TripItemView(trip: trip)
                     }
                     Divider()
@@ -61,7 +40,7 @@ struct InsightHistory: View {
 }
 
 private struct TripItemView: View {
-    @State var trip: Trip
+    @State var trip: Activity
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -73,7 +52,7 @@ private struct TripItemView: View {
             }
 
             Leading {
-                Text(trip.name)
+                Text(trip.tripName)
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(.gray)
             }
@@ -86,7 +65,7 @@ private struct TripItemView: View {
                 }
                 HStack {
                     Image(systemName: "timer")
-                    Text(trip.time.toTime(pad: true,units: [NSCalendar.Unit.minute, NSCalendar.Unit.hour]))
+                    Text(trip.movingTime.toTime(pad: true,units: [NSCalendar.Unit.minute, NSCalendar.Unit.hour]))
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                 }
                 
@@ -122,9 +101,9 @@ private struct HistoryGroupBoxStyle: GroupBoxStyle {
 
 struct InsightHistory_Previews: PreviewProvider {
     static var previews: some View {
-        let trips: [Trip] = [
-            Trip(id: 1, name: "Sagar", date: Date(), distance: 10, time: 50000, pace: 0.25),
-            Trip(id: 2, name: "Om", date: Date(), distance: 15, time: 7000, pace: 1.25),
+        let trips: Trips = [
+            Activity(tripName: "Monday Afternoon", distance: 10.55, movingTime: 1000, totalTime: 1200, avgSpeed: 20.3, fastestSpeed: 70.0),
+            Activity(tripName: "Sunday Afternoon", distance: 12.55, movingTime: 2000, totalTime: 2500, avgSpeed: 17.1, fastestSpeed: 30)
         ]
 
         InsightHistory(trips: trips)

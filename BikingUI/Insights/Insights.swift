@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct Insights: View {
-    @State var trips: [Trip] = [
-        Trip(id: 1, name: "Sagar", date: Date(), distance: 10, time: 5.15, pace: 0.25),
-        Trip(id: 2, name: "Om", date: Date(), distance: 15, time: 6.15, pace: 1.25),
-    ]
+    @State var trips: Trips = []
 
     var body: some View {
         VStack {
@@ -32,8 +29,14 @@ struct Insights: View {
 
 struct History_Previews: PreviewProvider {
     static var previews: some View {
+        
+        let trips: Trips = [
+            Activity(tripName: "Monday Afternoon", distance: 10.55, movingTime: 1000, totalTime: 1200, avgSpeed: 20.3, fastestSpeed: 70.0),
+            Activity(tripName: "Sunday Afternoon", distance: 12.55, movingTime: 2000, totalTime: 2500, avgSpeed: 17.1, fastestSpeed: 30)
+        ]
+
         NavigationView {
-            Insights()
+            Insights(trips: trips)
         }
     }
 }

@@ -55,7 +55,7 @@ struct InfoTextView: View {
     }
 }
 
-struct InfoCardGroupBox: GroupBoxStyle {
+private struct InfoCardGroupBox: GroupBoxStyle {
     var color: Color
 
     @ScaledMetric var size: CGFloat = 1

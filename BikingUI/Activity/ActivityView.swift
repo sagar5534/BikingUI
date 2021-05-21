@@ -5,8 +5,8 @@
 //  Created by Sagar on 2021-05-14.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct ViewOffsetKey: PreferenceKey {
     typealias Value = CGFloat
@@ -17,12 +17,11 @@ struct ViewOffsetKey: PreferenceKey {
 }
 
 struct ActivityView: View {
-    
     @State private var showPopover: Bool = false
     @State private var off = CGFloat.zero
 
     @ObservedObject var test = testData()
-    
+
     var x = [
         CLLocation(latitude: 43.67973480328126, longitude: -79.82698370506066),
         CLLocation(latitude: 43.67972791420599, longitude: -79.82698629711327),
@@ -88,40 +87,130 @@ struct ActivityView: View {
         CLLocation(latitude: 43.67911428573998, longitude: -79.82716509733487),
         CLLocation(latitude: 43.67911881835384, longitude: -79.827213862736),
     ]
-    
+
     var body: some View {
-        
         GeometryReader { geometry in
 
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     Image("")
                         .resizable()
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.66, alignment: .center)
-                    
-                    Image("profile")
-                        .resizable()
-                        .frame(width: geometry.size.width, height: 1000, alignment: .center)
-                }
-                .background(
-                    GeometryReader {
-                        Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
-                    }
-                )
-                .onPreferenceChange(ViewOffsetKey.self) { offset in
-                    self.off = offset
-                    print(self.off)
+                        .frame(width: geometry.size.width,
+                               height: geometry.size.height * 0.66,
+                               alignment: .center)
+
+                    ActivityDetail()
+                        .frame(width: geometry.size.width,
+                               height: 1000,
+                               alignment: .center)
+                        .cornerRadius(30)
                 }
             }
-            .coordinateSpace(name: "scroll")
             .background(
                 Map_Summary(coordinates: x.map { $0.coordinate }, bottomSpacing: geometry.size.height * 0.33)
                     .edgesIgnoringSafeArea(.top)
             )
         }
-
     }
-    
+}
+
+private struct ActivityDetail: View {
+    @State var x = ""
+    var body: some View {
+            
+            VStack {
+                
+                Capsule(style: .circular)
+                    .foregroundColor(.backgroundColor)
+                    .frame(width: 60, height: 6, alignment: .center)
+                    .padding()
+                
+                GroupBox(label: Label("Trip Name", systemImage: "mappin.and.ellipse")) {
+                    TextField("Monday Morning Trip", text: $x)
+                        .font(.system(size: 24 * 1, weight: .bold, design: .rounded))
+                        
+                }
+                .groupBoxStyle(InfoCardGroupBox(color: .blue))
+                
+                Divider()
+                    .padding(.horizontal)
+
+                GroupBox(label: Label("Details", systemImage: "rosette")) {
+                    HStack {
+                        Spacer()
+                        InfoLabel(value: "40", unit: "km/h")
+                        Spacer()
+
+                        Divider()
+
+                        Spacer()
+                        InfoLabel(value: "40", unit: "km/h")
+                        Spacer()
+
+                        Divider()
+
+                        Group {
+                            Spacer()
+                            InfoLabel(value: "40", unit: "km/h")
+                            Spacer()
+                        }
+                    }
+                    .frame(height: 70, alignment: .center)
+                }
+                .groupBoxStyle(InfoCardGroupBox(color: .blue))
+
+                Divider()
+                    .padding(.horizontal)
+                
+                Spacer()
+            }
+            .background(Color.white)
+
+        
+    }
+}
+
+
+private struct InfoCardGroupBox: GroupBoxStyle {
+    var color: Color
+
+    @ScaledMetric var size: CGFloat = 1
+
+    func makeBody(configuration: Configuration) -> some View {
+        GroupBox(label: HStack {
+            configuration.label
+                .foregroundColor(color)
+                .scaledToFit()
+                .minimumScaleFactor(0.5)
+                .lineLimit(2)
+
+            Spacer()
+        }) {
+            configuration.content.padding(.top)
+        }
+    }
+}
+
+
+private struct InfoLabel: View {
+    var value: String
+    var unit: String
+
+    @ScaledMetric var size: CGFloat = 1
+
+    @ViewBuilder
+    var body: some View {
+        VStack(alignment: .center, spacing: 0) {
+            Spacer(minLength: 0)
+            Text(value)
+                .font(.system(size: 24 * size, weight: .bold, design: .rounded))
+
+            Text(" \(unit)")
+                .font(.system(size: 16 * size, weight: .semibold, design: .rounded))
+                .foregroundColor(.secondary)
+            Spacer(minLength: 0)
+        }
+    }
 }
 
 struct ActivityView_Previews: PreviewProvider {

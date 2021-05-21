@@ -1,15 +1,29 @@
 //
-//  File.swift
+//  ActivityView.swift
 //  BikingUI
 //
-//  Created by Sagar on 2020-09-25.
+//  Created by Sagar on 2021-05-14.
 //
 
-import Foundation
+import SwiftUI
 import MapKit
 
-class testData: ObservableObject {
-    @Published var coords = [
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
+    }
+}
+
+struct ActivityView: View {
+    
+    @State private var showPopover: Bool = false
+    @State private var off = CGFloat.zero
+
+    @ObservedObject var test = testData()
+    
+    var x = [
         CLLocation(latitude: 43.67973480328126, longitude: -79.82698370506066),
         CLLocation(latitude: 43.67972791420599, longitude: -79.82698629711327),
         CLLocation(latitude: 43.679729534382716, longitude: -79.82698371605805),
@@ -74,6 +88,44 @@ class testData: ObservableObject {
         CLLocation(latitude: 43.67911428573998, longitude: -79.82716509733487),
         CLLocation(latitude: 43.67911881835384, longitude: -79.827213862736),
     ]
-
     
+    var body: some View {
+        
+        GeometryReader { geometry in
+
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    Image("")
+                        .resizable()
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.66, alignment: .center)
+                    
+                    Image("profile")
+                        .resizable()
+                        .frame(width: geometry.size.width, height: 1000, alignment: .center)
+                }
+                .background(
+                    GeometryReader {
+                        Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
+                    }
+                )
+                .onPreferenceChange(ViewOffsetKey.self) { offset in
+                    self.off = offset
+                    print(self.off)
+                }
+            }
+            .coordinateSpace(name: "scroll")
+            .background(
+                Map_Summary(coordinates: x.map { $0.coordinate }, bottomSpacing: geometry.size.height * 0.33)
+                    .edgesIgnoringSafeArea(.top)
+            )
+        }
+
+    }
+    
+}
+
+struct ActivityView_Previews: PreviewProvider {
+    static var previews: some View {
+        ActivityView()
+    }
 }

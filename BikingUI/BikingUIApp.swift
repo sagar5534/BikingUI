@@ -17,7 +17,8 @@ struct BikingUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabBar()
+//            TabBar()
+            ActivityView()
         }
     }
 }

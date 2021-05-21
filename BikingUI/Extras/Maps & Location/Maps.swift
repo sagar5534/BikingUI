@@ -63,8 +63,10 @@ struct Map_Tracking: UIViewRepresentable {
 }
 
 struct Map_Summary: UIViewRepresentable {
-    @Binding var coordinates: [CLLocationCoordinate2D]
+    @State var coordinates: [CLLocationCoordinate2D]
     @State var spacing: CGFloat = 15
+    @State var bottomSpacing: CGFloat = 15
+    
     let mapViewDelegate = MapSummaryDelegate()
 
     func makeUIView(context _: Context) -> MKMapView {
@@ -90,7 +92,7 @@ struct Map_Summary: UIViewRepresentable {
         let mapRect = route.boundingMapRect
         view.setVisibleMapRect(
             mapRect,
-            edgePadding: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing),
+            edgePadding: UIEdgeInsets(top: spacing, left: spacing, bottom: bottomSpacing + spacing, right: spacing),
             animated: true
         )
         view.addOverlay(route)

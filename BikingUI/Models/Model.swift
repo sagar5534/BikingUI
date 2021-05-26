@@ -5,10 +5,10 @@
 //  Created by Sagar on 2020-09-23.
 //
 
- import Foundation
- import MapKit
+import Foundation
+import MapKit
 
- struct User: Identifiable, Codable {
+struct User: Identifiable, Codable {
     var id: String? = UUID().uuidString
     var name: String
     var distance: Double
@@ -26,7 +26,7 @@
         avgSpeed = 0
         isKm = true
     }
- }
+}
 
 typealias Trips = [Activity]
 
@@ -41,7 +41,6 @@ struct Activity: Hashable, Identifiable, Codable {
 //    var date: Timestamp
 //    var coordinates: [GeoPoint]
 
-
     init() {
         id = UUID().uuidString
         tripName = ""
@@ -53,7 +52,7 @@ struct Activity: Hashable, Identifiable, Codable {
 //        date = Timestamp()
 //        coordinates = []
     }
-    
+
     init(
         tripName: String,
         distance: Double,
@@ -69,7 +68,7 @@ struct Activity: Hashable, Identifiable, Codable {
         self.avgSpeed = avgSpeed
         self.fastestSpeed = fastestSpeed
     }
-    
+
     init(location: CoreLocation, timer: StopWatchManager) {
         id = UUID().uuidString
         tripName = ""
@@ -81,4 +80,4 @@ struct Activity: Hashable, Identifiable, Codable {
 //        date = Timestamp()
 //        coordinates = location.coordinates.map{ $0.toGeoPoint() }
     }
- }
+}

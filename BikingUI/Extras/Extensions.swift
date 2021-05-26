@@ -9,17 +9,15 @@ import Foundation
 import MapKit
 
 extension Double {
-    
     func toTime(
         pad: Bool = true,
         units: NSCalendar.Unit = [NSCalendar.Unit.second, NSCalendar.Unit.minute, NSCalendar.Unit.hour]
     ) -> String {
-        
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
         formatter.includesApproximationPhrase = false
         formatter.includesTimeRemainingPhrase = false
-        
+
         if pad { formatter.zeroFormattingBehavior = .pad }
         formatter.allowedUnits = units
         return formatter.string(from: self) ?? ""

@@ -10,7 +10,7 @@ import SwiftUICharts
 
 struct Dashboard: View {
     @Binding var isDone: Bool
-    
+
     @State var isPaused: Bool = false
 
     @EnvironmentObject var Location: CoreLocation
@@ -18,7 +18,6 @@ struct Dashboard: View {
 
     var body: some View {
         VStack {
-            
             if isPaused == false {
                 Dashboard_Time(timer: Timer)
                 Dashboard_Speed(Location: Location)
@@ -26,7 +25,6 @@ struct Dashboard: View {
             }
 
             Dashboard_Controls()
-            
         }
         .onAppear {
             Timer.start()

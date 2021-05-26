@@ -74,6 +74,4 @@ class testData: ObservableObject {
         CLLocation(latitude: 43.67911428573998, longitude: -79.82716509733487),
         CLLocation(latitude: 43.67911881835384, longitude: -79.827213862736),
     ]
-
-    
 }

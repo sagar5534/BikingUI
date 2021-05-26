@@ -26,7 +26,7 @@ struct Start: View {
                 .groupBoxStyle(InfoCardGroupBox(color: .blue))
                 .boxShadow()
             }
-            .padding(.horizontal) 
+            .padding(.horizontal)
             .padding(.top)
 
             StartTripBox()

@@ -9,5 +9,6 @@ target 'BikingUI' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-
+  pod 'Alamofire'
+  pod 'AlamofireImage'	
 end

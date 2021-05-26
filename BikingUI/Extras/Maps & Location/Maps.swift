@@ -66,7 +66,7 @@ struct Map_Summary: UIViewRepresentable {
     @State var coordinates: [CLLocationCoordinate2D]
     @State var spacing: CGFloat = 15
     @State var bottomSpacing: CGFloat = 15
-    
+
     let mapViewDelegate = MapSummaryDelegate()
 
     func makeUIView(context _: Context) -> MKMapView {

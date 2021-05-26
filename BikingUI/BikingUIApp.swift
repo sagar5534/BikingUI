@@ -10,7 +10,6 @@ import SwiftUI
 
 @main
 struct BikingUIApp: App {
-
     init() {
         FirebaseApp.configure()
     }

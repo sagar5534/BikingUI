@@ -8,20 +8,8 @@
 import MapKit
 import SwiftUI
 
-struct ViewOffsetKey: PreferenceKey {
-    typealias Value = CGFloat
-    static var defaultValue = CGFloat.zero
-    static func reduce(value: inout Value, nextValue: () -> Value) {
-        value += nextValue()
-    }
-}
-
 struct ActivityView: View {
-    @State private var showPopover: Bool = false
-    @State private var off = CGFloat.zero
-
-    @ObservedObject var test = testData()
-
+    
     var x = [
         CLLocation(latitude: 43.67973480328126, longitude: -79.82698370506066),
         CLLocation(latitude: 43.67972791420599, longitude: -79.82698629711327),
@@ -87,7 +75,7 @@ struct ActivityView: View {
         CLLocation(latitude: 43.67911428573998, longitude: -79.82716509733487),
         CLLocation(latitude: 43.67911881835384, longitude: -79.827213862736),
     ]
-
+    
     var body: some View {
         GeometryReader { geometry in
 
@@ -114,62 +102,164 @@ struct ActivityView: View {
     }
 }
 
+
+
 private struct ActivityDetail: View {
-    @State var x = ""
+    
     var body: some View {
+        VStack {
+            Capsule(style: .circular)
+                .foregroundColor(.backgroundColor)
+                .frame(width: 60, height: 6, alignment: .center)
+                .padding()
+
+            TripName()
+
+            Divider()
+                .padding(.horizontal)
+
+            TripStats()
             
-            VStack {
-                
-                Capsule(style: .circular)
-                    .foregroundColor(.backgroundColor)
-                    .frame(width: 60, height: 6, alignment: .center)
-                    .padding()
-                
-                GroupBox(label: Label("Trip Name", systemImage: "mappin.and.ellipse")) {
-                    TextField("Monday Morning Trip", text: $x)
-                        .font(.system(size: 24 * 1, weight: .bold, design: .rounded))
-                        
-                }
-                .groupBoxStyle(InfoCardGroupBox(color: .blue))
-                
-                Divider()
-                    .padding(.horizontal)
+            Divider()
+                .padding(.horizontal)
 
-                GroupBox(label: Label("Details", systemImage: "rosette")) {
-                    HStack {
-                        Spacer()
-                        InfoLabel(value: "40", unit: "km/h")
-                        Spacer()
+            TripWeather()
 
-                        Divider()
+            Divider()
+                .padding(.horizontal)
 
-                        Spacer()
-                        InfoLabel(value: "40", unit: "km/h")
-                        Spacer()
+            Spacer()
+        }
+        .background(Color.white)
+    }
+}
 
-                        Divider()
 
-                        Group {
-                            Spacer()
-                            InfoLabel(value: "40", unit: "km/h")
-                            Spacer()
-                        }
-                    }
-                    .frame(height: 70, alignment: .center)
-                }
-                .groupBoxStyle(InfoCardGroupBox(color: .blue))
+private struct TripName: View {
+    
+    @State var tripName = ""
 
-                Divider()
-                    .padding(.horizontal)
-                
-                Spacer()
+    var body: some View {
+        
+        GroupBox(label: Label("Trip Name", systemImage: "mappin.and.ellipse")) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text("May 5, 2021")
+                    .font(.system(size: 16 * 1, weight: .semibold, design: .rounded))
+
+                TextField("Monday Morning Trip", text: $tripName)
+                    .font(.system(size: 24 * 1, weight: .bold, design: .rounded))
             }
-            .background(Color.white)
-
+        }
+        .groupBoxStyle(InfoCardGroupBox(color: .blue))
         
     }
 }
 
+private struct TripStats: View {
+    
+    var body: some View {
+        
+        GroupBox(label: Label("Details", systemImage: "rosette")) {
+            HStack(alignment: .top) {
+                InfoLabel(value: "15.4", unit: "Kilometers")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                Divider()
+                InfoLabel(value: "14:34", unit: "Moving Time")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                Divider()
+            }
+            .fixedSize(horizontal: false, vertical: true)
+
+            Divider()
+                .padding(.horizontal)
+
+            HStack(alignment: .top) {
+                InfoLabel(value: "05:14", unit: "Pace")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                Divider()
+                InfoLabel(value: "17.4", unit: "Speed")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                Divider()
+                InfoLabel(value: "+4m", unit: "Elevation")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+            }
+            .fixedSize(horizontal: false, vertical: true)
+        }
+        .groupBoxStyle(InfoCardGroupBox(color: .blue))
+        
+    }
+}
+
+private struct TripWeather: View {
+    
+    @ObservedObject var weatherapi = WeatherAPI(location: "Toronto, CA")
+
+    var body: some View {
+        
+        GroupBox(label: Label("Weather", systemImage: "cloud.sun.fill")) {
+            HStack(alignment: .center, spacing: 0) {
+                HStack(alignment: .top, spacing: 0) {
+                    
+                    let temp = weatherapi.weather?.main?.temp ?? 0
+                    
+                    Text(temp < 0 ? "-" : "+")
+                        .font(.system(size: 23 * 2, weight: .regular, design: .rounded))
+                    
+                    let formatted = String(format: "%0.0f", temp)
+                    Text(formatted)
+                        .font(.system(size: 30 * 2, weight: .medium, design: .rounded))
+
+                    Text("°C")
+                        .font(.system(size: 15 * 2, weight: .medium, design: .default))
+                }
+                
+                if ((weatherapi.icon) != nil) {
+                    Image(uiImage: weatherapi.icon!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 120, height: 120, alignment: .center)
+                        .clipped()
+                        .frame(width: 70, height: 70, alignment: .center)
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing) {
+                    Spacer()
+
+                    Text(weatherapi.weather?.weather?.first?.weatherMsg ?? "")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundColor(.secondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.trailing)
+                    
+
+                    HStack {
+                        let temp = weatherapi.weather?.main?.feelsLike ?? 0
+                        let formatted = String(format: "%0.0f", temp)
+
+                        Text("Feels Like ")
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .foregroundColor(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.trailing)
+                        Text((temp < 0 ? "-" : "+") + formatted)
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .foregroundColor(.primary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.trailing)
+                    }
+                }
+            }
+            .frame(height: 70, alignment: .center)
+        }
+        .groupBoxStyle(InfoCardGroupBox(color: .blue))
+        
+    }
+}
 
 private struct InfoCardGroupBox: GroupBoxStyle {
     var color: Color
@@ -183,14 +273,13 @@ private struct InfoCardGroupBox: GroupBoxStyle {
                 .scaledToFit()
                 .minimumScaleFactor(0.5)
                 .lineLimit(2)
-
             Spacer()
         }) {
-            configuration.content.padding(.top)
+            configuration.content
+                .padding(.top)
         }
     }
 }
-
 
 private struct InfoLabel: View {
     var value: String
@@ -201,13 +290,16 @@ private struct InfoLabel: View {
     @ViewBuilder
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            Spacer(minLength: 0)
             Text(value)
                 .font(.system(size: 24 * size, weight: .bold, design: .rounded))
 
-            Text(" \(unit)")
+            Text(unit)
                 .font(.system(size: 16 * size, weight: .semibold, design: .rounded))
                 .foregroundColor(.secondary)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
+
             Spacer(minLength: 0)
         }
     }
@@ -216,5 +308,6 @@ private struct InfoLabel: View {
 struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
         ActivityView()
+        ActivityDetail()
     }
 }

@@ -21,7 +21,8 @@ struct InsightHistory: View {
                     label: {
                         Text("See All")
                             .foregroundColor(.blue)
-                    })
+                    }
+                )
             }
 
         ) {
@@ -45,7 +46,7 @@ private struct TripItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Leading {
-                //TODO
+                // TODO:
                 Text("Yesterday")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.black)
@@ -65,12 +66,12 @@ private struct TripItemView: View {
                 }
                 HStack {
                     Image(systemName: "timer")
-                    Text(trip.movingTime.toTime(pad: true,units: [NSCalendar.Unit.minute, NSCalendar.Unit.hour]))
+                    Text(trip.movingTime.toTime(pad: true, units: [NSCalendar.Unit.minute, NSCalendar.Unit.hour]))
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                 }
-                
+
                 HStack {
-                    //TODO
+                    // TODO:
                     Image(systemName: "clock")
                     Text("0:25")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
@@ -103,7 +104,7 @@ struct InsightHistory_Previews: PreviewProvider {
     static var previews: some View {
         let trips: Trips = [
             Activity(tripName: "Monday Afternoon", distance: 10.55, movingTime: 1000, totalTime: 1200, avgSpeed: 20.3, fastestSpeed: 70.0),
-            Activity(tripName: "Sunday Afternoon", distance: 12.55, movingTime: 2000, totalTime: 2500, avgSpeed: 17.1, fastestSpeed: 30)
+            Activity(tripName: "Sunday Afternoon", distance: 12.55, movingTime: 2000, totalTime: 2500, avgSpeed: 17.1, fastestSpeed: 30),
         ]
 
         InsightHistory(trips: trips)

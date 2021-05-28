@@ -25,6 +25,7 @@ struct StartTripBox: View {
     }()
 
     var body: some View {
+        
         ZStack {
             Image("lightmap")
                 .resizable()
@@ -32,11 +33,12 @@ struct StartTripBox: View {
                 .blur(radius: 0.1, opaque: true)
 
             VStack {
-                HStack {
-                    Text("Start a \nTrip")
-                        .font(.system(size: 35, weight: .bold, design: .default))
-                    Spacer()
+                Leading {
+                    Text("Start a Trip")
+                        .font(.system(size: 30, weight: .bold, design: .default))
                 }
+                .padding(.horizontal)
+                .padding(.top)
 
                 HStack(alignment: .center) {
                     ForEach(0 ..< items.count) { index in
@@ -51,25 +53,25 @@ struct StartTripBox: View {
                     }
                     Spacer()
                 }
+                .padding(.horizontal)
 
                 Spacer()
 
-                HStack {
-                    HStack {
+                Button(action: {}, label: {
+                    Leading {
+                        Spacer()
                         Text("Start")
-                            .font(.system(size: 25, weight: .heavy))
+                            .font(.system(size: 22, weight: .semibold))
+                            .foregroundColor(.blue)
                         Image(systemName: "arrow.forward")
                             .resizable()
-                            .frame(width: 20, height: 20, alignment: .center)
-                            .font(.system(size: 25, weight: .heavy))
+                            .frame(width: 15, height: 12, alignment: .center)
+                            .font(.system(size: 23, weight: .medium))
+                            .foregroundColor(.blue)
                     }
+                })
                     .padding()
-                    .background(Capsule().fill(Color.red.opacity(0.2)))
-
-                    Spacer()
-                }
             }
-            .padding()
         }
     }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B03F0FB265E083700134728 /* TripWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F0FA265E083700134728 /* TripWeather.swift */; };
+		1B03F0FE265E088800134728 /* TripStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F0FD265E088800134728 /* TripStats.swift */; };
+		1B03F101265E094D00134728 /* TripName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F100265E094C00134728 /* TripName.swift */; };
+		1B03F109265F5D7F00134728 /* Color Hex Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F108265F5D7F00134728 /* Color Hex Ext.swift */; };
 		1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABC12510517200926415 /* BikingUIApp.swift */; };
 		1B0DABC62510517300926415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC52510517300926415 /* Assets.xcassets */; };
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
@@ -24,8 +28,6 @@
 		1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8DA263371FE0062D691 /* BottomBarItem.swift */; };
 		1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */; };
 		1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7868782638E65200362C58 /* InsightScoreboard.swift */; };
-		1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D3D251993D6005A3CED /* ActivityOverview.swift */; };
-		1B896D4225199411005A3CED /* Activity Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896D4125199411005A3CED /* Activity Info.swift */; };
 		1B896DB8251B011C005A3CED /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896DB7251B011C005A3CED /* Firebase.swift */; };
 		1B896DBC251B03A0005A3CED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896DBB251B03A0005A3CED /* Model.swift */; };
 		1B8B7E002658CA4D00E2A317 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B7DFF2658CA4D00E2A317 /* Weather.swift */; };
@@ -48,6 +50,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B03F0FA265E083700134728 /* TripWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripWeather.swift; sourceTree = "<group>"; };
+		1B03F0FD265E088800134728 /* TripStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStats.swift; sourceTree = "<group>"; };
+		1B03F100265E094C00134728 /* TripName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripName.swift; sourceTree = "<group>"; };
+		1B03F108265F5D7F00134728 /* Color Hex Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Hex Ext.swift"; sourceTree = "<group>"; };
 		1B0DABBE2510517200926415 /* BikingUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikingUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0DABC12510517200926415 /* BikingUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikingUIApp.swift; sourceTree = "<group>"; };
 		1B0DABC52510517300926415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,8 +73,6 @@
 		1B74D8DA263371FE0062D691 /* BottomBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectsBlur.swift; sourceTree = "<group>"; };
 		1B7868782638E65200362C58 /* InsightScoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightScoreboard.swift; sourceTree = "<group>"; };
-		1B896D3D251993D6005A3CED /* ActivityOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverview.swift; sourceTree = "<group>"; };
-		1B896D4125199411005A3CED /* Activity Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity Info.swift"; sourceTree = "<group>"; };
 		1B896DB7251B011C005A3CED /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		1B896DBB251B03A0005A3CED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1B8B7DFF2658CA4D00E2A317 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -111,6 +115,17 @@
 				D0467456A8DB5115383F584C /* Pods-BikingUI.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1B03F103265E09EF00134728 /* Activity Components */ = {
+			isa = PBXGroup;
+			children = (
+				1B03F100265E094C00134728 /* TripName.swift */,
+				1B03F0FD265E088800134728 /* TripStats.swift */,
+				1B03F0FA265E083700134728 /* TripWeather.swift */,
+				1B8B7DFF2658CA4D00E2A317 /* Weather.swift */,
+			);
+			path = "Activity Components";
 			sourceTree = "<group>";
 		};
 		1B0DABB52510517200926415 = {
@@ -205,7 +220,6 @@
 				1B9A0EF825185B8A0017AD07 /* Dashboard Buttons.swift */,
 				1B9A0ED72515DAEB0017AD07 /* Dash_TabManager.swift */,
 				1B9A0ED42515DADB0017AD07 /* Dashboard_Map.swift */,
-				1B896D3D251993D6005A3CED /* ActivityOverview.swift */,
 			);
 			path = Tracking;
 			sourceTree = "<group>";
@@ -235,9 +249,9 @@
 				1B9E0F2B251D8F690062F320 /* Stopwatch & Timers */,
 				1B9E0F2A251D8F310062F320 /* Maps & Location */,
 				1BC1DB4E25113E9A008D5162 /* Leading Element.swift */,
-				1B896D4125199411005A3CED /* Activity Info.swift */,
 				1B9E0F27251D82570062F320 /* Extensions.swift */,
 				1B6A20A0264A2AF800D7DAA8 /* BoxShadow.swift */,
+				1B03F108265F5D7F00134728 /* Color Hex Ext.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -246,8 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				1B0DABD0251052B700926415 /* Start.swift */,
-				1B74D8C726335D810062D691 /* Start_VModel.swift */,
 				1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */,
+				1B74D8C726335D810062D691 /* Start_VModel.swift */,
 			);
 			path = "Start Page";
 			sourceTree = "<group>";
@@ -256,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				1BCE0DE6264F0D7300532406 /* ActivityView.swift */,
-				1B8B7DFF2658CA4D00E2A317 /* Weather.swift */,
+				1B03F103265E09EF00134728 /* Activity Components */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -400,19 +414,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B9A0EE4251740600017AD07 /* StopWatch.swift in Sources */,
+				1B03F101265E094D00134728 /* TripName.swift in Sources */,
 				1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */,
+				1B03F109265F5D7F00134728 /* Color Hex Ext.swift in Sources */,
 				1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */,
 				1B163B42264734B100AABF52 /* InsightHistory.swift in Sources */,
 				1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */,
 				1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */,
-				1B896D3E251993D6005A3CED /* ActivityOverview.swift in Sources */,
 				1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */,
 				1B9A0EF925185B8A0017AD07 /* Dashboard Buttons.swift in Sources */,
+				1B03F0FE265E088800134728 /* TripStats.swift in Sources */,
 				1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */,
 				1B896DB8251B011C005A3CED /* Firebase.swift in Sources */,
 				1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */,
 				1B9A0ED02515B9F60017AD07 /* Dashboard.swift in Sources */,
-				1B896D4225199411005A3CED /* Activity Info.swift in Sources */,
 				1B74D8DB263371FE0062D691 /* BottomBar.swift in Sources */,
 				1B74D8DD263371FE0062D691 /* BarBuilder.swift in Sources */,
 				1BCE0DDF264EF46B00532406 /* Dashboard Components.swift in Sources */,
@@ -428,6 +443,7 @@
 				1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */,
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,
+				1B03F0FB265E083700134728 /* TripWeather.swift in Sources */,
 				1B6A20A1264A2AF800D7DAA8 /* BoxShadow.swift in Sources */,
 				1B9A0ED82515DAEB0017AD07 /* Dash_TabManager.swift in Sources */,
 				1B8D542725116252000CBB56 /* TabBar.swift in Sources */,

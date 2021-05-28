@@ -5,6 +5,7 @@
 //  Created by Sagar on 2020-09-24.
 //
 
+import FirebaseFirestore
 import Foundation
 import MapKit
 
@@ -39,14 +40,15 @@ extension Double {
     }
 }
 
-// extension Timestamp {
-//    func format() -> String {
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .medium
-//        formatter.doesRelativeDateFormatting = true
-//        return formatter.string(from: dateValue())
-//    }
-// }
+extension Timestamp {
+    func format() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.doesRelativeDateFormatting = true
+        return formatter.string(from: dateValue())
+    }
+}
+
 //
 // extension GeoPoint {
 //

@@ -11,25 +11,24 @@ import Foundation
 import SwiftUI
 
 class WeatherAPI: ObservableObject {
-    
     @Published var weather: WeatherResponse? = nil
     @Published var icon: UIImage? = nil
-    
+
     init(location: String) {
         getWeather(location: location)
     }
-    
+
     func getWeather(location: String) {
         let url = "https://api.openweathermap.org/data/2.5/weather"
         let apiKey = "c7bc2b3e65eea423b6ef65996a980b33"
         let units = "metric"
-        
+
         let param = [
             "q": location,
             "appid": apiKey,
-            "units": units
+            "units": units,
         ]
-        
+
         AF.request(url, parameters: param)
             .validate()
             .responseDecodable(of: WeatherResponse.self) { response in
@@ -41,30 +40,29 @@ class WeatherAPI: ObservableObject {
                 self.getIcon()
             }
     }
-    
+
     func getIcon() {
         let url = "https://openweathermap.org/img/wn/04n@4x.png"
 
         AF.request(url)
             .responseImage { response in
-                if case .success(let image) = response.result {
+                if case let .success(image) = response.result {
                     self.icon = image
                 }
             }
     }
-    
 }
 
-
 // MARK: - WeatherResponse
+
 struct WeatherResponse: Codable {
     let weather: [Weather]?
     let main: Main?
     let wind: Wind?
 }
 
-
 // MARK: - Main
+
 struct Main: Codable {
     let temp, feelsLike, tempMin, tempMax: Double?
     let pressure, humidity: Int?
@@ -78,8 +76,8 @@ struct Main: Codable {
     }
 }
 
-
 // MARK: - Weather
+
 struct Weather: Codable {
     let id: Int
     let weatherMsg, weatherDescription, icon: String
@@ -93,6 +91,7 @@ struct Weather: Codable {
 }
 
 // MARK: - Wind
+
 struct Wind: Codable {
     let speed: Double?
     let deg: Int?

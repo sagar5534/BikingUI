@@ -17,7 +17,7 @@ struct InsightScoreboard: View {
                         InfoLabel(value: "4", unit: "trips")
                     }
                 }
-                .groupBoxStyle(InsightsGroupBoxStyle(color: .red))
+                .groupBoxStyle(InsightsGroupBoxStyle(color: .orange))
 
                 Divider()
                     .padding(.vertical)
@@ -28,7 +28,7 @@ struct InsightScoreboard: View {
                         InfoLabel(value: "40", unit: "km/h")
                     }
                 }
-                .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
+                .groupBoxStyle(InsightsGroupBoxStyle(color: .orange))
 
                 Divider()
                     .padding(.vertical)
@@ -39,7 +39,7 @@ struct InsightScoreboard: View {
                         InfoLabel(value: "10", unit: "km")
                     }
                 }
-                .groupBoxStyle(InsightsGroupBoxStyle(color: .blue))
+                .groupBoxStyle(InsightsGroupBoxStyle(color: .orange))
             }
             .fixedSize(horizontal: false, vertical: true)
         }
@@ -73,21 +73,22 @@ private struct InfoLabel: View {
     var value: String
     var unit: String
 
-    @ScaledMetric var size: CGFloat = 1
-
     @ViewBuilder
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 0) {
             Spacer(minLength: 0)
             Text(value)
-                .font(.system(size: 24 * size, weight: .bold, design: .rounded))
+                .font(.system(size: 24, weight: .bold, design: .default))
 
             Text(" \(unit)")
-                .font(.system(size: 14 * size, weight: .semibold, design: .rounded))
+//                .font(.system(size: 14, weight: .semibold, design: .default))
+                .font(.system(size: 15, weight: .regular, design: .default))
+
                 .foregroundColor(.secondary)
             Spacer(minLength: 0)
         }
     }
+    
 }
 
 struct InsightScoreboard_Previews: PreviewProvider {

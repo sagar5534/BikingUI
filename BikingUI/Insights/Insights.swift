@@ -5,33 +5,91 @@
 //  Created by Sagar on 2020-09-16.
 //
 
+import FirebaseFirestore
 import SwiftUI
 
 struct Insights: View {
-    @State var trips: Trips = []
+    @State var trips: Trips = [
+        Activity(tripName: "Monday Afternoon",
+                 distance: 10.55,
+                 movingTime: 1000,
+                 totalTime: 1200,
+                 speed: 20.3,
+                 pace: 45,
+                 elevation: 70.0,
+                 date: Timestamp()),
+        Activity(tripName: "Sunday Afternoon",
+                 distance: 12.55,
+                 movingTime: 2000,
+                 totalTime: 2500,
+                 speed: 20.3,
+                 pace: 45,
+                 elevation: 70.0,
+                 date: Timestamp()),
+        Activity(tripName: "Monday Afternoon",
+                 distance: 10.55,
+                 movingTime: 1000,
+                 totalTime: 1200,
+                 speed: 20.3,
+                 pace: 45,
+                 elevation: 70.0,
+                 date: Timestamp()),
+        Activity(tripName: "Sunday Afternoon",
+                 distance: 12.55,
+                 movingTime: 2000,
+                 totalTime: 2500,
+                 speed: 20.3,
+                 pace: 45,
+                 elevation: 70.0,
+                 date: Timestamp()),
+        Activity(tripName: "Monday Afternoon",
+                 distance: 10.55,
+                 movingTime: 1000,
+                 totalTime: 1200,
+                 speed: 20.3,
+                 pace: 45,
+                 elevation: 70.0,
+                 date: Timestamp())
+    ]
 
     var body: some View {
-        VStack {
+        ScrollView {
             InsightScoreboard()
-                .boxShadow()
-                .padding(.horizontal)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                )
                 .padding(.top)
+                .padding(.horizontal)
+
 
             InsightHistory(trips: trips)
-                .boxShadow()
-                .padding(.horizontal)
+//                .padding(.horizontal)
 
             Spacer()
         }
-        .navigationTitle("Insights")
     }
 }
 
 struct History_Previews: PreviewProvider {
     static var previews: some View {
         let trips: Trips = [
-            Activity(tripName: "Monday Afternoon", distance: 10.55, movingTime: 1000, totalTime: 1200, avgSpeed: 20.3, fastestSpeed: 70.0),
-            Activity(tripName: "Sunday Afternoon", distance: 12.55, movingTime: 2000, totalTime: 2500, avgSpeed: 17.1, fastestSpeed: 30),
+            Activity(tripName: "Monday Afternoon",
+                     distance: 10.55,
+                     movingTime: 1000,
+                     totalTime: 1200,
+                     speed: 20.3,
+                     pace: 45,
+                     elevation: 70.0,
+                     date: Timestamp()),
+            Activity(tripName: "Sunday Afternoon",
+                     distance: 12.55,
+                     movingTime: 2000,
+                     totalTime: 2500,
+                     speed: 20.3,
+                     pace: 45,
+                     elevation: 70.0,
+                     date: Timestamp()),
         ]
 
         NavigationView {

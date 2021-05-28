@@ -10,16 +10,17 @@ import SwiftUI
 
 @main
 struct BikingUIApp: App {
+    
     init() {
         FirebaseApp.configure()
     }
 
     var body: some Scene {
         WindowGroup {
-//            TabBar()
-            ActivityView()
+            TabBar()
         }
     }
+    
 }
 
 struct BikingUIApp_Previews: PreviewProvider {

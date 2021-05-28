@@ -32,10 +32,10 @@ struct Start: View {
             StartTripBox()
                 .boxShadow()
                 .padding(.horizontal)
+                .padding(.bottom)
 
-            Spacer()
         }
-        .navigationTitle("Good Morning, Sagar!")
+        .modifier(NavBar(title: "Good Morning!"))
     }
 }
 
@@ -67,7 +67,6 @@ private struct InfoCardGroupBox: GroupBoxStyle {
                 .scaledToFit()
                 .minimumScaleFactor(0.5)
                 .lineLimit(2)
-
             Spacer()
         }) {
             configuration.content.padding(.top)

@@ -73,10 +73,10 @@ private struct InfoLabel: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             Text(value)
-                .font(.system(size: 24 * size, weight: .bold, design: .rounded))
+                .font(.system(size: 24, weight: .bold, design: .default))
 
             Text(unit)
-                .font(.system(size: 16 * size, weight: .semibold, design: .rounded))
+                .font(.system(size: 15, weight: .regular, design: .default))
                 .foregroundColor(.secondary)
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)

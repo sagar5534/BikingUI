@@ -90,17 +90,9 @@ struct ActivityView: View {
                                alignment: .center)
 
                     ActivityDetail(trip: trip)
-                        .frame(width: geometry.size.width,
-                               height: 1000,
-                               alignment: .center)
                         .cornerRadius(30)
                 }
             }
-            .transition(.move(edge: .bottom))
-            .onAppear() {
-//                UIScrollView.appearance().contentInset = UIEdgeInsets(top: 500, left: 0, bottom: 0, right: 0)
-            }
-            
             .background(
                 Map_Summary(coordinates: x.map { $0.coordinate }, bottomSpacing: geometry.size.height * 0.33)
                     .edgesIgnoringSafeArea(.top)
@@ -109,33 +101,39 @@ struct ActivityView: View {
     }
 }
 
-private struct ActivityDetail: View {
+struct ActivityDetail: View {
     @State var trip: Activity
-
+    
     var body: some View {
-        VStack {
-            
-            Capsule(style: .circular)
-                .foregroundColor(.backgroundColor)
-                .frame(width: 60, height: 6, alignment: .center)
-                .padding()
 
-            TripName(trip: trip)
+            VStack {
 
-            Divider().padding(.horizontal)
+                Capsule(style: .circular)
+                    .foregroundColor(.backgroundColor)
+                    .frame(width: 60, height: 6, alignment: .center)
+                    .padding()
 
-            TripStats(trip: trip)
+                TripName(trip: trip)
 
-            Divider().padding(.horizontal)
+                Divider().padding(.horizontal)
 
-            TripWeather()
+                TripStats(trip: trip)
 
-            Divider().padding(.horizontal)
+                Divider().padding(.horizontal)
 
-            Spacer()
-        }
-        .background(Color.white)
+                Group {
+                    TripWeather()
+                }
+
+                Divider().padding(.horizontal)
+
+                Spacer()
+
+            }
+            .background(Color.white)
+        
     }
+    
 }
 
 

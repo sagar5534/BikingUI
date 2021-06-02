@@ -11,6 +11,7 @@
 		1B03F0FE265E088800134728 /* TripStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F0FD265E088800134728 /* TripStats.swift */; };
 		1B03F101265E094D00134728 /* TripName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F100265E094C00134728 /* TripName.swift */; };
 		1B03F109265F5D7F00134728 /* Color Hex Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F108265F5D7F00134728 /* Color Hex Ext.swift */; };
+		1B03F10C26607EC200134728 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03F10B26607EC200134728 /* Test.swift */; };
 		1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABC12510517200926415 /* BikingUIApp.swift */; };
 		1B0DABC62510517300926415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC52510517300926415 /* Assets.xcassets */; };
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		1B03F0FD265E088800134728 /* TripStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStats.swift; sourceTree = "<group>"; };
 		1B03F100265E094C00134728 /* TripName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripName.swift; sourceTree = "<group>"; };
 		1B03F108265F5D7F00134728 /* Color Hex Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Hex Ext.swift"; sourceTree = "<group>"; };
+		1B03F10B26607EC200134728 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		1B0DABBE2510517200926415 /* BikingUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikingUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0DABC12510517200926415 /* BikingUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikingUIApp.swift; sourceTree = "<group>"; };
 		1B0DABC52510517300926415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +125,6 @@
 				1B03F100265E094C00134728 /* TripName.swift */,
 				1B03F0FD265E088800134728 /* TripStats.swift */,
 				1B03F0FA265E083700134728 /* TripWeather.swift */,
-				1B8B7DFF2658CA4D00E2A317 /* Weather.swift */,
 			);
 			path = "Activity Components";
 			sourceTree = "<group>";
@@ -182,6 +183,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		1B6F152A26674AD7006D59FC /* WeatherAPI & View */ = {
+			isa = PBXGroup;
+			children = (
+				1B8B7DFF2658CA4D00E2A317 /* Weather.swift */,
+			);
+			path = "WeatherAPI & View";
+			sourceTree = "<group>";
+		};
 		1B74D8E52633A0830062D691 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +214,7 @@
 		1B896DB2251B00B6005A3CED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1B6F152A26674AD7006D59FC /* WeatherAPI & View */,
 				1B896DB7251B011C005A3CED /* Firebase.swift */,
 				1B896DBB251B03A0005A3CED /* Model.swift */,
 				1B27E133251EC53D00A83B02 /* Testdata.swift */,
@@ -270,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				1BCE0DE6264F0D7300532406 /* ActivityView.swift */,
+				1B03F10B26607EC200134728 /* Test.swift */,
 				1B03F103265E09EF00134728 /* Activity Components */,
 			);
 			path = Activity;
@@ -442,6 +453,7 @@
 				1B8B7E002658CA4D00E2A317 /* Weather.swift in Sources */,
 				1B9E0F2D251D8F810062F320 /* Ticker.swift in Sources */,
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
+				1B03F10C26607EC200134728 /* Test.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,
 				1B03F0FB265E083700134728 /* TripWeather.swift in Sources */,
 				1B6A20A1264A2AF800D7DAA8 /* BoxShadow.swift in Sources */,

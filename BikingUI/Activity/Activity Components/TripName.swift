@@ -15,10 +15,12 @@ struct TripName: View {
         GroupBox(label: Label("Trip Name", systemImage: "mappin.and.ellipse")) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(trip.date.format())
-                    .font(.system(size: 16 * 1, weight: .semibold, design: .rounded))
+                    .font(.system(size: 15, weight: .regular, design: .default))
+                    .foregroundColor(.secondary)
 
                 TextField("Monday Morning Trip", text: $trip.tripName)
-                    .font(.system(size: 24 * 1, weight: .bold, design: .rounded))
+                    .font(.system(size: 24, weight: .medium, design: .default))
+                    .foregroundColor(.primary)
             }
         }
         .groupBoxStyle(InfoCardGroupBox(color: .blue))

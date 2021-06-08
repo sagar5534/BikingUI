@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/AppPear/ChartView",
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect",
         "state": {
-          "branch": "master",
-          "revision": "9115a992c91fa19cbb4f2241084240d38654a1fc",
-          "version": null
+          "branch": null,
+          "revision": "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
+          "version": "0.1.3"
         }
       }
     ]

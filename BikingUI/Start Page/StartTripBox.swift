@@ -25,7 +25,6 @@ struct StartTripBox: View {
     }()
 
     var body: some View {
-        
         ZStack {
             Image("lightmap")
                 .resizable()

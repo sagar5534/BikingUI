@@ -7,8 +7,10 @@
 
 import FirebaseFirestore
 import SwiftUI
+import MapKit
 
 struct Insights: View {
+    
     @State var trips: Trips = [
         Activity(tripName: "Monday Afternoon",
                  distance: 10.55,
@@ -49,22 +51,18 @@ struct Insights: View {
                  speed: 20.3,
                  pace: 45,
                  elevation: 70.0,
-                 date: Timestamp())
+                 date: Timestamp()),
     ]
 
     var body: some View {
         ScrollView {
             InsightScoreboard()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.gray.opacity(0.4), lineWidth: 1)
-                )
                 .padding(.top)
                 .padding(.horizontal)
 
-
             InsightHistory(trips: trips)
-//                .padding(.horizontal)
+                .padding(.top)
+                .padding(.horizontal)
 
             Spacer()
         }

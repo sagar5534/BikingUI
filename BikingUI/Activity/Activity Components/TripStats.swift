@@ -5,61 +5,37 @@
 //  Created by Sagar on 2021-05-25.
 //
 
-import SwiftUI
 import FirebaseFirestore
+import SwiftUI
 
 struct TripStats: View {
     @State var trip: Activity
 
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+
     var body: some View {
-        GroupBox(label: Label("Details", systemImage: "rosette")) {
-            HStack(alignment: .top) {
-                InfoLabel(value: trip.distance.format(precision: 1), unit: "Kilometers")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                Divider()
-                InfoLabel(value: String(trip.movingTime.toTime(pad: false)), unit: "Moving Time")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-            }
-            .fixedSize(horizontal: false, vertical: true)
+        
+        ContentBox(label: "Details") {
+            
 
-            Divider()
-                .padding(.horizontal)
-
-            HStack(alignment: .top) {
-                InfoLabel(value: String(trip.pace.toTime(pad: false)), unit: "Pace")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                Divider()
-                InfoLabel(value: trip.speed.format(precision: 1), unit: "Speed")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                Divider()
-
+            LazyVGrid(columns: columns, spacing: 40) {
+                
                 let elevLabel = (trip.elevation > 0 ? "+" : "-") + trip.elevation.format(precision: 0) + "m"
+                
+                InfoLabel(value: trip.distance.format(precision: 1), unit: "Kilometers")
+                InfoLabel(value: String(trip.movingTime.toTime(pad: false)), unit: "Moving Time")
+                InfoLabel(value: trip.speed.format(precision: 1), unit: "Speed")
+                InfoLabel(value: String(trip.pace.toTime(pad: false)), unit: "Pace")
                 InfoLabel(value: elevLabel, unit: "Elevation")
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                
             }
-            .fixedSize(horizontal: false, vertical: true)
+            
         }
-        .groupBoxStyle(InfoCardGroupBox(color: .blue))
-    }
-}
-
-private struct InfoCardGroupBox: GroupBoxStyle {
-    var color: Color
-
-    @ScaledMetric var size: CGFloat = 1
-
-    func makeBody(configuration: Configuration) -> some View {
-        GroupBox(label: HStack {
-            configuration.label
-                .foregroundColor(color)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-                .lineLimit(2)
-            Spacer()
-        }) {
-            configuration.content
-                .padding(.top)
-        }
+        
     }
 }
 
@@ -87,7 +63,6 @@ private struct InfoLabel: View {
     }
 }
 
-
 struct TripStats_Previews: PreviewProvider {
     static var previews: some View {
         let trip = Activity(
@@ -100,7 +75,7 @@ struct TripStats_Previews: PreviewProvider {
             elevation: 70.0,
             date: Timestamp()
         )
-        
+
         TripStats(trip: trip)
     }
 }

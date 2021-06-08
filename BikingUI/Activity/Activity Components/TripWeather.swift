@@ -11,35 +11,14 @@ struct TripWeather: View {
     @ObservedObject var weatherapi = WeatherAPI(location: "Toronto, CA")
 
     var body: some View {
-        GroupBox(label: Label("Weather", systemImage: "cloud.sun.fill")) {
+        ContentBox(label:"Weather") {
             HStack(alignment: .center, spacing: 0) {
                 WeatherIcon()
                 Spacer()
                 RightDetail()
             }
         }
-        .groupBoxStyle(InfoCardGroupBox(color: .blue))
         .environmentObject(weatherapi)
-    }
-}
-
-private struct InfoCardGroupBox: GroupBoxStyle {
-    var color: Color
-
-    @ScaledMetric var size: CGFloat = 1
-
-    func makeBody(configuration: Configuration) -> some View {
-        GroupBox(label: HStack {
-            configuration.label
-                .foregroundColor(color)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-                .lineLimit(2)
-            Spacer()
-        }) {
-            configuration.content
-                .padding(.top)
-        }
     }
 }
 

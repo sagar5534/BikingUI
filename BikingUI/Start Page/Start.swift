@@ -33,7 +33,6 @@ struct Start: View {
                 .boxShadow()
                 .padding(.horizontal)
                 .padding(.bottom)
-
         }
         .modifier(NavBar(title: "Good Morning!"))
     }
@@ -55,24 +54,24 @@ struct InfoTextView: View {
     }
 }
 
-private struct InfoCardGroupBox: GroupBoxStyle {
-    var color: Color
-
-    @ScaledMetric var size: CGFloat = 1
-
-    func makeBody(configuration: Configuration) -> some View {
-        GroupBox(label: HStack {
-            configuration.label
-                .foregroundColor(color)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-                .lineLimit(2)
-            Spacer()
-        }) {
-            configuration.content.padding(.top)
-        }
-    }
-}
+// private struct InfoCardGroupBox: GroupBoxStyle {
+//    var color: Color
+//
+//    @ScaledMetric var size: CGFloat = 1
+//
+//    func makeBody(configuration: Configuration) -> some View {
+//        GroupBox(label: HStack {
+//            configuration.label
+//                .foregroundColor(color)
+//                .scaledToFit()
+//                .minimumScaleFactor(0.5)
+//                .lineLimit(2)
+//            Spacer()
+//        }) {
+//            configuration.content.padding(.top)
+//        }
+//    }
+// }
 
 struct Start_Previews: PreviewProvider {
     static var previews: some View {

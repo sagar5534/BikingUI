@@ -10,24 +10,31 @@ import SwiftUI
 
 struct InsightHistory: View {
     @State var trips: Trips
+    @State private var selectedTrip: Activity?
 
     var body: some View {
-        GroupBox(label:
-            Text("Recent Trips")
-        ) {
+        ContentBox(label: "Recent Trips") {
             VStack(spacing: 12) {
                 ForEach(trips) { trip in
+
+//                    Button(action: {
+//                        selectedTrip = trip
+//                    }, label: {
+//                        TripItemView(trip: trip)
+//                    })
+                    
                     NavigationLink(
-                        destination: ActivityView(trip: trip)
-                    ) {
-                        TripItemView(trip: trip)
-                    }
+                        destination: ActivityView(trip: trip),
+                        label: {
+                            TripItemView(trip: trip)
+                        })
                 }
                 SeeAllTripsView()
             }
-            .padding(.top)
         }
-        .groupBoxStyle(HistoryGroupBoxStyle(color: .red))
+        .fullScreenCover(item: $selectedTrip) { item in
+            ActivityView(trip: item)
+        }
     }
 }
 
@@ -56,7 +63,6 @@ private struct TripItemView: View {
                     Text(trip.distance.format(precision: 1) + " Km")
                         .font(.system(size: 15, weight: .regular, design: .default))
                         .foregroundColor(.secondary)
-
                 }
                 HStack {
                     // TODO:
@@ -65,35 +71,33 @@ private struct TripItemView: View {
                     Text("0:25")
                         .font(.system(size: 15, weight: .regular, design: .default))
                         .foregroundColor(.secondary)
-
                 }
             }
             .padding(.top, 10)
         }
         .padding(.horizontal, 25)
         .padding(.vertical, 15)
-        .background(Color(hex: "fef2ec"))
+        .background(Color("TripBoxColor"))
         .cornerRadius(5)
     }
 }
 
 private struct SeeAllTripsView: View {
-
     var body: some View {
-        
         NavigationLink(
             destination: Text("History"),
             label: {
                 HStack(alignment: .center) {
                     Text("View Full History")
                         .font(.system(size: 17, weight: .regular, design: .default))
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                     Spacer()
                     Image(systemName: "chevron.right")
                 }
-            })
-            .padding(.horizontal, 25)
-            .padding(.vertical, 20)
+            }
+        )
+        .padding(.horizontal, 25)
+        .padding(.vertical, 20)
         .overlay(
             RoundedRectangle(cornerRadius: 5)
                 .stroke(Color.gray.opacity(0.4), lineWidth: 1)
@@ -145,9 +149,8 @@ struct InsightHistory_Previews: PreviewProvider {
 
         TripItemView(trip: trips[0])
             .previewLayout(.sizeThatFits)
-        
+
         SeeAllTripsView()
             .previewLayout(.sizeThatFits)
-
     }
 }

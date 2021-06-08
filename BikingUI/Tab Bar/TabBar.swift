@@ -8,43 +8,37 @@
 import SwiftUI
 
 struct TabBar: View {
-    
     var body: some View {
-            TabView {
-                
-                NavigationView {
-                    Start()
-                }
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
-
-                
-                NavigationView {
-                    Insights()
-                        .modifier(NavBar(title: "Insights"))
-                }
-                .tabItem {
-                    Label("Insights", systemImage: "chart.bar.xaxis")
-                }
-                
-                
-                NavigationView {
-                    Settings()
-                        .modifier(NavBar(title: "Settings"))
-                }
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
-                }
+        TabView {
+            NavigationView {
+                Start()
             }
+            .tabItem {
+                Label("Home", systemImage: "house.fill")
+            }
+
+            NavigationView {
+                Insights()
+                    .modifier(NavBar(title: "Insights"))
+            }
+            .tabItem {
+                Label("Insights", systemImage: "chart.bar.xaxis")
+            }
+
+            NavigationView {
+                Settings()
+                    .modifier(NavBar(title: "Settings"))
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape.fill")
+            }
+        }
     }
-    
 }
 
 struct NavBar: ViewModifier {
-    
     @State var title: String
-    
+
     func body(content: Content) -> some View {
         content
             .navigationTitle(title)
@@ -52,8 +46,9 @@ struct NavBar: ViewModifier {
             .navigationBarItems(leading:
                 Image("profile")
                     .resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
+                    .frame(width: 38, height: 38, alignment: .center)
                     .clipShape(Circle())
+                    .padding(.bottom, 7)
             )
     }
 }

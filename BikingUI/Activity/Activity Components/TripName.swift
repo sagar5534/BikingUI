@@ -5,50 +5,32 @@
 //  Created by Sagar on 2021-05-25.
 //
 
-import SwiftUI
 import FirebaseFirestore
+import SwiftUI
+import MapKit
 
 struct TripName: View {
     @State var trip: Activity
-
+    
     var body: some View {
-        GroupBox(label: Label("Trip Name", systemImage: "mappin.and.ellipse")) {
-            VStack(alignment: .leading, spacing: 3) {
-                Text(trip.date.format())
-                    .font(.system(size: 15, weight: .regular, design: .default))
-                    .foregroundColor(.secondary)
+        VStack(alignment: .leading, spacing: 3) {
+            
+            TextField("Monday Morning Trip", text: $trip.tripName)
+                .font(.system(size: 24, weight: .medium, design: .default))
+                .foregroundColor(.primary)
+            
+            Text(trip.date.format())
+                .font(.system(size: 15, weight: .regular, design: .default))
+                .foregroundColor(.secondary)
 
-                TextField("Monday Morning Trip", text: $trip.tripName)
-                    .font(.system(size: 24, weight: .medium, design: .default))
-                    .foregroundColor(.primary)
-            }
-        }
-        .groupBoxStyle(InfoCardGroupBox(color: .blue))
-    }
-}
-
-
-
-private struct InfoCardGroupBox: GroupBoxStyle {
-    var color: Color
-
-    @ScaledMetric var size: CGFloat = 1
-
-    func makeBody(configuration: Configuration) -> some View {
-        GroupBox(label: HStack {
-            configuration.label
-                .foregroundColor(color)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-                .lineLimit(2)
-            Spacer()
-        }) {
-            configuration.content
+            Map_Summary(coordinates: trip.coordinates.map { $0.toCLLocationCoordinate() })
+                .frame(height: 400)
                 .padding(.top)
+            
+
         }
     }
 }
-
 
 struct TripName_Previews: PreviewProvider {
     static var previews: some View {
@@ -62,7 +44,7 @@ struct TripName_Previews: PreviewProvider {
             elevation: 70.0,
             date: Timestamp()
         )
-        
+
         TripName(trip: trip)
     }
 }

@@ -11,35 +11,30 @@ import MapKit
 import SwiftUI
 
 struct ActivityView: View {
-
     @Environment(\.presentationMode) var presentationMode
     @State var trip: Activity
 
     var body: some View {
-        
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                TripName(trip: trip)
-                    .padding()
+        ScrollView(.vertical, showsIndicators: false) {
+            TripName(trip: trip)
+                .padding()
 
 //                Divider().padding(.horizontal)
 
-                TripStats(trip: trip)
-                    .padding()
+            TripStats(trip: trip)
+                .padding()
 
-                Divider().padding(.horizontal)
+            Divider().padding(.horizontal)
 
-                TripWeather()
-                    .padding()
+            TripWeather()
+                .padding()
+        }
 
-            }
-            
-            .onAppear {
-                UIScrollView.appearance().bounces = false
-            }
+        .onAppear {
+            UIScrollView.appearance().bounces = false
+        }
     }
 }
-
 
 struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
@@ -55,6 +50,5 @@ struct ActivityView_Previews: PreviewProvider {
         )
 
         ActivityView(trip: trip)
-        
     }
 }

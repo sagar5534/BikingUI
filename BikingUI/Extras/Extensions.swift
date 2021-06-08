@@ -49,19 +49,14 @@ extension Timestamp {
     }
 }
 
-
- extension GeoPoint {
-
+extension GeoPoint {
     func toCLLocationCoordinate() -> CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
+}
 
- }
-
- extension CLLocationCoordinate2D {
-
+extension CLLocationCoordinate2D {
     func toGeoPoint() -> GeoPoint {
-        return GeoPoint(latitude: self.latitude, longitude: self.longitude)
+        return GeoPoint(latitude: latitude, longitude: longitude)
     }
-
- }
+}

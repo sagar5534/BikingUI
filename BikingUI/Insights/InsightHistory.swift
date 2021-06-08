@@ -22,12 +22,13 @@ struct InsightHistory: View {
 //                    }, label: {
 //                        TripItemView(trip: trip)
 //                    })
-                    
+
                     NavigationLink(
                         destination: ActivityView(trip: trip),
                         label: {
                             TripItemView(trip: trip)
-                        })
+                        }
+                    )
                 }
                 SeeAllTripsView()
             }

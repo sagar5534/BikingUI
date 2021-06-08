@@ -18,24 +18,17 @@ struct TripStats: View {
     ]
 
     var body: some View {
-        
         ContentBox(label: "Details") {
-            
-
             LazyVGrid(columns: columns, spacing: 40) {
-                
                 let elevLabel = (trip.elevation > 0 ? "+" : "-") + trip.elevation.format(precision: 0) + "m"
-                
+
                 InfoLabel(value: trip.distance.format(precision: 1), unit: "Kilometers")
                 InfoLabel(value: String(trip.movingTime.toTime(pad: false)), unit: "Moving Time")
                 InfoLabel(value: trip.speed.format(precision: 1), unit: "Speed")
                 InfoLabel(value: String(trip.pace.toTime(pad: false)), unit: "Pace")
                 InfoLabel(value: elevLabel, unit: "Elevation")
-                
             }
-            
         }
-        
     }
 }
 

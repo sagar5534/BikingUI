@@ -82,9 +82,8 @@ struct Activity: Hashable, Identifiable, Codable {
         self.pace = pace
         self.elevation = elevation
         self.date = date
-        self.coordinates = x.map({ $0.coordinate.toGeoPoint()})
+        coordinates = x.map { $0.coordinate.toGeoPoint() }
     }
-
 }
 
 var x = [

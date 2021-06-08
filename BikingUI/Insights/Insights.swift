@@ -6,11 +6,10 @@
 //
 
 import FirebaseFirestore
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct Insights: View {
-    
     @State var trips: Trips = [
         Activity(tripName: "Monday Afternoon",
                  distance: 10.55,

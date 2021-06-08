@@ -6,19 +6,18 @@
 //
 
 import FirebaseFirestore
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct TripName: View {
     @State var trip: Activity
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            
             TextField("Monday Morning Trip", text: $trip.tripName)
                 .font(.system(size: 24, weight: .medium, design: .default))
                 .foregroundColor(.primary)
-            
+
             Text(trip.date.format())
                 .font(.system(size: 15, weight: .regular, design: .default))
                 .foregroundColor(.secondary)
@@ -26,8 +25,6 @@ struct TripName: View {
             Map_Summary(coordinates: trip.coordinates.map { $0.toCLLocationCoordinate() })
                 .frame(height: 400)
                 .padding(.top)
-            
-
         }
     }
 }

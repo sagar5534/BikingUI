@@ -11,7 +11,7 @@ struct TripWeather: View {
     @ObservedObject var weatherapi = WeatherAPI(location: "Toronto, CA")
 
     var body: some View {
-        ContentBox(label:"Weather") {
+        ContentBox(label: "Weather") {
             HStack(alignment: .center, spacing: 0) {
                 WeatherIcon()
                 Spacer()

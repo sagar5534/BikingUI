@@ -43,14 +43,6 @@ struct Insights: View {
                  pace: 45,
                  elevation: 70.0,
                  date: Timestamp()),
-        Activity(tripName: "Monday Afternoon",
-                 distance: 10.55,
-                 movingTime: 1000,
-                 totalTime: 1200,
-                 speed: 20.3,
-                 pace: 45,
-                 elevation: 70.0,
-                 date: Timestamp()),
     ]
 
     var body: some View {
@@ -70,27 +62,8 @@ struct Insights: View {
 
 struct History_Previews: PreviewProvider {
     static var previews: some View {
-        let trips: Trips = [
-            Activity(tripName: "Monday Afternoon",
-                     distance: 10.55,
-                     movingTime: 1000,
-                     totalTime: 1200,
-                     speed: 20.3,
-                     pace: 45,
-                     elevation: 70.0,
-                     date: Timestamp()),
-            Activity(tripName: "Sunday Afternoon",
-                     distance: 12.55,
-                     movingTime: 2000,
-                     totalTime: 2500,
-                     speed: 20.3,
-                     pace: 45,
-                     elevation: 70.0,
-                     date: Timestamp()),
-        ]
-
         NavigationView {
-            Insights(trips: trips)
+            Insights()
         }
     }
 }

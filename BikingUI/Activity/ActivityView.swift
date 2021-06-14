@@ -6,12 +6,10 @@
 //
 
 import FirebaseFirestore
-import Introspect
 import MapKit
 import SwiftUI
 
 struct ActivityView: View {
-    @Environment(\.presentationMode) var presentationMode
     @State var trip: Activity
 
     var body: some View {
@@ -19,17 +17,13 @@ struct ActivityView: View {
             TripName(trip: trip)
                 .padding()
 
-//                Divider().padding(.horizontal)
-
             TripStats(trip: trip)
                 .padding()
-
-            Divider().padding(.horizontal)
-
+            
             TripWeather()
                 .padding()
         }
-
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             UIScrollView.appearance().bounces = false
         }

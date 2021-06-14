@@ -14,21 +14,42 @@ struct TripStats: View {
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
-        GridItem(.flexible()),
     ]
 
     var body: some View {
         ContentBox(label: "Details") {
-            LazyVGrid(columns: columns, spacing: 40) {
-                let elevLabel = (trip.elevation > 0 ? "+" : "-") + trip.elevation.format(precision: 0) + "m"
+            LazyVGrid(columns: columns, spacing: 15) {
+            
+                let elevLabel = (trip.elevation > 0 ? "+" : "-") + trip.elevation.format(precision: 0)
 
-                InfoLabel(value: trip.distance.format(precision: 1), unit: "Kilometers")
-                InfoLabel(value: String(trip.movingTime.toTime(pad: false)), unit: "Moving Time")
-                InfoLabel(value: trip.speed.format(precision: 1), unit: "Speed")
-                InfoLabel(value: String(trip.pace.toTime(pad: false)), unit: "Pace")
-                InfoLabel(value: elevLabel, unit: "Elevation")
+                StatsBox(label: "Distance", image: "flame", value: trip.distance.format(precision: 1), unit: "Km")
+                StatsBox(label: "Moving Time", image: "arrowtriangle.right.circle", value: String(trip.movingTime.toTime(pad: false)), unit: "")
+
+                StatsBox(label: "Speed", image: "timer", value: trip.speed.format(precision: 1), unit: "Km/h")
+                StatsBox(label: "Pace", image: "stopwatch", value: String(trip.pace.toTime(pad: false)), unit: "")
+
+                StatsBox(label: "Elevation", image: "arrow.triangle.swap", value: elevLabel, unit: "Meters")
+            
             }
         }
+    }
+}
+
+
+private struct StatsBox: View {
+    var label: String = ""
+    var image: String = ""
+    var value: String = ""
+    var unit: String = ""
+
+    var body: some View {
+        GroupBox(label: Label(
+            title: { Text(label) },
+            icon: { Image(systemName: image)
+        }), content: {
+            InfoTextView(value: value, unit: unit)
+                .padding(.top)
+        })
     }
 }
 

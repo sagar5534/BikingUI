@@ -19,7 +19,6 @@ struct TabBar: View {
 
             NavigationView {
                 Insights()
-                    .modifier(NavBar(title: "Insights"))
             }
             .tabItem {
                 Label("Insights", systemImage: "chart.bar.xaxis")
@@ -50,6 +49,16 @@ struct NavBar: ViewModifier {
                     .clipShape(Circle())
                     .padding(.bottom, 7)
             )
+    }
+}
+
+struct InlineNavBar: ViewModifier {
+    @State var title: String
+
+    func body(content: Content) -> some View {
+        content
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

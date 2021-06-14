@@ -14,20 +14,18 @@ struct TripName: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            
             HStack {
                 TextField("Monday Morning Trip", text: $trip.tripName) { bool in
                     print(bool)
                 } onCommit: {
                     print("Commit activity name: " + trip.tripName)
                 }
-                    .font(.system(size: 24, weight: .medium, design: .default))
-                    .foregroundColor(.primary)
-                
+                .font(.system(size: 24, weight: .medium, design: .default))
+                .foregroundColor(.primary)
+
                 Image(systemName: "pencil")
                     .font(.system(size: 24, weight: .medium, design: .default))
             }
-            
 
             Text(trip.date.format())
                 .font(.system(size: 15, weight: .regular, design: .default))
@@ -50,7 +48,7 @@ struct TripName_Previews: PreviewProvider {
             speed: 20.3,
             pace: 1450,
             elevation: 70.0,
-            date: Timestamp(seconds: 1592095365, nanoseconds: 0)
+            date: Timestamp(seconds: 1_592_095_365, nanoseconds: 0)
         )
 
         TripName(trip: trip)

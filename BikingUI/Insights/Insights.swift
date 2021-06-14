@@ -54,13 +54,14 @@ struct Insights: View {
             InsightHistory(trips: trips)
                 .padding(.top)
                 .padding(.horizontal)
-
+                .padding(.bottom)
             Spacer()
         }
+        .modifier(NavBar(title: "Insights"))
     }
 }
 
-struct History_Previews: PreviewProvider {
+struct Insights_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             Insights()

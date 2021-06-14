@@ -19,13 +19,17 @@ struct ActivityView: View {
 
             TripStats(trip: trip)
                 .padding()
-            
+
             TripWeather()
                 .padding()
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .padding(.top)
+        
         .onAppear {
             UIScrollView.appearance().bounces = false
+        }
+        .onDisappear {
+            UIScrollView.appearance().bounces = true
         }
     }
 }

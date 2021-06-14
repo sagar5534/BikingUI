@@ -17,29 +17,32 @@ struct InsightHistory: View {
             VStack(spacing: 12) {
                 ForEach(trips) { trip in
 
-//                    Button(action: {
-//                        selectedTrip = trip
-//                    }, label: {
-//                        TripItemView(trip: trip)
-//                    })
+                    Button(action: {
+                        selectedTrip = trip
+                    }, label: {
+                        TripItemView(trip: trip)
+                    })
 
-                    NavigationLink(
-                        destination: ActivityView(trip: trip),
-                        label: {
-                            TripItemView(trip: trip)
-                        }
-                    )
+//                    NavigationLink(
+//                        destination: ActivityView(trip: trip),
+//                        label: {
+//                            TripItemView(trip: trip)
+//                        }
+//                    )
                 }
-                SeeAllTripsView()
+                SeeAllTripsView(trips: trips)
             }
         }
-        .fullScreenCover(item: $selectedTrip) { item in
+        .sheet(item: $selectedTrip) { item in
             ActivityView(trip: item)
         }
+//        .fullScreenCover(item: $selectedTrip) { item in
+//            ActivityView(trip: item)
+//        }
     }
 }
 
-private struct TripItemView: View {
+struct TripItemView: View {
     @State var trip: Activity
 
     var body: some View {
@@ -84,9 +87,11 @@ private struct TripItemView: View {
 }
 
 private struct SeeAllTripsView: View {
+    @State var trips: Trips
+
     var body: some View {
         NavigationLink(
-            destination: Text("History"),
+            destination: History(trips: trips),
             label: {
                 HStack(alignment: .center) {
                     Text("View Full History")
@@ -151,7 +156,7 @@ struct InsightHistory_Previews: PreviewProvider {
         TripItemView(trip: trips[0])
             .previewLayout(.sizeThatFits)
 
-        SeeAllTripsView()
+        SeeAllTripsView(trips: trips)
             .previewLayout(.sizeThatFits)
     }
 }

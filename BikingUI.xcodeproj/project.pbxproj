@@ -16,6 +16,7 @@
 		1B0DABC92510517300926415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0DABC82510517300926415 /* Preview Assets.xcassets */; };
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
 		1B163B42264734B100AABF52 /* InsightHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B163B41264734B100AABF52 /* InsightHistory.swift */; };
+		1B246AA02677187E0062156B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246A9F2677187E0062156B /* SearchBar.swift */; };
 		1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* Testdata.swift */; };
 		1B43D1AB26686182001C4E20 /* InfoCardGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43D1AA26686182001C4E20 /* InfoCardGroupBox.swift */; };
 		1B6A209E264A276B00D7DAA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A209D264A276B00D7DAA8 /* Settings.swift */; };
@@ -48,6 +49,7 @@
 		1BCE0DE7264F0D7300532406 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE0DE6264F0D7300532406 /* ActivityView.swift */; };
 		1BD2DC83266EFA2900589776 /* ContentBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2DC82266EFA2900589776 /* ContentBox.swift */; };
 		1BE732BD2512731E0073E5C8 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE732BC2512731E0073E5C8 /* Insights.swift */; };
+		1BF262FD2676DF1A009A8CE1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF262FC2676DF1A009A8CE1 /* History.swift */; };
 		FD17DC42CCA34F821CC92831 /* Pods_BikingUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590E2552687948C031DCA97A /* Pods_BikingUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,7 @@
 		1B0DABCA2510517300926415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B163B41264734B100AABF52 /* InsightHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightHistory.swift; sourceTree = "<group>"; };
+		1B246A9F2677187E0062156B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		1B27E133251EC53D00A83B02 /* Testdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testdata.swift; sourceTree = "<group>"; };
 		1B43D1AA26686182001C4E20 /* InfoCardGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGroupBox.swift; sourceTree = "<group>"; };
 		1B6A209D264A276B00D7DAA8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 		1BCE0DE6264F0D7300532406 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		1BD2DC82266EFA2900589776 /* ContentBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBox.swift; sourceTree = "<group>"; };
 		1BE732BC2512731E0073E5C8 /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
+		1BF262FC2676DF1A009A8CE1 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		590E2552687948C031DCA97A /* Pods_BikingUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikingUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CF29BE3D6C13C9AC4EA094 /* Pods-BikingUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikingUI.debug.xcconfig"; path = "Target Support Files/Pods-BikingUI/Pods-BikingUI.debug.xcconfig"; sourceTree = "<group>"; };
 		D0467456A8DB5115383F584C /* Pods-BikingUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikingUI.release.xcconfig"; path = "Target Support Files/Pods-BikingUI/Pods-BikingUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				1B03F108265F5D7F00134728 /* Color Hex Ext.swift */,
 				1B43D1AA26686182001C4E20 /* InfoCardGroupBox.swift */,
 				1BD2DC82266EFA2900589776 /* ContentBox.swift */,
+				1B246A9F2677187E0062156B /* SearchBar.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				1BE732BC2512731E0073E5C8 /* Insights.swift */,
 				1B7868782638E65200362C58 /* InsightScoreboard.swift */,
 				1B163B41264734B100AABF52 /* InsightHistory.swift */,
+				1BF262FC2676DF1A009A8CE1 /* History.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 			files = (
 				1B9A0EE4251740600017AD07 /* StopWatch.swift in Sources */,
 				1B03F101265E094D00134728 /* TripName.swift in Sources */,
+				1BF262FD2676DF1A009A8CE1 /* History.swift in Sources */,
 				1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */,
 				1B03F109265F5D7F00134728 /* Color Hex Ext.swift in Sources */,
 				1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */,
@@ -452,6 +459,7 @@
 				1B6A209E264A276B00D7DAA8 /* Settings.swift in Sources */,
 				1BCE0DE7264F0D7300532406 /* ActivityView.swift in Sources */,
 				1B9E0F28251D82570062F320 /* Extensions.swift in Sources */,
+				1B246AA02677187E0062156B /* SearchBar.swift in Sources */,
 				1B896DBC251B03A0005A3CED /* Model.swift in Sources */,
 				1BC1DB4F25113E9A008D5162 /* Leading Element.swift in Sources */,
 				1B8B7E002658CA4D00E2A317 /* Weather.swift in Sources */,

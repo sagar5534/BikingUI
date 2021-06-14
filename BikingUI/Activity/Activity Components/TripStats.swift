@@ -18,8 +18,8 @@ struct TripStats: View {
 
     var body: some View {
         ContentBox(label: "Details") {
-            LazyVGrid(columns: columns, spacing: 15) {
             
+            LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
                 let elevLabel = (trip.elevation > 0 ? "+" : "-") + trip.elevation.format(precision: 0)
 
                 StatsBox(label: "Distance", image: "flame", value: trip.distance.format(precision: 1), unit: "Km")
@@ -29,12 +29,10 @@ struct TripStats: View {
                 StatsBox(label: "Pace", image: "stopwatch", value: String(trip.pace.toTime(pad: false)), unit: "")
 
                 StatsBox(label: "Elevation", image: "arrow.triangle.swap", value: elevLabel, unit: "Meters")
-            
             }
         }
     }
 }
-
 
 private struct StatsBox: View {
     var label: String = ""
@@ -46,7 +44,8 @@ private struct StatsBox: View {
         GroupBox(label: Label(
             title: { Text(label) },
             icon: { Image(systemName: image)
-        }), content: {
+            }
+        ), content: {
             InfoTextView(value: value, unit: unit)
                 .padding(.top)
         })

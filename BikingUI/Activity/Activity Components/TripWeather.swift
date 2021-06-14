@@ -31,7 +31,7 @@ private struct RightDetail: View {
             InfoLabelOnly(label: weatherapi.weather?.weather?.first?.weatherMsg ?? "")
             InfoLabel(label: "Feels Like", value: weatherapi.weather?.main?.feelsLike ?? 0)
             InfoLabel(label: "High", value: weatherapi.weather?.main?.feelsLike ?? 0)
-            //TODO Fix
+            // TODO: Fix
             InfoLabel(label: "Low", value: weatherapi.weather?.main?.feelsLike ?? 0)
         }
     }

@@ -17,17 +17,14 @@
 		1B0DABD1251052B700926415 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DABD0251052B700926415 /* Start.swift */; };
 		1B163B42264734B100AABF52 /* InsightHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B163B41264734B100AABF52 /* InsightHistory.swift */; };
 		1B246AA02677187E0062156B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246A9F2677187E0062156B /* SearchBar.swift */; };
+		1B246AA22677BD3B0062156B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246AA12677BD3B0062156B /* NavigationBar.swift */; };
+		1B246AA5267839070062156B /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B246AA4267839070062156B /* Events.swift */; };
 		1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27E133251EC53D00A83B02 /* Testdata.swift */; };
 		1B43D1AB26686182001C4E20 /* InfoCardGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43D1AA26686182001C4E20 /* InfoCardGroupBox.swift */; };
 		1B6A209E264A276B00D7DAA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A209D264A276B00D7DAA8 /* Settings.swift */; };
-		1B6A20A1264A2AF800D7DAA8 /* BoxShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A20A0264A2AF800D7DAA8 /* BoxShadow.swift */; };
 		1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */; };
 		1B74D8C32632AD6C0062D691 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B74D8C22632AD6C0062D691 /* GoogleService-Info.plist */; };
 		1B74D8C826335D810062D691 /* Start_VModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8C726335D810062D691 /* Start_VModel.swift */; };
-		1B74D8DB263371FE0062D691 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8D7263371FE0062D691 /* BottomBar.swift */; };
-		1B74D8DC263371FE0062D691 /* BottomBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */; };
-		1B74D8DD263371FE0062D691 /* BarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8D9263371FE0062D691 /* BarBuilder.swift */; };
-		1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8DA263371FE0062D691 /* BottomBarItem.swift */; };
 		1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */; };
 		1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7868782638E65200362C58 /* InsightScoreboard.swift */; };
 		1B896DB8251B011C005A3CED /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B896DB7251B011C005A3CED /* Firebase.swift */; };
@@ -66,17 +63,14 @@
 		1B0DABD0251052B700926415 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B163B41264734B100AABF52 /* InsightHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightHistory.swift; sourceTree = "<group>"; };
 		1B246A9F2677187E0062156B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1B246AA12677BD3B0062156B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		1B246AA4267839070062156B /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		1B27E133251EC53D00A83B02 /* Testdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testdata.swift; sourceTree = "<group>"; };
 		1B43D1AA26686182001C4E20 /* InfoCardGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGroupBox.swift; sourceTree = "<group>"; };
 		1B6A209D264A276B00D7DAA8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		1B6A20A0264A2AF800D7DAA8 /* BoxShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxShadow.swift; sourceTree = "<group>"; };
 		1B71DB0F26374F6B009A2BAD /* StartTripBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTripBox.swift; sourceTree = "<group>"; };
 		1B74D8C22632AD6C0062D691 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1B74D8C726335D810062D691 /* Start_VModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_VModel.swift; sourceTree = "<group>"; };
-		1B74D8D7263371FE0062D691 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
-		1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarItemView.swift; sourceTree = "<group>"; };
-		1B74D8D9263371FE0062D691 /* BarBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarBuilder.swift; sourceTree = "<group>"; };
-		1B74D8DA263371FE0062D691 /* BottomBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
 		1B74D8E226339E350062D691 /* VisualEffectsBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectsBlur.swift; sourceTree = "<group>"; };
 		1B7868782638E65200362C58 /* InsightScoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightScoreboard.swift; sourceTree = "<group>"; };
 		1B896DB7251B011C005A3CED /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
@@ -160,6 +154,7 @@
 				1B74D8E52633A0830062D691 /* Tab Bar */,
 				1BC1DB5025114B6D008D5162 /* Start Page */,
 				1BE732BB2512730D0073E5C8 /* Insights */,
+				1B246AA3267838B60062156B /* Events */,
 				1B6A209C264A275200D7DAA8 /* Settings */,
 				1B9A0ECE2515B7B70017AD07 /* Tracking */,
 				1BCE0DE5264F0D4700532406 /* Activity */,
@@ -179,6 +174,14 @@
 				1B0DABC82510517300926415 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1B246AA3267838B60062156B /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				1B246AA4267839070062156B /* Events.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		1B6A209C264A275200D7DAA8 /* Settings */ = {
@@ -201,20 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				1B8D542625116252000CBB56 /* TabBar.swift */,
-				1B78687C2638EB8B00362C58 /* CustomTabBar */,
 			);
 			path = "Tab Bar";
-			sourceTree = "<group>";
-		};
-		1B78687C2638EB8B00362C58 /* CustomTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				1B74D8D7263371FE0062D691 /* BottomBar.swift */,
-				1B74D8DA263371FE0062D691 /* BottomBarItem.swift */,
-				1B74D8D8263371FE0062D691 /* BottomBarItemView.swift */,
-				1B74D8D9263371FE0062D691 /* BarBuilder.swift */,
-			);
-			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		1B896DB2251B00B6005A3CED /* Models */ = {
@@ -266,11 +257,11 @@
 				1B9E0F2A251D8F310062F320 /* Maps & Location */,
 				1BC1DB4E25113E9A008D5162 /* Leading Element.swift */,
 				1B9E0F27251D82570062F320 /* Extensions.swift */,
-				1B6A20A0264A2AF800D7DAA8 /* BoxShadow.swift */,
 				1B03F108265F5D7F00134728 /* Color Hex Ext.swift */,
 				1B43D1AA26686182001C4E20 /* InfoCardGroupBox.swift */,
 				1BD2DC82266EFA2900589776 /* ContentBox.swift */,
 				1B246A9F2677187E0062156B /* SearchBar.swift */,
+				1B246AA12677BD3B0062156B /* NavigationBar.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -437,20 +428,18 @@
 				1B03F101265E094D00134728 /* TripName.swift in Sources */,
 				1BF262FD2676DF1A009A8CE1 /* History.swift in Sources */,
 				1B9A0EE12517326F0017AD07 /* Core Location.swift in Sources */,
+				1B246AA5267839070062156B /* Events.swift in Sources */,
 				1B03F109265F5D7F00134728 /* Color Hex Ext.swift in Sources */,
 				1B9A0ED52515DADB0017AD07 /* Dashboard_Map.swift in Sources */,
 				1B163B42264734B100AABF52 /* InsightHistory.swift in Sources */,
 				1B71DB1026374F6B009A2BAD /* StartTripBox.swift in Sources */,
 				1B7868792638E65200362C58 /* InsightScoreboard.swift in Sources */,
-				1B74D8DE263371FE0062D691 /* BottomBarItem.swift in Sources */,
 				1B9A0EF925185B8A0017AD07 /* Dashboard Buttons.swift in Sources */,
 				1B03F0FE265E088800134728 /* TripStats.swift in Sources */,
 				1B27E134251EC53E00A83B02 /* Testdata.swift in Sources */,
 				1B896DB8251B011C005A3CED /* Firebase.swift in Sources */,
 				1B74D8E326339E350062D691 /* VisualEffectsBlur.swift in Sources */,
 				1B9A0ED02515B9F60017AD07 /* Dashboard.swift in Sources */,
-				1B74D8DB263371FE0062D691 /* BottomBar.swift in Sources */,
-				1B74D8DD263371FE0062D691 /* BarBuilder.swift in Sources */,
 				1B43D1AB26686182001C4E20 /* InfoCardGroupBox.swift in Sources */,
 				1BCE0DDF264EF46B00532406 /* Dashboard Components.swift in Sources */,
 				1BE732BD2512731E0073E5C8 /* Insights.swift in Sources */,
@@ -467,11 +456,10 @@
 				1B0DABD1251052B700926415 /* Start.swift in Sources */,
 				1B0DABC22510517200926415 /* BikingUIApp.swift in Sources */,
 				1B03F0FB265E083700134728 /* TripWeather.swift in Sources */,
-				1B6A20A1264A2AF800D7DAA8 /* BoxShadow.swift in Sources */,
+				1B246AA22677BD3B0062156B /* NavigationBar.swift in Sources */,
 				1B9A0ED82515DAEB0017AD07 /* Dash_TabManager.swift in Sources */,
 				1BD2DC83266EFA2900589776 /* ContentBox.swift in Sources */,
 				1B8D542725116252000CBB56 /* TabBar.swift in Sources */,
-				1B74D8DC263371FE0062D691 /* BottomBarItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

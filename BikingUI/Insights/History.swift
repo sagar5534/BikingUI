@@ -43,7 +43,6 @@ struct History: View {
         
             
         }
-        
         .modifier(InlineNavBar(title: "History"))
         .sheet(item: $selectedTrip) { item in
             ActivityView(trip: item)

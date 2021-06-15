@@ -8,12 +8,6 @@
 import SwiftUI
 
 struct StartTripBox: View {
-    let items: [BottomBarItem] = [
-        BottomBarItem(icon: "clock.fill", title: "Timed", color: .purple),
-        BottomBarItem(icon: "ruler", title: "Distance", color: .pink),
-        BottomBarItem(icon: "timer", title: "Pace", color: .orange),
-    ]
-    @State public var selectedIndex: Int = 4
 
     @State var timer = TimeInterval()
     @State private var seconds: TimeInterval = 60 * 60 * 12
@@ -38,21 +32,6 @@ struct StartTripBox: View {
                 }
                 .padding(.horizontal)
                 .padding(.top)
-
-                HStack(alignment: .center) {
-                    ForEach(0 ..< items.count) { index in
-
-                        Button(action: {
-                            withAnimation { self.selectedIndex = index }
-                        }) {
-                            BikeTypeBarView(selected: self.$selectedIndex,
-                                            index: index,
-                                            item: items[index])
-                        }
-                    }
-                    Spacer()
-                }
-                .padding(.horizontal)
 
                 Spacer()
 
@@ -106,36 +85,6 @@ private struct DurationPicker: UIViewRepresentable {
     }
 }
 
-private struct BikeTypeBarView: View {
-    @Binding var selected: Int
-    public let index: Int
-    public let item: BottomBarItem
-
-    public var body: some View {
-        HStack {
-            item.icon
-                .imageScale(.medium)
-                .foregroundColor(isSelected ? item.color : .primary)
-                .frame(maxHeight: 15)
-
-            if isSelected {
-                Text(item.title)
-                    .foregroundColor(item.color)
-                    .font(.caption)
-                    .fontWeight(.bold)
-            }
-        }
-        .padding()
-        .background(
-            Capsule()
-                .fill(item.color.opacity(0.2))
-        )
-    }
-
-    var isSelected: Bool {
-        selected == index
-    }
-}
 
 struct StartTripBox_Previews: PreviewProvider {
     static var previews: some View {

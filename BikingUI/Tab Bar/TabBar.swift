@@ -25,40 +25,13 @@ struct TabBar: View {
             }
 
             NavigationView {
-                Settings()
-                    .modifier(NavBar(title: "Settings"))
+                Events()
+                    .modifier(NavBar(title: "Events"))
             }
             .tabItem {
-                Label("Settings", systemImage: "gearshape.fill")
+                Label("Events", systemImage: "person.3.fill")
             }
         }
-    }
-}
-
-struct NavBar: ViewModifier {
-    @State var title: String
-
-    func body(content: Content) -> some View {
-        content
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(leading:
-                Image("profile")
-                    .resizable()
-                    .frame(width: 38, height: 38, alignment: .center)
-                    .clipShape(Circle())
-                    .padding(.bottom, 7)
-            )
-    }
-}
-
-struct InlineNavBar: ViewModifier {
-    @State var title: String
-
-    func body(content: Content) -> some View {
-        content
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -18,19 +18,16 @@ struct Start: View {
                     InfoTextView(value: "4", unit: "Days")
                 }
                 .groupBoxStyle(InfoCardGroupBox(color: Color(red: 254 / 255, green: 87 / 255, blue: 45 / 255, opacity: 1)))
-                .boxShadow()
 
                 GroupBox(label: Label("Travelled", systemImage: "mappin.and.ellipse")) {
                     InfoTextView(value: "4019", unit: "Kms")
                 }
                 .groupBoxStyle(InfoCardGroupBox(color: .blue))
-                .boxShadow()
             }
             .padding(.horizontal)
             .padding(.top)
 
             StartTripBox()
-                .boxShadow()
                 .padding(.horizontal)
                 .padding(.bottom)
         }
